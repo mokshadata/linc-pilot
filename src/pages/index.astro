@@ -19,10 +19,6 @@ import family6 from '@assets/images/pexels-shvetsa-4586685.jpg'
 const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
 ---
 
-<script define:vars={{familyWithBikingDaughter}}>
-  console.log({familyWithBikingDaughter})
-</script>
-
 <BaseLayout pageTitle={pageTitle}>
   <main data-page="index">
     <!-- <section>
@@ -33,7 +29,7 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
       <!-- <div> -->
         <div class="container grid">
           <div>
-            <Image src={familyWithBikingDaughter} alt="Smith family biking"/>
+            <Image src={familyWithBikingDaughter} alt="Fort Bend family biking"/>
           </div>
           <div class="content">
             <Heading
@@ -59,7 +55,7 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
             <p>The Smith family had job changes and new medical bills in the beginning of 2024.  They got behind on a couple of bills but were starting to catch up.  Then, the May derechos hit. They reached out to their landlord about how they were struggling. The due date for their rent was extended. They then reached out to community organization for assistance.</p>
           </div>
           <div>
-            <Image src={family1} alt="Smith family biking"/>
+            <Image src={family1} alt="Smith family"/>
           </div>
         </div>
 
@@ -68,19 +64,26 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
     </section>
     <section id="how-it-works">
       <div class="container">
-        <h1>How it works</h1>
-        <p>With LINC, you'll get answers quickly about your request for help. The process is designed to let you know whether you will get help with a little information from you as possible.</p>
-        <ol>
-          <li>
-            <p>
-              Fill out a 5 question form to see if you may qualify.
-            </p>
-            <ul>
-              <li>You will know right away if you do not qualify.</li>
-            </ul>
-          </li>
-          <li></li>
-        </ol>
+        <div class="grid">
+          <div>
+            <Image src={family2} alt="family"/>
+          </div>
+          <div>
+            <h1>How it works</h1>
+            <p>With LINC, you'll get answers quickly about your request for help. The process is designed to let you know whether you will get help with a little information from you as possible.</p>
+            <ol>
+              <li>
+                <p>
+                  Fill out a 5 question form to see if you may qualify.
+                </p>
+                <ul>
+                  <li>You will know right away if you do not qualify.</li>
+                </ul>
+              </li>
+              <li></li>
+            </ol>
+          </div>
+        </div>
       </div>
     </section>
     <section id="get-started">
