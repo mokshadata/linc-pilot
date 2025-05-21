@@ -331,7 +331,59 @@ main #logo-2 #c {
   fill: var(--linc--alt--green);
 }
 
-[data-page="logos"] .grid > div:nth-child(2),
+main #logo-3 #dot,
+main #logo-3 [id="Fort-Bend"],
+main #logo-3 #link {
+  fill: var(--linc--alt--green--dark);
+}
+
+main #logo-3 #l,
+main #logo-3 #i,
+main #logo-3 #n,
+main #logo-3 #c {
+  fill: var(--linc--alt--green);
+}
+
+main #logo-4 #dot,
+main #logo-4 [id="Fort-Bend"],
+main #logo-4 #link {
+  fill: var(--linc--green--dark);
+}
+
+main #logo-4 #l,
+main #logo-4 #i,
+main #logo-4 #n,
+main #logo-4 #c {
+  fill: var(--linc--green);
+}
+
+main #logo-5 #dot,
+main #logo-5 [id="Fort-Bend"],
+main #logo-5 #link {
+  fill: var(--linc--green--dark);
+}
+
+main #logo-5 #l,
+main #logo-5 #i,
+main #logo-5 #n,
+main #logo-5 #c {
+  fill: var(--linc--green);
+}
+
+main #logo-6 #dot,
+main #logo-6 [id="Fort-Bend"],
+main #logo-6 #link {
+  fill: var(--linc--green--dark);
+}
+
+main #logo-6 #l,
+main #logo-6 #i,
+main #logo-6 #n,
+main #logo-6 #c {
+  fill: var(--linc--green);
+}
+
+/* [data-page="logos"] .grid > div:nth-child(2),
 [data-page="logos"] .grid > div:nth-child(3) {
   display: none;
-}
+} */
