@@ -40,16 +40,12 @@ const pageTitle: string = "Preview";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <header>
-    <NavWrapper />
-  </header>
-  <hr />
   <main class="container">
     <section>
       <div>
         <hgroup>
           <h3>Preview Components</h3>
-          <small>= Pico CSS + Astro</small>
+          <!-- <small>= Pico CSS + Astro</small> -->
         </hgroup>
         <hr />
       </div>
@@ -58,7 +54,7 @@ const pageTitle: string = "Preview";
     <!-- HGroup -->
     <section>
       <Hgroup
-        title="Pico"
+        title="Uses Pico"
         description="A pure HTML example, without dependencies."
       />
       <Dropdown summary="Theme" elements={["auto", "light", "dark"]} />
@@ -68,7 +64,7 @@ const pageTitle: string = "Preview";
     <!-- Preview -->
     <section id="preview">
       <Sample
-        title="Pico"
+        title="Heading"
         description="Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet suscipit sapien. Nulla iaculis eros a elit pharetra egestas."
       />
     </section>

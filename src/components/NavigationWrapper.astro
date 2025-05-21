@@ -1,20 +1,48 @@
 ---
 import Hamburger from "./Hamburger.astro";
 import Navigation from "./Navigation.astro";
----
+import LincLogo from "./LincLogo.astro";
 
-<div>
+const { pathname } = Astro.url;
+---
+<header>
   <nav class="container nav-wrapper">
     <Hamburger />
-    <ul>
-      <li><a href="/" class="contrast"><strong>AstroPico</strong></a></li>
-    </ul>
+    <a href="/" aria-current={pathname === "/"}><LincLogo/></a>
     <Navigation />
   </nav>
-</div>
+</header>
+
+<script>
+  import scrollama from "scrollama";
+
+  const headerEl = document.querySelector('header')
+  headerEl.dataset.scrollDirection = 'up'
+  console.log(headerEl)
+  console.log(headerEl?.offsetHeight)
+  // instantiate the scrollama
+  const scroller = scrollama();
+
+  // setup the instance, pass callback functions
+  scroller
+    .setup({
+      step: document.querySelectorAll('main'),
+      offset: `${(headerEl?.offsetHeight || 0) / 2}px`,
+    })
+    .onStepEnter((response) => {
+      headerEl.dataset.scrollDirection = response.direction
+      // { element, index, direction }
+    })
+    .onStepExit((response) => {
+      // { element, index, direction }
+      headerEl.dataset.scrollDirection = response.direction
+    });
+</script>
 
 <style>
   .nav-wrapper {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     display: block;
   }
 

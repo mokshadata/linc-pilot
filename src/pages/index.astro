@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import NavWrapper from "@components/NavigationWrapper.astro";
 import Heading from "@components/Heading.astro";
 import LatestPosts from "@components/LatestPosts.astro";
 import Featured from "@components/Featured.astro";
@@ -8,81 +7,164 @@ import RecentProjects from "@components/RecentProjects.astro";
 import WorkExperiences from "@components/WorkExperiences.astro";
 import DetailsQuote from "@components/DetailsQuote";
 
-const pageTitle: string = "AstroPico";
+import { Image } from "astro:assets";
+import familyWithBikingDaughter from '@assets/images/family-bike.jpg'
+import family1 from '@assets/images/pexels-august-de-richelieu-4260639.jpg'
+import family2 from '@assets/images/pexels-cottonbro-6667301.jpg'
+import family3 from '@assets/images/pexels-elly-fairytale-3893723.jpg'
+import family4 from '@assets/images/pexels-olly-3820120.jpg'
+import family5 from '@assets/images/pexels-pnw-prod-7677946.jpg'
+import family6 from '@assets/images/pexels-shvetsa-4586685.jpg'
+
+const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
 ---
 
+<script define:vars={{familyWithBikingDaughter}}>
+  console.log({familyWithBikingDaughter})
+</script>
+
 <BaseLayout pageTitle={pageTitle}>
-  <header>
-    <NavWrapper />
-  </header>
-  <hr />
-  <main class="container">
-    <section>
-      <hgroup>
-        <h1>{pageTitle}</h1>
-        <p>... Astro styled with Pico CSS</p>
-      </hgroup>
-      <p>
-        <u><a href="/about/" class="">AstroPico</a></u> is an Astro theme who likes
-        simple implementation and good looking visual.
-      </p>
-      <DetailsQuote client:only="react" />
+  <main data-page="index">
+    <!-- <section>
+
+    </section> -->
+    <!-- Hero -->
+    <section class="hero">
+      <!-- <div> -->
+        <div class="container grid">
+          <div>
+            <Image src={familyWithBikingDaughter} alt="Smith family biking"/>
+          </div>
+          <div class="content">
+            <Heading
+              title="Many Fort Bend families get help for rent."
+              heading="1"
+              description="You can too. Learn how LINC can help."
+            />
+            <p>
+              <a href="#why-linc" role="button" class="outline">Learn more</a>
+            </p>
+          </div>
+        </div>
+      <!-- </div> -->
     </section>
-    <hr />
-    <section>
-      <hgroup>
-        <Heading
-          title="Featured"
-          heading="3"
-          description="... some of finest"
-        />
-      </hgroup>
-      <Featured />
+  <!-- ./ Hero -->
+    <section id="why-linc">
+      <div class="container">
+        
+        <div class="grid">
+          <div>
+            <h1>In 2024, more than 100 Fort Bend families needed and received rental assistance.</h1>
+            <h3>Here's how they got help.</h3>
+            <p>The Smith family had job changes and new medical bills in the beginning of 2024.  They got behind on a couple of bills but were starting to catch up.  Then, the May derechos hit. They reached out to their landlord about how they were struggling. The due date for their rent was extended. They then reached out to community organization for assistance.</p>
+          </div>
+          <div>
+            <Image src={family1} alt="Smith family biking"/>
+          </div>
+        </div>
+
+        <h1>LINC is your connection to rental assistance.</h1>
+      </div>
     </section>
-    <hr />
-    <section>
-      <hgroup>
-        <Heading
-          title="Latest posts"
-          heading="3"
-          description="... some of latest"
-        />
-      </hgroup>
-      <LatestPosts />
-      <p>
-        <small>
-          For more posts,
-          <a href="/blog/">to here.</a>
-        </small>
-      </p>
+    <section id="how-it-works">
+      <div class="container">
+        <h1>How it works</h1>
+        <p>With LINC, you'll get answers quickly about your request for help. The process is designed to let you know whether you will get help with a little information from you as possible.</p>
+        <ol>
+          <li>
+            <p>
+              Fill out a 5 question form to see if you may qualify.
+            </p>
+            <ul>
+              <li>You will know right away if you do not qualify.</li>
+            </ul>
+          </li>
+          <li></li>
+        </ol>
+      </div>
     </section>
-    <hr />
-    <section>
-      <hgroup>
-        <Heading title="Recent projects" heading="3" description="" />
-      </hgroup>
-      <RecentProjects />
-      <p>
-        <small>
-          For my featured projects, please visit my
-          <a href="https://www.github.com/san-ghun">Github</a>
-        </small>
-      </p>
+    <section id="get-started">
+      <div class="container">
+        <h1>Get Started</h1>
+      </div>
     </section>
-    <hr />
-    <section>
-      <hgroup>
-        <Heading title="Work experience" heading="3" description="" />
-      </hgroup>
-      <WorkExperiences />
-      <p>
-        <small>
-          If you want to know more about me,
-          <!-- If you want to see my resume, -->
-          <a href="/about/">to here</a>
-        </small>
-      </p>
+    <section id="whats-next">
+      <div class="container">
+        <h1>What's Next</h1>
+      </div>
     </section>
-    <hr />
   </main>
 </BaseLayout>
+
+<style define:vars={{ family: `url(${familyWithBikingDaughter.src})` }}>
+
+.hero {
+  /* background-image: var(--family); */
+  /* background-size: cover; */
+  /* background-attachment: fixed; */
+  background-color: rgba(var(--linc--green--rgb), 1);
+}
+
+.hero h1 {
+  color: var(--linc--green--dark);
+}
+
+.hero [role="button"] {
+  border-width: 4px;
+  color: var(--linc--green--dark);
+  border-color: var(--linc--green--dark);
+}
+
+.hero [role="button"]:hover {
+  color: var(--linc--purple);
+  border-color: var(--linc--purple);
+}
+
+/* .hero > div {
+  background-color: rgba(var(--linc--green--rgb), 0.8);
+  backdrop-filter: blur(10px);
+} */
+
+#why-linc p {
+  font-size: 20px;
+}
+
+#why-linc h1 {
+  color: var(--linc--green--dark);
+}
+#why-linc h3 {
+  color: var(--linc--green);
+}
+#why-linc > div > h1 {
+  margin-top: 2rem;
+}
+
+section {
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.content {
+  padding: 1rem;
+}
+
+img {
+  border-radius: 2rem;
+
+  --s: 6rem; /* the size on the corner */
+  --t: 5px;  /* the thickness of the border */
+  --g: 1rem; /* the gap between the border and image */
+  
+  padding: calc(var(--g) + var(--t));
+  outline: var(--t) solid var(--linc--green--dark); /* the color here */
+  outline-offset: calc(-1*var(--t));
+  mask:
+    conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
+     0 0/calc(100% - var(--s)) calc(100% - var(--s)),
+    conic-gradient(#000 0 0) content-box;
+  transition: .4s;
+}
+</style>

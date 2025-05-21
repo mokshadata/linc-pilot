@@ -1,5 +1,9 @@
 ---
+import "../styles/linc-colors.css";
+import "../styles/linc-custom.css";
+
 import Footer from "@components/Footer.astro";
+import NavigationWrapper from "@components/NavigationWrapper.astro";
 import { ViewTransitions } from "astro:transitions";
 
 interface Props {
@@ -9,12 +13,14 @@ interface Props {
 const { pageTitle } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
@@ -28,8 +34,8 @@ const { pageTitle } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
+    <NavigationWrapper />
     <slot />
-    <hr />
     <Footer />
     <script>
       import "../scripts/menu.js";
