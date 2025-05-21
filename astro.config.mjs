@@ -6,7 +6,8 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-pico.netlify.app",
+  site: 'https://mokshadata.github.io',
+  base: 'linc-demo',
   integrations: [react(), icon(), mdx(), sitemap()],
   image: {
     domains: ["astro.build"],
