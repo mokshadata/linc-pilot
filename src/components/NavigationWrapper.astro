@@ -15,28 +15,24 @@ const { pathname } = Astro.url;
 
 <script>
   import scrollama from "scrollama";
-
-  const headerEl = document.querySelector('header')
-  headerEl.dataset.scrollDirection = 'up'
-  console.log(headerEl)
-  console.log(headerEl?.offsetHeight)
-  // instantiate the scrollama
   const scroller = scrollama();
 
-  // setup the instance, pass callback functions
-  scroller
-    .setup({
-      step: document.querySelectorAll('main'),
-      offset: `${(headerEl?.offsetHeight || 0) / 2}px`,
-    })
-    .onStepEnter((response) => {
-      headerEl.dataset.scrollDirection = response.direction
-      // { element, index, direction }
-    })
-    .onStepExit((response) => {
-      // { element, index, direction }
-      headerEl.dataset.scrollDirection = response.direction
-    });
+  const headerEl = document.querySelector('header')
+
+  if (headerEl) {
+    headerEl.dataset.scrollDirection = 'up'
+    scroller
+      .setup({
+        step: document.querySelectorAll('main'),
+        offset: 0.1,
+      })
+      .onStepEnter((response) => {
+        headerEl.dataset.scrollDirection = response.direction
+      })
+      .onStepExit((response) => {
+        headerEl.dataset.scrollDirection = response.direction
+      });
+    }
 </script>
 
 <style>
