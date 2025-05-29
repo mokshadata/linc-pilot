@@ -8,7 +8,7 @@ const { pathname } = Astro.url;
 <header>
   <nav class="container nav-wrapper">
     <Hamburger />
-    <a href="/linc-demo" aria-current={pathname === "/linc-demo"}><LincLogo/></a>
+    <a href="/" aria-current={pathname === "/"}><LincLogo/></a>
     <Navigation />
   </nav>
 </header>
@@ -24,7 +24,7 @@ const { pathname } = Astro.url;
     scroller
       .setup({
         step: document.querySelectorAll('main'),
-        offset: 0.1,
+        offset: 0,
       })
       .onStepEnter((response) => {
         headerEl.dataset.scrollDirection = response.direction

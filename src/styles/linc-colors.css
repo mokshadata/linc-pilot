@@ -24,6 +24,18 @@
     --seashell--hsla: hsla(30, 70%, 96%, 1);
     --seashell-light--hsla: hsla(30, 70%, 99%, 1);
 
+    --cal-poly-green--hs: 139, 27%;
+    --emerald--hs: 140, 43%;
+    --indigo-dye--hs: 204, 98%;
+    --light-sky-blue--hs: 204, 100%;
+    --tekhelet--hs: 246, 46%;
+    --periwinkle--hs: 239, 77%;
+    --naples-yellow--hs: 46, 100%;
+    --peach--hs: 32, 100%;
+    --sinopia--hs: 14, 74%;
+    --seashell--hs: 30, 70%;
+    --seashell-light--hs: 30, 70%;
+
     --cal-poly-green--rgb: 47, 81, 58;
     --emerald--rgb: 78, 184, 114;
     --indigo-dye--rgb: 1, 73, 122;
@@ -57,7 +69,18 @@
     --linc--cream--rgb: var(--peach--rgb);
     --linc--red--rgb: var(--sinopia--rgb);
     --linc--off-white--rgb: var(--seashell--rgb);
-    --white: 255, 255, 255;
+    --white--rgb: 255, 255, 255;
+
+    --linc--green--dark--hs: var(--cal-poly-green--hs);
+    --linc--green--hs: var(--emerald--hs);
+    --linc--blue--hs: var(--indigo-dye--hs);
+    --linc--blue--light--hs: var(--light-sky-blue--hs);
+    --linc--purple--hs: var(--tekhelet--hs);
+    --linc--purple--light--hs: var(--periwinkle--hs);
+    --linc--yellow--hs: var(--naples-yellow--hs);
+    --linc--cream--hs: var(--peach--hs);
+    --linc--red--hs: var(--sinopia--hs);
+    --linc--off-white--hs: var(--seashell-light--hs);
 
     --linc--alt--green: #71B790;
     --linc--alt--green--dark: #3A6B53;
