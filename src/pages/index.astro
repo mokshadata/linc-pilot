@@ -9,7 +9,16 @@ import family2 from '@assets/images/pexels-cottonbro-6667301.jpg'
 import family3 from '@assets/images/pexels-elly-fairytale-3893723.jpg'
 import family4 from '@assets/images/pexels-olly-3820120.jpg'
 import family5 from '@assets/images/pexels-pnw-prod-7677946.jpg'
-import family6 from '@assets/images/pexels-shvetsa-4586685.jpg'
+import family6 from '@assets/images/pexels-shvetsa-4586685-cropped.jpg'
+import person1 from '@assets/images/joao-reguengos-XPUFYcf284w-unsplash.jpg'
+
+import stepAppreciation from '@assets/images/Appreciation-amico(1).svg'
+import stepFamily from '@assets/images/Family-amico.svg'
+import stepApply from '@assets/images/Feed-amico.svg'
+import stepTeam from '@assets/images/Good team-pana.svg'
+import stepFinance from '@assets/images/Personal finance-amico.svg'
+import stepReview from '@assets/images/Webinar-amico.svg'
+
 
 const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
 ---
@@ -28,7 +37,7 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
           </div>
           <div class="content">
             <Heading
-              title="Many Fort Bend families need help for rent."
+              title="Many Fort Bend residents need help for rent."
               heading="1"
               description="Fort Bend LINC connects people like you to rental assistance."
             />
@@ -43,7 +52,7 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
   <!-- ./ Hero -->
     <section id="why-linc">
       <div class="container">
-        <h1 class="headline">In 2024, more than 1,000 Fort Bend families needed rental assistance.</h1>
+        <h1 class="headline">In 2024, more than 1,000 Fort Bend residents needed rental assistance.</h1>
         <div class="grid">
           <div class="content">
             <h3>Here's how they got help.</h3>
@@ -60,39 +69,100 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
     <section id="how-it-works">
       <div class="container">
         <div class="grid">
-          <div>
-            <Image src={family2} alt="family"/>
-          </div>
-          <div>
+          <div class="content intro">
             <h1>How LINC works</h1>
             <p>With LINC, you'll get answers quickly, whether it be yes or no. Here's how:</p>
-            <ol>
-              <li>
-                <p>
-                  You fill out a 5 question pre-screener.
-                </p>
-                <ul>
-                  <li>We let you know right away if you will not qualify.</li>
-                  <li>If you may qualify, we ask you to complete our ___ question application.</li>
-                </ul>
-              </li>
-              <li>
-                <p>Your application will be queued for review.</p>
-                <p>If we are not able to meet your rental </p>
-              </li>
-            </ol>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="step grid">
+            <div class="step--figure" style="text-align: right;">
+              <Image src={stepApply} alt="applying on phone"/>
+            </div>
+            <div class="step--label">
+              <p>
+                You fill out a 7 question pre-screener that takes 2 minutes. You know right away whether you might qualify.
+              </p>
+            </div>
+          </div>
+
+          <div class="step grid">
+            <div class="step--figure" style="text-align: right;">
+              <Image src={stepFinance} alt="applying more details"/>
+            </div>
+            <div class="step--label">
+              <p>If you might qualify, we invite you to submit an application that takes 20 minutes to complete.</p>
+              <p>You will fill out information about your household, your rental property and landlord, along with how much rental assistance you are requesting. You will also need to upload proof of identity and proof of residence.</p>
+            </div>
+          </div>
+
+          <div class="step grid">
+            <div class="step--label" style="text-align: right;">
+              <p>Our partner agencies will review your request to see whether we can help within ___ days.</p>
+            </div>
+            <div class="step--figure">
+              <Image src={stepTeam} alt="team review"/>
+            </div>
+          </div>
+          <div class="step grid">
+            <div class="step--label" style="text-align: right;">
+              <p>Within ___ days, </p>
+              <p>if we are not able to meet your rental assistance needs, we will let you know.</p>
+              <p>if we are able to meet you rental assistance needs, we will follow up for more information.</p>
+            </div>
+            <div class="step--figure">
+              <Image src={stepReview} alt="team review"/>
+            </div>
+          </div>
+          <div class="step grid">
+            <div class="step--label" style="text-align: right;">
+              <p>Once we have all the informaiton and documents needed, we will send the confirmed rental amount to your landlord.</p>
+            </div>
+            <div class="step--figure">
+              <Image src={stepFamily} alt="team review"/>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section id="get-started">
       <div class="container">
-        <h1>Get Started</h1>
+        <div class="grid">
+          <div>
+            <Image src={family1} alt="family"/>
+          </div>
+          <div class="content">
+            <h1>Get started</h1>
+            <p>You can complete the pre-screener on your phone or computer.</p>
+            <p>You will be filling out information about your household.</p>
+            <p>
+              <a href="https://harveyhomeconnect--linc.sandbox.my.site.com/MyLINC/s/apply-for-assistance" role="button" class="primary">See if you qualify</a>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
     <section id="whats-next">
       <div class="container">
-        <h1>What's Next</h1>
+        <div class="grid">
+          <div>
+            <Image src={family6} alt="family"/>
+          </div>
+          <div class="content">
+            <h1>What's next</h1>
+            <p>While LINC connects to more than 5 rental assistance programs with each application, funds are limited. We will try our best to meet your needs, and we really appreciate you reaching out.</p>
+            <p>After submitting an application, we highly recommend:</p>
+            <ul>
+              <li>
+                <p>Letting your landlord know you're looking for assistance.</p>
+                <ul>
+                  <li>You can share fortbendlinc.org/for-landlords with them.</li>
+                </ul>
+              </li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -121,7 +191,7 @@ section p {
   padding: 1rem;
 }
 
-img {
+img[src*=".jpg"] {
   border-radius: 2rem;
 
   --s: 6rem; /* the size on the corner */
@@ -138,6 +208,13 @@ img {
   transition: .4s;
 }
 
+img[src*=".svg"] {
+  width: 50%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: hsla(var(--linc--green--dark--hs), 20%, 1);
+}
 
 .hero {
   /* background-image: var(--family); */
@@ -146,36 +223,36 @@ img {
   background-color: rgba(var(--linc--green--rgb), 1);
 }
 
-.hero h1 {
+/* .hero h1 {
   color: var(--linc--green--dark);
-}
+} */
 
-.hero [role="button"] {
+[data-page=index] [role="button"] {
   border-width: 4px;
   transition: background-color var(--pico-transition),border-color var(--pico-transition),color var(--pico-transition),box-shadow var(--pico-transition), transform var(--pico-transition);
 }
 
-.hero [role="button"]:hover {
+[data-page=index] [role="button"]:hover {
   transform: translate(-4px, -4px);
 }
 
-.hero [role="button"].primary {
+[data-page=index] [role="button"].primary {
   background-color: hsla(var(--linc--purple--hs), 50%, 1);
   border-color: hsla(var(--linc--purple--hs), 50%, 1);
   color: var(--white);
 }
 
-.hero [role="button"].primary:hover {
+[data-page=index] [role="button"].primary:hover {
   box-shadow: 4px 6px 0 hsla(var(--linc--purple--hs), 20%, 1);
 }
 
-.hero [role="button"].outline {
+[data-page=index] [role="button"].outline {
   background-color: rgba(var(--white--rgb, 0.5));
   color: hsla(var(--linc--purple--hs), 50%, 1);
   border-color: hsla(var(--linc--purple--hs), 50%, 1);
 }
 
-.hero [role="button"].outline:hover {
+[data-page=index] [role="button"].outline:hover {
   box-shadow: 4px 4px 0 hsla(var(--linc--purple--hs), 50%, 1);
 }
 
@@ -211,7 +288,7 @@ img {
   background-color: var(--seashell);
 }
 #get-started .content {
-  text-align: right;
+  text-align: left;
 }
 #get-started .headline {
   text-align: center;
@@ -226,9 +303,23 @@ img {
   margin-top: 2rem;
 }
 
-#how-it-works, #whats-next {
+#whats-next {
   background-color: var(--linc--green);
 }
+
+#how-it-works .intro {
+  text-align: center;
+}
+
+.steps {
+  counter-reset: primary 0;
+}
+
+.step--label::before {
+  counter-increment: primary;
+  content: counter(primary)". ";
+}
+
 /* #how-it-works img {
   outline: var(--t) solid var(--linc--green);
 }
