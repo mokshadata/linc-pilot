@@ -19,6 +19,13 @@ import stepTeam from '@assets/images/Good team-pana.svg'
 import stepFinance from '@assets/images/Personal finance-amico.svg'
 import stepReview from '@assets/images/Webinar-amico.svg'
 
+import gridRenter1 from '@assets/images/grid/alvaro-reyes-3Cigxs7xEkM-unsplash.jpg'
+import gridRenter2 from '@assets/images/grid/assal-mshk-NP5Z_Mg8Q04-unsplash-cropped.jpg'
+import gridRenter3 from '@assets/images/grid/family-bike.jpg'
+import gridRenter4 from '@assets/images/grid/joao-reguengos-XPUFYcf284w-unsplash.jpg'
+import gridRenter5 from '@assets/images/grid/pexels-august-de-richelieu-4260639.jpg'
+import gridRenter6 from '@assets/images/grid/pexels-elly-fairytale-3893723.jpg'
+import gridRenter7 from '@assets/images/grid/pexels-shvetsa-4586685-cropped.jpg'
 
 const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
 ---
@@ -31,15 +38,28 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
     <!-- Hero -->
     <section class="hero">
       <!-- <div> -->
-        <div class="container grid">
-          <div>
-            <Image src={familyWithBikingDaughter} alt="Fort Bend family biking"/>
+        <div class="container-fluid grid">
+          <div class="grid hero-photo-grid">
+            <div>
+              <Image src={gridRenter3} alt="renter 3" class="hero-photo-grid--item"/>
+              <Image src={gridRenter2} alt="renter 2" class="hero-photo-grid--item"/>
+            </div>
+            <div>
+              <Image src={gridRenter4} alt="renter 4" class="hero-photo-grid--item"/>
+              <Image src={gridRenter1} alt="renter 1" class="hero-photo-grid--item"/>
+              <!-- <Image src={gridRenter5} alt="renter 5" class="hero-photo-grid--item"/> -->
+            </div>
+            <div>
+              <Image src={gridRenter6} alt="renter 6" class="hero-photo-grid--item"/>
+              <Image src={gridRenter7} alt="renter 7" class="hero-photo-grid--item"/>
+            </div>
           </div>
-          <div class="content">
+
+          <div class="content hero-photo-grid--sibling">
             <Heading
-              title="Many Fort Bend residents need help for rent."
+              title="Many Fort Bend neighbors need help for rent."
               heading="1"
-              description="Fort Bend LINC connects people like you to rental assistance."
+              description="Fort Bend LINC connects Fort Bend renters to rental assistance."
             />
             <p>
               <a href="#get-started" role="button" class="primary">See if you qualify</a>
@@ -52,7 +72,7 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
   <!-- ./ Hero -->
     <section id="why-linc">
       <div class="container">
-        <h1 class="headline">In 2024, more than 1,000 Fort Bend residents needed rental assistance.</h1>
+        <h1 class="headline">In 2024, more than 1,000 Fort Bend renters needed help to make rent.</h1>
         <div class="grid">
           <div class="content">
             <h3>Here's how they got help.</h3>
@@ -63,15 +83,14 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
             <Image src={family5} alt="Smith family"/>
           </div>
         </div>
-        <h1 class="headline">LINC can connect <em>you</em> to the rental assistance you need.</h1>
+        <h1 class="headline">Fort Bend LINC can connect <em>you</em> to the rental assistance you need.</h1>
       </div>
     </section>
     <section id="how-it-works">
       <div class="container">
         <div class="grid">
           <div class="content intro">
-            <h1>How LINC works.</h1>
-            <p>With LINC, you'll get answers quickly, whether it be yes or no. Here's how:</p>
+            <h1>How Fort Bend LINC works.</h1>
           </div>
         </div>
         <div class="steps">
@@ -81,7 +100,7 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
             </div>
             <div class="step--label">
               <p>
-                You fill out a 7 question pre-screener that takes 2 minutes. You know right away whether you might qualify.
+                You fill out a 7 question pre-screener. You know right away whether you might qualify.
               </p>
             </div>
           </div>
@@ -134,7 +153,7 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
           <div class="content">
             <h1>Get started!</h1>
             <p>You can complete the pre-screener on your phone or computer.</p>
-            <p>You will be filling out information about your household.</p>
+            <p>For this first step, we will be asking for information about your household.</p>
             <p>
               <a href="https://harveyhomeconnect--linc.sandbox.my.site.com/MyLINC/s/apply-for-assistance" role="button" class="primary">See if you qualify</a>
             </p>
@@ -165,6 +184,19 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
         </div>
       </div>
     </section>
+    <section>
+      <div class="container">
+        <div class="grid">
+          <h1>In the future, Fort Bend LINC will be expanding their assistance programs.</h1>
+          <div>
+            <p>Our goal is to serve all neighbors who call Fort Bend home.</p>
+            <p>
+              <a href="/linc-demo/about-us" role="button" class="outline">Learn more about our mission here.</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </BaseLayout>
 
@@ -191,7 +223,17 @@ section p {
   padding: 1rem;
 }
 
-img[src*=".jpg"], img[src*=".webp"] {
+.hero-photo-grid {
+  grid-column-gap: 0.25rem;
+  grid-row-gap: 0.25rem;
+}
+
+.hero-photo-grid--item {
+  margin-bottom: 0.25rem;
+}
+
+img[src*=".jpg"]:not(.hero-photo-grid--item),
+img[src*=".webp"]:not(.hero-photo-grid--item) {
   border-radius: 2rem;
 
   --s: 6rem; /* the size on the corner */
@@ -332,4 +374,33 @@ h1, h2, h3, h4, h5, h6 {
 #how-it-works h3 {
   color: var(--linc--green);
 } */
+
+
+@media (min-width:576px) {
+  .hero-photo-grid--sibling {
+    max-width:405px;
+    padding-right:0;
+    padding-left:0
+  }
+}
+@media (min-width:768px) {
+  .hero-photo-grid--sibling {
+    max-width:350px
+  }
+}
+@media (min-width:1024px) {
+  .hero-photo-grid--sibling {
+    max-width:475px
+  }
+}
+@media (min-width:1280px) {
+  .hero-photo-grid--sibling {
+    max-width:600px
+  }
+}
+@media (min-width:1536px) {
+  .hero-photo-grid--sibling {
+    max-width:725px
+  }
+}
 </style>
