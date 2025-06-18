@@ -35,50 +35,114 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
     <!-- <section>
 
     </section> -->
-    <!-- Hero -->
-    <section class="hero">
-      <!-- <div> -->
-        <div class="container-fluid grid">
-          <div class="grid hero-photo-grid">
-            <div>
-              <Image src={gridRenter3} alt="renter 3" class="hero-photo-grid--item"/>
-              <Image src={gridRenter2} alt="renter 2" class="hero-photo-grid--item"/>
-            </div>
-            <div>
-              <Image src={gridRenter4} alt="renter 4" class="hero-photo-grid--item"/>
-              <Image src={gridRenter1} alt="renter 1" class="hero-photo-grid--item"/>
-              <!-- <Image src={gridRenter5} alt="renter 5" class="hero-photo-grid--item"/> -->
-            </div>
-            <div>
-              <Image src={gridRenter6} alt="renter 6" class="hero-photo-grid--item"/>
-              <Image src={gridRenter7} alt="renter 7" class="hero-photo-grid--item"/>
-            </div>
+    <section id="how-it-works">
+      <div class="container">
+        <div class="grid">
+          <div class="content intro">
+            <h1>How Fort Bend LINC works.</h1>
+            <p>There are 4 steps to rental assistance with Fort Bend LINC.
+              With each step, we ask for just the amount of information we need.
+              Until we pledge funds for your case, we may find that we are unable to help at any step.
+              As soon as we know we cannot help you, we will let you know.</p>
+            <p>Here is the process:</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <div class="steps">
+          <h4 class="step--label">
+            You fill out a questionnaire.
+          </h4>
+          <div class="step--details">
+            <ul>
+              <li><p>It takes less than one minute.</p></li>
+              <li><p>You will know right away whether you are eligible to submit a full application.</p></li>
+            </ul>
+          </div>
+          <div class="step--figure">
+            <Image src={stepApply} alt="applying on phone"/>
           </div>
 
-          <div class="content hero-photo-grid--sibling">
-            <Heading
-              title="Many Fort Bend neighbors need help for rent."
-              heading="1"
-              description="Fort Bend LINC connects Fort Bend renters to rental assistance."
-            />
+            <h4 class="step--label">
+              You submit a full application.
+            </h4>
+            <div class="step--details">
+              <ul>
+                <li><p>If you are eligible to apply, you receive an invitation by email to submit a full application.</p></li>
+                <li><p>The application takes approximately 20 minutes to complete.</p></li>
+                <li>
+                  <p>
+                    You will fill out information about
+                  </p>
+                  <ul>
+                    <li><p>your household,</p></li>
+                    <li><p>your rental property and landlord, along with</p></li>
+                    <li><p>how much rental assistance you are requesting.</p></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>You will need to upload a copy of a Photo ID and a copy of your Rental Agreement.</p>
+                </li>
+              </ul>
+            </div>
+            <div class="step--figure">
+              <Image src={stepFinance} alt="applying more details"/>
+            </div>
+
+            <h4 class="step--label">Your application is reviewed.</h4>
+            <div class="step--details">
+              <ul>
+                <li><p>Our team of agencies review your application.</p></li>
+                <li><p>If Fort Bend LINC is not able to help, we share other options with you.</p></li>
+                <li><p>If Fort Bend LINC is able to help, we notify you and request any missing information and documents.</p></li>
+                <li><p>Once all information and documents are submitted and confirmed, and we know we can help, we pledge funds for your case.</p></li>
+              </ul>
+            </div>
+            <div class="step--figure">
+              <Image src={stepTeam} alt="team review"/>
+            </div>
+
+            <h4 class="step--label">Our agencies sends rent payment to your landlord.</h4>
+            <div class="step--details">
+              <ul>
+                <li><p>We send the confirmed rental amount to your landlord.</p></li>
+              </ul>
+            </div>
+            <div class="step--figure">
+              <Image src={stepFamily} alt="team review"/>
+            </div>
+        </div>
+      </div>
+    </section>
+    <section id="get-started">
+      <div class="container">
+        <div class="grid">
+          <div>
+            <Image src={family1} alt="family"/>
+          </div>
+          <div class="content">
+            <h1>Get started!</h1>
+            <p>You can complete the pre-screener on your phone or computer.</p>
+            <p>For this first step, we will be asking for information about your household.</p>
             <p>
-              <a href="/linc-demo/get-started" role="button" class="primary">See if you qualify</a>
+              <a href="https://harveyhomeconnect--linc.sandbox.my.site.com/MyLINC/s/apply-for-assistance" role="button" class="primary">See if you qualify</a>
             </p>
           </div>
         </div>
-      <!-- </div> -->
+      </div>
     </section>
-  <!-- ./ Hero -->
   </main>
 </BaseLayout>
 
 <style define:vars={{ family: `url(${familyWithBikingDaughter.src})` }}>
-section {
-  min-height: 700px;
+section#how-it-works {
+  /* min-height: 700px; */
   display: flex;
   align-items: center;
   padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-bottom: 1rem;
   margin-bottom: 0;
 }
 
@@ -123,7 +187,7 @@ img[src*=".webp"]:not(.hero-photo-grid--item) {
 }
 
 img[src*=".svg"] {
-  width: 50%;
+  width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -179,24 +243,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
-#why-linc {
-  background-color: var(--seashell);
-}
-#why-linc .content {
-  text-align: right;
-}
-#why-linc .headline {
-  text-align: center;
-}
-#why-linc h1 {
-  color: var(--linc--green--dark);
-}
-#why-linc h3 {
-  color: var(--linc--green);
-}
-#why-linc > div > h1 {
-  margin-top: 2rem;
-}
+
 
 #get-started {
   background-color: var(--seashell);
@@ -217,22 +264,80 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 2rem;
 }
 
-#whats-next {
+
+#how-it-works {
   background-color: var(--linc--green);
 }
-
+/* 
 #how-it-works .intro {
   text-align: center;
-}
+} */
 
 .steps {
   counter-reset: primary 0;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  align-items: start;
 }
+
+.step--label, .step--details, .step--figure {
+  height: 100%;
+}
+
+/* .step--label {
+  padding-left: 10vw;
+}
+*/
+/* .step--figure {
+  padding-right: 10vw;
+} */
 
 .step--label::before {
   counter-increment: primary;
   content: counter(primary)". ";
 }
+
+.step--label {
+  font-weight: 300;
+  position: sticky;
+  top: 100px;
+  /* background-color: white; */
+  text-align: right;
+}
+
+.steps > *:nth-child(odd of .step--label),
+.steps > *:nth-child(odd of .step--figure),
+.steps > *:nth-child(odd of .step--details) {
+  background-color: var(--seashell);
+}
+
+.steps > *:nth-child(even of .step--label),
+.steps > *:nth-child(even of .step--figure),
+.steps > *:nth-child(even of .step--details) {
+  background-color: var(--white);
+}
+
+.steps > *:nth-child(1 of .step--label) {
+  top: 100px;
+}
+.steps > *:nth-child(2 of .step--label) {
+  top: 140px;
+}
+.steps > *:nth-child(3 of .step--label) {
+  top: 180px;
+}
+.steps > *:nth-child(4 of .step--label) {
+  top: 220px;
+}
+
+.step--details, .step--figure {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* .step {
+  text-align: center;
+} */
 
 /* #how-it-works img {
   outline: var(--t) solid var(--linc--green);

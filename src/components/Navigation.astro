@@ -1,14 +1,14 @@
 ---
 import ThemeIcon from "./ThemeIcon.astro";
 import NavigationItem from "./NavigationItem.astro";
+
+const base_url = import.meta.env.BASE_URL;
 ---
 
 <ul class="nav-links">
-  <NavigationItem href="/linc-demo/#why-linc">Why Fort Bend LINC<span class="accent">?</span></NavigationItem>
-  <NavigationItem href="/linc-demo/#how-it-works">How it works<span class="accent">.</span></NavigationItem>
-  <NavigationItem href="/linc-demo/#get-started">Get started<span class="accent">.</span></NavigationItem>
-  <NavigationItem href="/linc-demo/#whats-next">What's next<span class="accent">?</span></NavigationItem>
-  <!-- <NavigationItem href="/preview">About</NavigationItem> -->
+  <NavigationItem href={`${base_url}/get-started/`}>Get started</NavigationItem>
+  <NavigationItem href={`${base_url}/about/`}>About Fort Bend LINC</NavigationItem>
+  <NavigationItem href={`${base_url}/faqs/`}>FAQs</NavigationItem>
   <!-- <NavigationItem href="/preview/">Style Guide</NavigationItem> -->
   <!-- <li><a href="/projects/" class="contrast">Projects</a></li>
   <li><a href="/about/" class="contrast">About</a></li> -->

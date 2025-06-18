@@ -15,7 +15,7 @@ const { pathname } = Astro.url;
     </a>
 </li>
 
-<script define:vars={{href, pathname}}>
+<!-- <script define:vars={{href, pathname}}>
     document.addEventListener('click', (clickEvent) => {
         const anchorEl = clickEvent.target.closest('a')
         if (anchorEl===null) {
@@ -29,7 +29,7 @@ const { pathname } = Astro.url;
             });
         }
     })
-</script>
+</script> -->
 
 <style>
 li {
@@ -46,7 +46,7 @@ svg line {
 	stroke-width: 8;
 	stroke: var(--pico-muted-color);
 	fill: none;
-	stroke-dasharray: 200;
+	stroke-dasharray: 400;
 	-webkit-transform: translateX(-400px);
 	transform: translateX(-400px);
 	-webkit-transition: -webkit-transform .4s ease-out;
