@@ -1,40 +1,24 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Heading from "@components/Heading.astro";
 
 import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
 import familyWithBikingDaughter from '@assets/images/family-bike.jpg'
 import family1 from '@assets/images/pexels-august-de-richelieu-4260639.jpg'
-import family2 from '@assets/images/pexels-cottonbro-6667301.jpg'
-import family3 from '@assets/images/pexels-elly-fairytale-3893723.jpg'
-import family4 from '@assets/images/pexels-olly-3820120.jpg'
-import family5 from '@assets/images/pexels-pnw-prod-7677946.jpg'
-import family6 from '@assets/images/pexels-shvetsa-4586685-cropped.jpg'
-import person1 from '@assets/images/joao-reguengos-XPUFYcf284w-unsplash.jpg'
-
-import stepAppreciation from '@assets/images/Appreciation-amico(1).svg'
-import stepFamily from '@assets/images/Family-amico.svg'
-import stepApply from '@assets/images/Feed-amico.svg'
-import stepTeam from '@assets/images/Good team-pana.svg'
-import stepFinance from '@assets/images/Personal finance-amico.svg'
-import stepReview from '@assets/images/Webinar-amico.svg'
-
-import gridRenter1 from '@assets/images/grid/alvaro-reyes-3Cigxs7xEkM-unsplash.jpg'
-import gridRenter2 from '@assets/images/grid/assal-mshk-NP5Z_Mg8Q04-unsplash-cropped.jpg'
-import gridRenter3 from '@assets/images/grid/family-bike.jpg'
-import gridRenter4 from '@assets/images/grid/joao-reguengos-XPUFYcf284w-unsplash.jpg'
-import gridRenter5 from '@assets/images/grid/pexels-august-de-richelieu-4260639.jpg'
-import gridRenter6 from '@assets/images/grid/pexels-elly-fairytale-3893723.jpg'
-import gridRenter7 from '@assets/images/grid/pexels-shvetsa-4586685-cropped.jpg'
 
 const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
+
+const steps = await getCollection("steps");
+const stepsWithContent = await Promise.all(steps
+  .map(async (step) => ({
+    ...step,
+    ...await step.render(),
+  })))
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <main data-page="index">
-    <!-- <section>
-
-    </section> -->
     <section id="how-it-works">
       <div class="container">
         <div class="grid">
@@ -52,67 +36,21 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
     <section>
       <div>
         <div class="steps">
-          <h4 class="step--label">
-            You fill out a questionnaire.
-          </h4>
-          <div class="step--details">
-            <ul>
-              <li><p>It takes less than one minute.</p></li>
-              <li><p>You will know right away whether you are eligible to submit a full application.</p></li>
-            </ul>
-          </div>
-          <div class="step--figure">
-            <Image src={stepApply} alt="applying on phone"/>
-          </div>
-
-            <h4 class="step--label">
-              You submit a full application.
-            </h4>
-            <div class="step--details">
-              <ul>
-                <li><p>If you are eligible to apply, you receive an invitation by email to submit a full application.</p></li>
-                <li><p>The application takes approximately 20 minutes to complete.</p></li>
-                <li>
-                  <p>
-                    You will fill out information about
-                  </p>
-                  <ul>
-                    <li><p>your household,</p></li>
-                    <li><p>your rental property and landlord, along with</p></li>
-                    <li><p>how much rental assistance you are requesting.</p></li>
-                  </ul>
-                </li>
-                <li>
-                  <p>You will need to upload a copy of a Photo ID and a copy of your Rental Agreement.</p>
-                </li>
-              </ul>
-            </div>
-            <div class="step--figure">
-              <Image src={stepFinance} alt="applying more details"/>
-            </div>
-
-            <h4 class="step--label">Your application is reviewed.</h4>
-            <div class="step--details">
-              <ul>
-                <li><p>Our team of agencies review your application.</p></li>
-                <li><p>If Fort Bend LINC is not able to help, we share other options with you.</p></li>
-                <li><p>If Fort Bend LINC is able to help, we notify you and request any missing information and documents.</p></li>
-                <li><p>Once all information and documents are submitted and confirmed, and we know we can help, we pledge funds for your case.</p></li>
-              </ul>
-            </div>
-            <div class="step--figure">
-              <Image src={stepTeam} alt="team review"/>
-            </div>
-
-            <h4 class="step--label">Our agencies sends rent payment to your landlord.</h4>
-            <div class="step--details">
-              <ul>
-                <li><p>We send the confirmed rental amount to your landlord.</p></li>
-              </ul>
-            </div>
-            <div class="step--figure">
-              <Image src={stepFamily} alt="team review"/>
-            </div>
+          {stepsWithContent
+            .map((step) => 
+            (<>
+              <h4 class="step--label">
+                {step.data.title}
+              </h4>
+              <div class="step--details">
+                <step.Content/>
+              </div>
+              <div class="step--figure">
+                <Image src={step.data.cover} alt={step.data.coverAlt}/>
+              </div>
+            </>
+            )
+          )}
         </div>
       </div>
     </section>
