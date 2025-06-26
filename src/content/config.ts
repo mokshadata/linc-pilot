@@ -23,8 +23,9 @@ const stepsCollection = defineCollection({
     order: z.number(),
     cover: image(),
     coverAlt: z.string(),
+    isSummary: z.boolean(),
   }),
-})
+});
 
 // Export a single `collections` object to register your collection(s)
 export const collections = {

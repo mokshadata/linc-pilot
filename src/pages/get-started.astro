@@ -14,7 +14,7 @@ const stepsWithContent = await Promise.all(steps
   .map(async (step) => ({
     ...step,
     ...await step.render(),
-  })))
+  })));
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -39,7 +39,7 @@ const stepsWithContent = await Promise.all(steps
           {stepsWithContent
             .map((step) => 
             (<>
-              <h4 class="step--label">
+              <h4 class="step--label" data-summary={step.data.isSummary && "summary" || ""}>
                 {step.data.title}
               </h4>
               <div class="step--details">
@@ -75,13 +75,14 @@ const stepsWithContent = await Promise.all(steps
 </BaseLayout>
 
 <style define:vars={{ family: `url(${familyWithBikingDaughter.src})` }}>
-section#how-it-works {
+#how-it-works {
   /* min-height: 700px; */
   display: flex;
   align-items: center;
   padding-top: 4rem;
   padding-bottom: 1rem;
   margin-bottom: 0;
+  background-color: var(--linc--green);
 }
 
 section p {
@@ -131,14 +132,6 @@ img[src*=".svg"] {
 h1, h2, h3, h4, h5, h6 {
   color: hsla(var(--linc--green--dark--hs), 20%, 1);
 }
-
-.hero {
-  /* background-image: var(--family); */
-  /* background-size: cover; */
-  /* background-attachment: fixed; */
-  background-color: rgba(var(--linc--green--rgb), 1);
-}
-
 /* .hero h1 {
   color: var(--linc--green--dark);
 } */
@@ -181,36 +174,6 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
-
-
-#get-started {
-  background-color: var(--seashell);
-}
-#get-started .content {
-  text-align: left;
-}
-#get-started .headline {
-  text-align: center;
-}
-#get-started h1 {
-  color: var(--linc--green--dark);
-}
-#get-started h3 {
-  color: var(--linc--green);
-}
-#get-started > div > h1 {
-  margin-top: 2rem;
-}
-
-
-#how-it-works {
-  background-color: var(--linc--green);
-}
-/* 
-#how-it-works .intro {
-  text-align: center;
-} */
-
 .steps {
   counter-reset: primary 0;
   display: grid;
@@ -226,13 +189,17 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 10vw;
 }
 */
-/* .step--figure {
+.step--figure {
   padding-right: 10vw;
-} */
+}
 
-.step--label::before {
+.step--label[data-summary=""]::before {
   counter-increment: primary;
   content: counter(primary)". ";
+}
+
+.step--label[data-summary="summary"] {
+  visibility: hidden;
 }
 
 .step--label {
@@ -257,20 +224,32 @@ h1, h2, h3, h4, h5, h6 {
 
 .steps > *:nth-child(1 of .step--label) {
   top: 100px;
+  z-index: 2;
 }
 .steps > *:nth-child(2 of .step--label) {
-  top: 140px;
+  top: 170px;
+  z-index: 3;
 }
 .steps > *:nth-child(3 of .step--label) {
-  top: 180px;
+  top: 240px;
+  z-index: 4;
 }
 .steps > *:nth-child(4 of .step--label) {
-  top: 220px;
+  top: 310px;
+  z-index: 5;
+}
+.steps > .step--label[data-summary="summary"] {
+  margin-bottom: 100vh;
 }
 
 .step--details, .step--figure {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.step--label {
+  padding-top: 2rem;
+  padding-right: 1rem;
 }
 
 /* .step {
