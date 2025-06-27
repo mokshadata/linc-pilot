@@ -4,7 +4,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
-import familyWithBikingDaughter from '@assets/images/family-bike.jpg'
+import onComputer from '@assets/images/on-computer.png'
 import family1 from '@assets/images/pexels-august-de-richelieu-4260639.jpg'
 
 const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
@@ -17,6 +17,35 @@ const stepsWithContent = await Promise.all(steps
   })));
 ---
 
+<script>
+  import scrollama from "scrollama";
+  const scroller = scrollama();
+  scroller
+    .setup({
+      step: ".step--details",
+    })
+    .onStepEnter((step) => {
+      console.log('enter', step)
+      if (step.element.dataset.step === '5') {
+        step.element.parentElement?.setAttribute('data-active-step', step.element.dataset.step)
+        return
+      }
+      if (step.element.dataset.step === '1') {
+        step.element.parentElement?.setAttribute('data-active-step', '0')
+        return
+      }
+      if (step.direction === 'up') {
+        step.element.parentElement?.setAttribute('data-active-step', `${(step.element.dataset.step) - 1}`)
+      }
+    })
+    .onStepExit((step) => {
+      console.log('enter', step)
+      if (step.direction === 'down') {
+        step.element.parentElement?.setAttribute('data-active-step', step.element.dataset.step || '')
+      }
+    });
+</script>
+
 <BaseLayout pageTitle={pageTitle}>
   <main data-page="index">
     <section id="how-it-works">
@@ -24,11 +53,12 @@ const stepsWithContent = await Promise.all(steps
         <div class="grid">
           <div class="content intro">
             <h1>How Fort Bend LINC works.</h1>
-            <p>There are 4 steps to rental assistance with Fort Bend LINC.
-              With each step, we ask for just the amount of information we need.
-              Until we pledge funds for your case, we may find that we are unable to help at any step.
-              As soon as we know we cannot help you, we will let you know.</p>
-            <p>Here is the process:</p>
+            <p>There are 4 steps to rental assistance with Fort Bend LINC.</p>
+            <p>With each step, we ask for just the amount of information we need.  Until we pledge funds for your case, we may find that we are unable to help at any step. As soon as we know we cannot help you, we will let you know.</p>
+            <p>Learn more about the steps to get started.</p>
+          </div>
+          <div>
+            <Image src={onComputer} alt="Applying on computer"/>
           </div>
         </div>
       </div>
@@ -39,13 +69,13 @@ const stepsWithContent = await Promise.all(steps
           {stepsWithContent
             .map((step) => 
             (<>
-              <h4 class="step--label" data-summary={step.data.isSummary && "summary" || ""}>
+              <h4 class="step--label" data-step={step.data.order} data-slug={step.slug} data-summary={step.data.isSummary && "summary" || ""}>
                 {step.data.title}
               </h4>
-              <div class="step--details">
+              <div class="step--details" data-step={step.data.order} data-slug={step.slug}>
                 <step.Content/>
               </div>
-              <div class="step--figure">
+              <div class="step--figure" data-step={step.data.order} data-slug={step.slug}>
                 <Image src={step.data.cover} alt={step.data.coverAlt}/>
               </div>
             </>
@@ -74,7 +104,7 @@ const stepsWithContent = await Promise.all(steps
   </main>
 </BaseLayout>
 
-<style define:vars={{ family: `url(${familyWithBikingDaughter.src})` }}>
+<style>
 #how-it-works {
   /* min-height: 700px; */
   display: flex;
@@ -108,6 +138,7 @@ section p {
 }
 
 img[src*=".jpg"]:not(.hero-photo-grid--item),
+img[src*=".png"]:not(.hero-photo-grid--item),
 img[src*=".webp"]:not(.hero-photo-grid--item) {
   border-radius: 2rem;
 
@@ -227,15 +258,15 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
 }
 .steps > *:nth-child(2 of .step--label) {
-  top: 170px;
+  top: 140px;
   z-index: 3;
 }
 .steps > *:nth-child(3 of .step--label) {
-  top: 240px;
+  top: 180px;
   z-index: 4;
 }
 .steps > *:nth-child(4 of .step--label) {
-  top: 310px;
+  top: 220px;
   z-index: 5;
 }
 .steps > .step--label[data-summary="summary"] {
@@ -250,6 +281,60 @@ h1, h2, h3, h4, h5, h6 {
 .step--label {
   padding-top: 2rem;
   padding-right: 1rem;
+  transition: 500ms linear padding;
+}
+
+.step--details {
+  padding-left: 1rem;
+}
+
+.steps[data-active-step=5] > *:nth-child(1 of .step--label),
+.steps[data-active-step=5] > *:nth-child(2 of .step--label),
+.steps[data-active-step=5] > *:nth-child(3 of .step--label),
+.steps[data-active-step=5] > *:nth-child(4 of .step--label),
+.steps[data-active-step=5] > *:nth-child(5 of .step--label) {
+  padding-top: 0.25rem;
+  background-color: var(--seashell);
+}
+
+.steps[data-active-step=5] > *:nth-child(1 of .step--label) {
+  top: 138px;
+  z-index: 2;
+}
+.steps[data-active-step=5] > *:nth-child(2 of .step--label) {
+  top: 178px;
+  z-index: 3;
+}
+.steps[data-active-step=5] > *:nth-child(3 of .step--label) {
+  top: 218px;
+  z-index: 4;
+}
+.steps[data-active-step=5] > *:nth-child(4 of .step--label) {
+  top: 258px;
+  z-index: 5;
+}
+
+.steps[data-active-step=4] > *:nth-child(1 of .step--label),
+.steps[data-active-step=4] > *:nth-child(2 of .step--label),
+.steps[data-active-step=4] > *:nth-child(3 of .step--label),
+.steps[data-active-step=4] > *:nth-child(4 of .step--label),
+
+.steps[data-active-step=3] > *:nth-child(1 of .step--label),
+.steps[data-active-step=3] > *:nth-child(2 of .step--label),
+.steps[data-active-step=3] > *:nth-child(3 of .step--label),
+
+.steps[data-active-step=2] > *:nth-child(1 of .step--label),
+.steps[data-active-step=2] > *:nth-child(2 of .step--label),
+
+.steps[data-active-step=1] > *:nth-child(1 of .step--label) {
+  padding-top: 0.25rem;
+}
+
+.steps[data-active-step=0] > *:nth-child(1 of .step--label),
+.steps[data-active-step=1] > *:nth-child(2 of .step--label),
+.steps[data-active-step=2] > *:nth-child(3 of .step--label),
+.steps[data-active-step=3] > *:nth-child(4 of .step--label) {
+  color: var(--linc--green);
 }
 
 /* .step {

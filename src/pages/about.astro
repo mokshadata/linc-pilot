@@ -1,206 +1,31 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Heading from "@components/Heading.astro";
-
-import { Image } from "astro:assets";
-import familyWithBikingDaughter from '@assets/images/family-bike.jpg'
-import family1 from '@assets/images/pexels-august-de-richelieu-4260639.jpg'
-import family2 from '@assets/images/pexels-cottonbro-6667301.jpg'
-import family3 from '@assets/images/pexels-elly-fairytale-3893723.jpg'
-import family4 from '@assets/images/pexels-olly-3820120.jpg'
-import family5 from '@assets/images/pexels-pnw-prod-7677946.jpg'
-import family6 from '@assets/images/pexels-shvetsa-4586685-cropped.jpg'
-import person1 from '@assets/images/joao-reguengos-XPUFYcf284w-unsplash.jpg'
-
-import stepAppreciation from '@assets/images/Appreciation-amico(1).svg'
-import stepFamily from '@assets/images/Family-amico.svg'
-import stepApply from '@assets/images/Feed-amico.svg'
-import stepTeam from '@assets/images/Good team-pana.svg'
-import stepFinance from '@assets/images/Personal finance-amico.svg'
-import stepReview from '@assets/images/Webinar-amico.svg'
-
-import gridRenter1 from '@assets/images/grid/alvaro-reyes-3Cigxs7xEkM-unsplash.jpg'
-import gridRenter2 from '@assets/images/grid/assal-mshk-NP5Z_Mg8Q04-unsplash-cropped.jpg'
-import gridRenter3 from '@assets/images/grid/family-bike.jpg'
-import gridRenter4 from '@assets/images/grid/joao-reguengos-XPUFYcf284w-unsplash.jpg'
-import gridRenter5 from '@assets/images/grid/pexels-august-de-richelieu-4260639.jpg'
-import gridRenter6 from '@assets/images/grid/pexels-elly-fairytale-3893723.jpg'
-import gridRenter7 from '@assets/images/grid/pexels-shvetsa-4586685-cropped.jpg'
 
 const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <main data-page="index">
-    <!-- <section>
-
-    </section> -->
-    <!-- Hero -->
-    <section class="hero">
-      <!-- <div> -->
-        <div class="container-fluid grid">
-          <div class="grid hero-photo-grid">
-            <div>
-              <Image src={gridRenter3} alt="renter 3" class="hero-photo-grid--item"/>
-              <Image src={gridRenter2} alt="renter 2" class="hero-photo-grid--item"/>
-            </div>
-            <div>
-              <Image src={gridRenter4} alt="renter 4" class="hero-photo-grid--item"/>
-              <Image src={gridRenter1} alt="renter 1" class="hero-photo-grid--item"/>
-              <!-- <Image src={gridRenter5} alt="renter 5" class="hero-photo-grid--item"/> -->
-            </div>
-            <div>
-              <Image src={gridRenter6} alt="renter 6" class="hero-photo-grid--item"/>
-              <Image src={gridRenter7} alt="renter 7" class="hero-photo-grid--item"/>
-            </div>
-          </div>
-
-          <div class="content hero-photo-grid--sibling">
-            <Heading
-              title="Many Fort Bend neighbors need help for rent."
-              heading="1"
-              description="Fort Bend LINC connects Fort Bend renters to rental assistance."
-            />
-            <p>
-              <a href="#get-started" role="button" class="primary">See if you qualify</a>
-              <a href="#why-linc" role="button" class="outline">Learn more</a>
-            </p>
-          </div>
-        </div>
-      <!-- </div> -->
-    </section>
-  <!-- ./ Hero -->
-    <section id="why-linc">
-      <div class="container">
-        <h1 class="headline">In 2024, more than 1,000 Fort Bend renters needed help to make rent.</h1>
-        <div class="grid">
-          <div class="content">
-            <h3>Here's how they got help.</h3>
-            <p>The Smith family had job changes and new medical bills in the beginning of 2024.  They got behind on a couple of bills and were starting to catch up.  Then, the May derechos hit and caused car damage. They reached out to their landlord about how they were struggling. The due date for their rent was extended. They applied for rental assistance with ______ and got two months rent paid.</p>
-            <p>After two months, they were back on their feet.</p>
-          </div>
-          <div>
-            <Image src={family5} alt="Smith family"/>
-          </div>
-        </div>
-        <h1 class="headline">Fort Bend LINC can connect <em>you</em> to the rental assistance you need.</h1>
-      </div>
-    </section>
-    <section id="how-it-works">
-      <div class="container">
-        <div class="grid">
-          <div class="content intro">
-            <h1>How Fort Bend LINC works.</h1>
-          </div>
-        </div>
-        <div class="steps">
-          <div class="step grid">
-            <div class="step--figure" style="text-align: right;">
-              <Image src={stepApply} alt="applying on phone"/>
-            </div>
-            <div class="step--label">
-              <p>
-                You fill out a 7 question pre-screener. You know right away whether you might qualify.
-              </p>
-            </div>
-          </div>
-
-          <div class="step grid">
-            <div class="step--figure" style="text-align: right;">
-              <Image src={stepFinance} alt="applying more details"/>
-            </div>
-            <div class="step--label">
-              <p>If you might qualify, we invite you to submit an application that takes 20 minutes to complete.</p>
-              <p>You will fill out information about your household, your rental property and landlord, along with how much rental assistance you are requesting. You will also need to upload proof of identity and proof of residence.</p>
-            </div>
-          </div>
-
-          <div class="step grid">
-            <div class="step--label" style="text-align: right;">
-              <p>Our partner agencies will review your request to see whether we can help within ___ days.</p>
-            </div>
-            <div class="step--figure">
-              <Image src={stepTeam} alt="team review"/>
-            </div>
-          </div>
-          <div class="step grid">
-            <div class="step--label" style="text-align: right;">
-              <p>Within ___ days, </p>
-              <p>if we are not able to meet your rental assistance needs, we will let you know.</p>
-              <p>if we are able to meet you rental assistance needs, we will follow up for more information.</p>
-            </div>
-            <div class="step--figure">
-              <Image src={stepReview} alt="team review"/>
-            </div>
-          </div>
-          <div class="step grid">
-            <div class="step--label" style="text-align: right;">
-              <p>Once we have all the information and documents needed, we will send the confirmed rental amount to your landlord.</p>
-            </div>
-            <div class="step--figure">
-              <Image src={stepFamily} alt="team review"/>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="get-started">
-      <div class="container">
-        <div class="grid">
-          <div>
-            <Image src={family1} alt="family"/>
-          </div>
-          <div class="content">
-            <h1>Get started!</h1>
-            <p>You can complete the pre-screener on your phone or computer.</p>
-            <p>For this first step, we will be asking for information about your household.</p>
-            <p>
-              <a href="https://harveyhomeconnect--linc.sandbox.my.site.com/MyLINC/s/apply-for-assistance" role="button" class="primary">See if you qualify</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="whats-next">
-      <div class="container">
-        <div class="grid">
-          <div>
-            <Image src={family6} alt="family"/>
-          </div>
-          <div class="content">
-            <h1>What's next?</h1>
-            <p>While LINC connects to more than 5 rental assistance programs with each application, funds are limited. We will try our best to meet your needs, and we really appreciate you reaching out.</p>
-            <p>After submitting an application, we highly recommend:</p>
-            <ul>
-              <li>
-                <p>Letting your landlord know you're looking for assistance.</p>
-                <ul>
-                  <li>You can share fortbendlinc.org/for-landlords with them.</li>
-                </ul>
-              </li>
-              <li></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
     <section>
       <div class="container">
-        <div class="grid">
-          <h1>In the future, Fort Bend LINC will be expanding their assistance programs.</h1>
-          <div>
-            <p>Our goal is to serve all neighbors who call Fort Bend home.</p>
-            <p>
-              <a href="/linc-demo/about-us" role="button" class="outline">Learn more about our mission here.</a>
-            </p>
-          </div>
-        </div>
+        <p>
+          The George Foundation is proud to serve as the founding catalyst of Fort Bend LINC—an innovative, community-driven initiative designed to streamline access to rental, mortgage, and utility assistance for residents across Fort Bend County. Recognizing housing stability as a cornerstone of economic resilience, the Foundation launched this effort in partnership with Connective and a coalition of nonprofit, faith-based, and public sector organizations.
+        </p>
+        <p>
+          Using a human-centered design process, The George Foundation led early efforts to identify gaps in the existing support system, elevate the voices of those most impacted, and co-create a coordinated, client-focused solution. These efforts have resulted in the development of a new housing stability blueprint and the creation of a centralized platform that simplifies applications, increases efficiency, and connects residents to essential resources with dignity and speed.
+        </p>
+        <p>
+          Through LINC, we envision a future where all Fort Bend residents—especially renters—can more easily access the help they need, avoid eviction, and remain stably housed.
+        </p>
+        <p>
+          Fort Bend LINC is currently composed of various Fort Bend nonprofit and public sector organizations that are working together to provide financial and other assistance to families in Fort Bend.
+        </p>
       </div>
     </section>
   </main>
 </BaseLayout>
 
-<style define:vars={{ family: `url(${familyWithBikingDaughter.src})` }}>
+<style>
 section {
   min-height: 700px;
   display: flex;
