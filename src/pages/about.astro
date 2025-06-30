@@ -1,7 +1,11 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 
+import { Image } from "astro:assets";
+
 const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
+
+import tgfLogo from '@assets/images/tgf-logo.png'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -20,6 +24,7 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
         <p>
           Fort Bend LINC is currently composed of various Fort Bend nonprofit and public sector organizations that are working together to provide financial and other assistance to families in Fort Bend.
         </p>
+        <Image src={tgfLogo} alt=""/>
       </div>
     </section>
   </main>
@@ -55,28 +60,6 @@ section p {
 
 .hero-photo-grid--item {
   margin-bottom: 0.25rem;
-}
-
-img[src*=".jpg"]:not(.hero-photo-grid--item),
-img[src*=".webp"]:not(.hero-photo-grid--item) {
-  border-radius: 2rem;
-
-  --s: 6rem; /* the size on the corner */
-  --t: 5px;  /* the thickness of the border */
-  --g: 1rem; /* the gap between the border and image */
-  
-  padding: calc(var(--g) + var(--t));
-  outline: var(--t) solid var(--linc--green--dark); /* the color here */
-  outline-offset: calc(-1*var(--t));
-  mask:
-    conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
-     0 0/calc(100% - var(--s)) calc(100% - var(--s)),
-    conic-gradient(#000 0 0) content-box;
-  transition: .4s;
-}
-
-img[src*=".svg"] {
-  width: 50%;
 }
 
 h1, h2, h3, h4, h5, h6 {
