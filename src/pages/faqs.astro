@@ -1,0 +1,178 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+import family1 from '@assets/images/pexels-olly-3820120.jpg'
+
+const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
+
+const faqs = await getCollection("faqs");
+const faqsWithContent = await Promise.all(faqs
+  .map(async (faq) => ({
+    ...faq,
+    ...await faq.render(),
+  })));
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <main data-page="faqs">
+    <section id="title-section">
+      <div class="container">
+        <div class="grid">
+          <div class="content intro">
+            <h1>FAQs</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="faqs">
+      {faqsWithContent
+        .map((faq) => 
+          (<div class="faq">
+            <div class="container">
+              <div class="content">
+                <h4 class="faq--question" data-faq={faq.data.order} data-slug={faq.slug}>
+                  {faq.data.title}
+                </h4>
+                <div class="faq--answer" data-faq={faq.data.order} data-slug={faq.slug}>
+                  <faq.Content/>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      )}
+    </section>
+    <section id="get-started">
+      <div class="container">
+        <div class="grid">
+          <div>
+            <Image src={family1} alt="family"/>
+          </div>
+          <div class="content">
+            <h1>Get started!</h1>
+            <p>Many Fort Bend neighbors need help for rent.</p>
+            <p>Fort Bend LINC connects Fort Bend renters to rental assistance.</p>
+            <p>
+              <a href="/linc-demo/get-started" role="button" class="primary">See if you qualify</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+#title-section {
+  /* min-height: 700px; */
+  display: flex;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+  background-color: var(--linc--green);
+}
+
+section p {
+  font-size: 20px;
+}
+
+.grid {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.content {
+  padding: 1rem;
+}
+
+img[src*=".jpg"]:not(.hero-photo-grid--item),
+img[src*=".png"]:not(.hero-photo-grid--item),
+img[src*=".webp"]:not(.hero-photo-grid--item) {
+  border-radius: 2rem;
+
+  --s: 6rem; /* the size on the corner */
+  --t: 5px;  /* the thickness of the border */
+  --g: 1rem; /* the gap between the border and image */
+  
+  padding: calc(var(--g) + var(--t));
+  outline: var(--t) solid var(--linc--green--dark); /* the color here */
+  outline-offset: calc(-1*var(--t));
+  mask:
+    conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
+     0 0/calc(100% - var(--s)) calc(100% - var(--s)),
+    conic-gradient(#000 0 0) content-box;
+  transition: .4s;
+}
+
+img[src*=".svg"] {
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: hsla(var(--linc--green--dark--hs), 20%, 1);
+}
+
+.faqs {
+  counter-reset: primary 0;
+}
+
+.faq--question {
+  position: sticky;
+  top: 110px;
+  padding: 1rem 0;
+}
+
+.faq:nth-child(odd),
+.faq:nth-child(odd) .faq--question {
+  background-color: var(--seashell);
+}
+
+.faq:nth-child(even),
+.faq:nth-child(even) .faq--question {
+  background-color: var(--white);
+}
+
+.faq--question::before {
+  counter-increment: primary;
+  content: counter(primary)". ";
+}
+
+#get-started {
+  background-color: var(--linc--green);
+}
+
+
+[data-page=faqs] [role="button"] {
+  border-width: 4px;
+  transition: background-color var(--pico-transition),border-color var(--pico-transition),color var(--pico-transition),box-shadow var(--pico-transition), transform var(--pico-transition);
+}
+
+[data-page=faqs] [role="button"]:hover {
+  transform: translate(-4px, -4px);
+}
+
+[data-page=faqs] [role="button"].primary {
+  background-color: hsla(var(--linc--purple--hs), 50%, 1);
+  border-color: hsla(var(--linc--purple--hs), 50%, 1);
+  color: var(--white);
+}
+
+[data-page=faqs] [role="button"].primary:hover {
+  box-shadow: 4px 6px 0 hsla(var(--linc--purple--hs), 20%, 1);
+}
+
+[data-page=faqs] [role="button"].outline {
+  background-color: rgba(var(--white--rgb, 0.5));
+  color: hsla(var(--linc--purple--hs), 50%, 1);
+  border-color: hsla(var(--linc--purple--hs), 50%, 1);
+}
+
+[data-page=faqs] [role="button"].outline:hover {
+  box-shadow: 4px 4px 0 hsla(var(--linc--purple--hs), 50%, 1);
+}
+
+</style>
