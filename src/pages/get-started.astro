@@ -25,21 +25,23 @@ const stepsWithContent = await Promise.all(steps
       step: ".step--details",
     })
     .onStepEnter((step) => {
-      console.log('enter', step)
-      if (step.element.dataset.step === '5') {
-        step.element.parentElement?.setAttribute('data-active-step', step.element.dataset.step)
+      const stepNumber = step.element.dataset.step && Number(step.element.dataset.step) || 0
+      if (!stepNumber) {
         return
       }
-      if (step.element.dataset.step === '1') {
+      if (stepNumber === 5) {
+        step.element.parentElement?.setAttribute('data-active-step', `${stepNumber}`)
+        return
+      }
+      if (stepNumber === 1) {
         step.element.parentElement?.setAttribute('data-active-step', '0')
         return
       }
       if (step.direction === 'up') {
-        step.element.parentElement?.setAttribute('data-active-step', `${(step.element.dataset.step) - 1}`)
+        step.element.parentElement?.setAttribute('data-active-step', `${stepNumber - 1}`)
       }
     })
     .onStepExit((step) => {
-      console.log('enter', step)
       if (step.direction === 'down') {
         step.element.parentElement?.setAttribute('data-active-step', step.element.dataset.step || '')
       }
