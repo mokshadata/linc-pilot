@@ -10,8 +10,20 @@ import tgfLogo from '@assets/images/tgf-logo.png'
 
 <BaseLayout pageTitle={pageTitle}>
   <main data-page="index">
+    <section id="title-section">
+      <div class="container">
+        <div class="grid">
+          <div class="content intro">
+            <h1>About Fort Bend LINC</h1>
+          </div>
+        </div>
+      </div>
+    </section>
     <section>
       <div class="container">
+        <div class="tgf-logo">
+          <Image src={tgfLogo} alt="The George Foundation Logo"/>
+        </div>
         <p>
           The George Foundation is proud to serve as the founding catalyst of Fort Bend LINC—an innovative, community-driven initiative designed to streamline access to rental, mortgage, and utility assistance for residents across Fort Bend County. Recognizing housing stability as a cornerstone of economic resilience, the Foundation launched this effort in partnership with Connective and a coalition of nonprofit, faith-based, and public sector organizations.
         </p>
@@ -21,10 +33,9 @@ import tgfLogo from '@assets/images/tgf-logo.png'
         <p>
           Through LINC, we envision a future where all Fort Bend residents—especially renters—can more easily access the help they need, avoid eviction, and remain stably housed.
         </p>
-        <p>
+        <p class="emphasis">
           Fort Bend LINC is currently composed of various Fort Bend nonprofit and public sector organizations that are working together to provide financial and other assistance to families in Fort Bend.
         </p>
-        <Image src={tgfLogo} alt=""/>
       </div>
     </section>
   </main>
@@ -32,7 +43,7 @@ import tgfLogo from '@assets/images/tgf-logo.png'
 
 <style>
 section {
-  min-height: 700px;
+  /* min-height: 700px; */
   display: flex;
   align-items: center;
   padding-top: 4rem;
@@ -42,6 +53,21 @@ section {
 
 section p {
   font-size: 20px;
+}
+
+.tgf-logo {
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+#title-section {
+  /* min-height: 700px; */
+  display: flex;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+  background-color: var(--linc--green);
 }
 
 .grid {
@@ -182,6 +208,11 @@ h1, h2, h3, h4, h5, h6 {
 #how-it-works h3 {
   color: var(--linc--green);
 } */
+
+.emphasis {
+  font-weight: 800;
+  font-style: italic;
+}
 
 
 @media (min-width:576px) {
