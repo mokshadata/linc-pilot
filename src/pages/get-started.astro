@@ -22,28 +22,24 @@ const stepsWithContent = await Promise.all(steps
   const scroller = scrollama();
   scroller
     .setup({
-      step: ".step--details",
+      step: ".step",
     })
     .onStepEnter((step) => {
       const stepNumber = step.element.dataset.step && Number(step.element.dataset.step) || 0
       if (!stepNumber) {
         return
       }
-      if (stepNumber === 5) {
-        step.element.parentElement?.setAttribute('data-active-step', `${stepNumber}`)
-        return
-      }
       if (stepNumber === 1) {
-        step.element.parentElement?.setAttribute('data-active-step', '0')
+        step.element.parentElement?.parentElement?.setAttribute('data-active-step', '0')
         return
       }
       if (step.direction === 'up') {
-        step.element.parentElement?.setAttribute('data-active-step', `${stepNumber - 1}`)
+        step.element.parentElement?.parentElement?.setAttribute('data-active-step', `${stepNumber - 1}`)
       }
     })
     .onStepExit((step) => {
       if (step.direction === 'down') {
-        step.element.parentElement?.setAttribute('data-active-step', step.element.dataset.step || '')
+        step.element.parentElement?.parentElement?.setAttribute('data-active-step', step.element.dataset.step || '')
       }
     });
 </script>
@@ -74,21 +70,31 @@ const stepsWithContent = await Promise.all(steps
     <section>
       <div>
         <div class="steps">
-          {stepsWithContent
-            .map((step) => 
-            (<>
-              <h4 class="step--label" data-step={step.data.order} data-slug={step.slug} data-summary={step.data.isSummary && "summary" || ""}>
-                {step.data.title}
-              </h4>
-              <div class="step--details" data-step={step.data.order} data-slug={step.slug}>
-                <step.Content/>
+          <div class="step--listing">
+            {stepsWithContent
+              .map((step) => 
+              (<>
+                <h4 class="step--label" data-step={step.data.order} data-slug={step.slug} data-summary={step.data.isSummary && "summary" || ""}>
+                  {step.data.title}
+                </h4>
+              </>
+              )
+            )}
+          </div>
+          <div class="step--info">
+            {stepsWithContent
+              .map((step) => 
+              (<div class="step" data-step={step.data.order}>
+                <div class="step--details" data-slug={step.slug}>
+                  <step.Content/>
+                </div>
+                <div class="step--figure" data-slug={step.slug}>
+                  <Image src={step.data.cover} alt={step.data.coverAlt}/>
+                </div>
               </div>
-              <div class="step--figure" data-step={step.data.order} data-slug={step.slug}>
-                <Image src={step.data.cover} alt={step.data.coverAlt}/>
-              </div>
-            </>
-            )
-          )}
+              )
+            )}
+          </div>
         </div>
       </div>
     </section>
@@ -122,6 +128,11 @@ const stepsWithContent = await Promise.all(steps
   background-color: var(--linc--green);
 }
 
+#get-started {
+  background-color: var(--seashell);
+  padding: 4rem 0;
+}
+
 section p {
   font-size: 20px;
 }
@@ -133,15 +144,6 @@ section p {
 
 .content {
   padding: 1rem;
-}
-
-.hero-photo-grid {
-  grid-column-gap: 0.25rem;
-  grid-row-gap: 0.25rem;
-}
-
-.hero-photo-grid--item {
-  margin-bottom: 0.25rem;
 }
 
 img[src*=".jpg"]:not(.hero-photo-grid--item),
@@ -203,11 +205,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 4px 4px 0 hsla(var(--linc--purple--hs), 50%, 1);
 }
 
-/* .hero > div {
-  background-color: rgba(var(--linc--green--rgb), 0.8);
-  backdrop-filter: blur(10px);
-} */
-
 .headline em {
   text-decoration: underline;
 }
@@ -215,178 +212,88 @@ h1, h2, h3, h4, h5, h6 {
 .steps {
   counter-reset: primary 0;
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr;
   align-items: start;
+  background-color: var(--seashell);
+  padding-bottom: 2rem;
 }
 
-.step--label, .step--details, .step--figure {
-  height: 100%;
+.step {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: start;
+  padding: 4rem 0;
+  min-height: 50vh;
 }
 
-/* .step--label {
-  padding-left: 10vw;
-}
-*/
 .step--figure {
   padding-right: 10vw;
 }
 
-.step--label[data-summary=""]::before {
+.step--label::before {
   counter-increment: primary;
   content: counter(primary)". ";
 }
 
-.step--label[data-summary="summary"] {
-  visibility: hidden;
-}
-
 .step--label {
   font-weight: 300;
-  position: sticky;
-  top: 100px;
-  /* background-color: white; */
   text-align: right;
 }
 
-.steps > *:nth-child(odd of .step--label),
-.steps > *:nth-child(odd of .step--figure),
-.steps > *:nth-child(odd of .step--details) {
-  background-color: var(--seashell);
-}
-
-.steps > *:nth-child(even of .step--label),
-.steps > *:nth-child(even of .step--figure),
-.steps > *:nth-child(even of .step--details) {
-  background-color: var(--white);
-}
-
-.steps > *:nth-child(1 of .step--label) {
-  top: 100px;
-  z-index: 2;
-}
-.steps > *:nth-child(2 of .step--label) {
-  top: 140px;
-  z-index: 3;
-}
-.steps > *:nth-child(3 of .step--label) {
-  top: 180px;
-  z-index: 4;
-}
-.steps > *:nth-child(4 of .step--label) {
-  top: 220px;
-  z-index: 5;
-}
-.steps > .step--label[data-summary="summary"] {
-  margin-bottom: 100vh;
-}
-
-.step--details, .step--figure {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.step--listing {
+  position: sticky;
+  top: 76px;
 }
 
 .step--label {
-  padding-top: 2rem;
-  padding-right: 1rem;
-  transition: 500ms linear padding;
+  padding: 1rem 1rem 1rem 0;
+  margin: 0;
+}
+
+.step--label:first-child {
+  padding-top: 4rem;
 }
 
 .step--details {
   padding-left: 1rem;
 }
 
-.steps[data-active-step=5] > *:nth-child(1 of .step--label),
-.steps[data-active-step=5] > *:nth-child(2 of .step--label),
-.steps[data-active-step=5] > *:nth-child(3 of .step--label),
-.steps[data-active-step=5] > *:nth-child(4 of .step--label),
-.steps[data-active-step=5] > *:nth-child(5 of .step--label) {
-  padding-top: 0.25rem;
-  background-color: var(--seashell);
+[data-step] {
+  opacity: .5;
+  transition: 500ms linear opacity, 500ms linear color, 500ms linear background-color;
 }
 
-.steps[data-active-step=5] > *:nth-child(1 of .step--label) {
-  top: 138px;
-  z-index: 2;
-}
-.steps[data-active-step=5] > *:nth-child(2 of .step--label) {
-  top: 178px;
-  z-index: 3;
-}
-.steps[data-active-step=5] > *:nth-child(3 of .step--label) {
-  top: 218px;
-  z-index: 4;
-}
-.steps[data-active-step=5] > *:nth-child(4 of .step--label) {
-  top: 258px;
-  z-index: 5;
-}
-
-.steps[data-active-step=4] > *:nth-child(1 of .step--label),
-.steps[data-active-step=4] > *:nth-child(2 of .step--label),
-.steps[data-active-step=4] > *:nth-child(3 of .step--label),
-.steps[data-active-step=4] > *:nth-child(4 of .step--label),
-
-.steps[data-active-step=3] > *:nth-child(1 of .step--label),
-.steps[data-active-step=3] > *:nth-child(2 of .step--label),
-.steps[data-active-step=3] > *:nth-child(3 of .step--label),
-
-.steps[data-active-step=2] > *:nth-child(1 of .step--label),
-.steps[data-active-step=2] > *:nth-child(2 of .step--label),
-
-.steps[data-active-step=1] > *:nth-child(1 of .step--label) {
-  padding-top: 0.25rem;
-}
-
-.steps[data-active-step=0] > *:nth-child(1 of .step--label),
-.steps[data-active-step=1] > *:nth-child(2 of .step--label),
-.steps[data-active-step=2] > *:nth-child(3 of .step--label),
-.steps[data-active-step=3] > *:nth-child(4 of .step--label) {
+.steps[data-active-step=0] [data-step=1],
+.steps[data-active-step=1] [data-step=2],
+.steps[data-active-step=2] [data-step=3],
+.steps[data-active-step=3] [data-step=4],
+.steps[data-active-step=4] [data-step=4] {
   color: var(--linc--green);
+  background-color: var(--white);
+  opacity: 1;
 }
 
-/* .step {
-  text-align: center;
-} */
+.steps[data-active-step=1] .step--label[data-step=1],
+.steps[data-active-step=1] .step--label[data-step=2],
 
-/* #how-it-works img {
-  outline: var(--t) solid var(--linc--green);
-}
-#how-it-works p {
-  color: var(--white);
-}
-#how-it-works h1 {
-  color: var(--linc--green);
-}
-#how-it-works h3 {
-  color: var(--linc--green);
-} */
+.steps[data-active-step=2] .step--label[data-step=1],
+.steps[data-active-step=2] .step--label[data-step=2],
+.steps[data-active-step=2] .step--label[data-step=3],
 
+.steps[data-active-step=3] .step--label[data-step=1],
+.steps[data-active-step=3] .step--label[data-step=2],
+.steps[data-active-step=3] .step--label[data-step=3],
+.steps[data-active-step=3] .step--label[data-step=4],
 
-@media (min-width:576px) {
-  .hero-photo-grid--sibling {
-    max-width:405px;
-    padding-right:0;
-    padding-left:0
-  }
-}
-@media (min-width:768px) {
-  .hero-photo-grid--sibling {
-    max-width:350px
-  }
-}
-@media (min-width:1024px) {
-  .hero-photo-grid--sibling {
-    max-width:475px
-  }
-}
-@media (min-width:1280px) {
-  .hero-photo-grid--sibling {
-    max-width:600px
-  }
-}
-@media (min-width:1536px) {
-  .hero-photo-grid--sibling {
-    max-width:725px
-  }
+.steps[data-active-step=3],
+
+.steps[data-active-step=4] .step--label[data-step=1],
+.steps[data-active-step=4] .step--label[data-step=2],
+.steps[data-active-step=4] .step--label[data-step=3],
+.steps[data-active-step=4] .step--label[data-step=4],
+
+.steps[data-active-step=4] {
+  opacity: 1;
+  background-color: var(--white);
 }
 </style>
