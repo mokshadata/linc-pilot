@@ -21,6 +21,10 @@ const stepsWithContent = await Promise.all(steps
   import scrollama from "scrollama";
   document.addEventListener("astro:page-load", () => {
 
+    if (!document.querySelector('.step')) {
+      return
+    }
+
     const scroller = scrollama();
     scroller
       .setup({
