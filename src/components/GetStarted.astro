@@ -1,0 +1,78 @@
+---
+import { Image } from "astro:assets";
+import family1 from '@assets/images/pexels-olly-3820120.jpg';
+---
+
+<section id="get-started">
+  <div class="container">
+    <div class="grid">
+    <div>
+        <Image src={family1} alt="family"/>
+    </div>
+    <div class="content">
+        <h2>Many Fort Bend neighbors need help for rent.</h2>
+        <p>Fort Bend LINC connects Fort Bend renters to rental assistance.</p>
+        <p>
+        <a href="/linc-demo/get-started" role="button" class="primary">See how it works!</a>
+        </p>
+    </div>
+  </div>
+</div>
+
+<style>
+
+img[src*=".jpg"]:not(.hero-photo-grid--item),
+img[src*=".png"]:not(.hero-photo-grid--item),
+img[src*=".webp"]:not(.hero-photo-grid--item) {
+  border-radius: 2rem;
+
+  --s: 6rem; /* the size on the corner */
+  --t: 5px;  /* the thickness of the border */
+  --g: 1rem; /* the gap between the border and image */
+  
+  padding: calc(var(--g) + var(--t));
+  outline: var(--t) solid var(--linc--green--dark); /* the color here */
+  outline-offset: calc(-1*var(--t));
+  mask:
+    conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
+     0 0/calc(100% - var(--s)) calc(100% - var(--s)),
+    conic-gradient(#000 0 0) content-box;
+  transition: .4s;
+}
+
+#get-started {
+  background-color: var(--linc--green);
+  padding: 4rem 0;
+}
+
+
+[role="button"] {
+  border-width: 4px;
+  transition: background-color var(--pico-transition),border-color var(--pico-transition),color var(--pico-transition),box-shadow var(--pico-transition), transform var(--pico-transition);
+}
+
+[role="button"]:hover {
+  transform: translate(-4px, -4px);
+}
+
+[role="button"].primary {
+  background-color: hsla(var(--linc--purple--hs), 50%, 1);
+  border-color: hsla(var(--linc--purple--hs), 50%, 1);
+  color: var(--white);
+}
+
+[role="button"].primary:hover {
+  box-shadow: 4px 6px 0 hsla(var(--linc--purple--hs), 20%, 1);
+}
+
+[role="button"].outline {
+  background-color: rgba(var(--white--rgb, 0.5));
+  color: hsla(var(--linc--purple--hs), 50%, 1);
+  border-color: hsla(var(--linc--purple--hs), 50%, 1);
+}
+
+[role="button"].outline:hover {
+  box-shadow: 4px 4px 0 hsla(var(--linc--purple--hs), 50%, 1);
+}
+
+</style>

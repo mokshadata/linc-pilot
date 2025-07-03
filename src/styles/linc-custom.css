@@ -279,9 +279,16 @@ header[data-scroll-direction="down"] nav > a > svg {
   height: 32px;
   width: 73px;
 }
+/* 
+footer svg {
+  opacity: 0.75;
+} */
 
 header[data-scroll-direction="down"] #linc-logo path,
-header[data-scroll-direction="down"] #linc-logo polygon {
+header[data-scroll-direction="down"] #linc-logo polygon,
+footer #linc-logo path,
+footer #linc-logo polygon
+{
   fill: var(--linc--green--dark);
 }
 
@@ -310,4 +317,45 @@ body > footer {
 [role="button"], [type="button"], [type="file"]::file-selector-button, [type="reset"], [type="submit"], button {
   font-family: var(--linc--button-font-family);
   line-height: 1;
+}
+
+section {
+  margin-bottom: 0;
+}
+
+
+/* section p {
+  font-size: 20px;
+} */
+/* 
+.grid {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+} */
+
+/* .container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+} */
+
+/* html, body {
+  height: 100%;
+} */
+
+.content {
+  padding: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: hsla(var(--linc--green--dark--hs), 20%, 1);
+}
+
+.title-section {
+  /* min-height: 700px; */
+  display: flex;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+  background-color: var(--linc--green);
 }
