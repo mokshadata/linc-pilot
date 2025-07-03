@@ -19,29 +19,32 @@ const stepsWithContent = await Promise.all(steps
 
 <script>
   import scrollama from "scrollama";
-  const scroller = scrollama();
-  scroller
-    .setup({
-      step: ".step",
+  document.addEventListener("astro:page-load", () => {
+
+    const scroller = scrollama();
+    scroller
+      .setup({
+        step: ".step",
+      })
+      .onStepEnter((step) => {
+        const stepNumber = step.element.dataset.step && Number(step.element.dataset.step) || 0
+        if (!stepNumber) {
+          return
+        }
+        if (stepNumber === 1) {
+          step.element.parentElement?.parentElement?.setAttribute('data-active-step', '0')
+          return
+        }
+        if (step.direction === 'up') {
+          step.element.parentElement?.parentElement?.setAttribute('data-active-step', `${stepNumber - 1}`)
+        }
+      })
+      .onStepExit((step) => {
+        if (step.direction === 'down') {
+          step.element.parentElement?.parentElement?.setAttribute('data-active-step', step.element.dataset.step || '')
+        }
+      });
     })
-    .onStepEnter((step) => {
-      const stepNumber = step.element.dataset.step && Number(step.element.dataset.step) || 0
-      if (!stepNumber) {
-        return
-      }
-      if (stepNumber === 1) {
-        step.element.parentElement?.parentElement?.setAttribute('data-active-step', '0')
-        return
-      }
-      if (step.direction === 'up') {
-        step.element.parentElement?.parentElement?.setAttribute('data-active-step', `${stepNumber - 1}`)
-      }
-    })
-    .onStepExit((step) => {
-      if (step.direction === 'down') {
-        step.element.parentElement?.parentElement?.setAttribute('data-active-step', step.element.dataset.step || '')
-      }
-    });
 </script>
 
 <BaseLayout pageTitle={pageTitle}>
@@ -242,7 +245,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .step--listing {
   position: sticky;
-  top: 76px;
+  top: 72px;
 }
 
 .step--label {
