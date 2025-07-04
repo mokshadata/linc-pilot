@@ -28,8 +28,8 @@ const stepsWithContent = await Promise.all(steps
     const stepMin = Math.min(...stepNumbers)
     const stepMax = Math.max(...stepNumbers)
 
-    const boundStepNumber = (stepNumberString: number) => (
-      Math.min(stepMax, Math.max(stepMin, stepNumberString))
+    const boundStepNumber = (stepNumber: number) => (
+      Math.min(stepMax, Math.max(stepMin, stepNumber))
     )
 
     const scroller = scrollama();
@@ -256,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .step--listing {
   position: sticky;
-  top: 72px;
+  top: 68px;
 }
 
 .step--label {
