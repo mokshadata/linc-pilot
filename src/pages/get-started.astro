@@ -19,18 +19,49 @@ const stepsWithContent = await Promise.all(steps
 
 <script>
   import scrollama from "scrollama";
+
+  
   document.addEventListener("astro:page-load", () => {
-    const stepElements = document.querySelectorAll('.step')
+    const headerHeight = document.querySelector('header')?.clientHeight || 0
+    const getStepInfo = (el: HTMLElement) => ({
+      stepNumber: Number(el.getAttribute('data-step')),
+      position: el.offsetTop - headerHeight,
+    })
+
+    const stepElements = document.querySelectorAll('.step') as NodeListOf<HTMLElement>;
     if (!stepElements.length) {
       return
     }
-    const stepNumbers = [...stepElements].map((el) => (Number(el.getAttribute('data-step'))))
+
+    const stepInfo = [...stepElements].map(getStepInfo)
+    const stepNumbers = [...stepInfo].map((item) => (item.stepNumber))
     const stepMin = Math.min(...stepNumbers)
     const stepMax = Math.max(...stepNumbers)
 
     const boundStepNumber = (stepNumber: number) => (
       Math.min(stepMax, Math.max(stepMin, stepNumber))
     )
+
+    document.addEventListener('click', (clickEvent) => {
+      const clickTarget = clickEvent.target as HTMLElement
+      if( clickTarget.matches('.step--label') ) {
+        const clickStepNumber = Number(clickTarget.dataset.step)
+        const stepsElement = document.querySelector('.steps') as HTMLElement
+        const clickTargetStep = stepInfo.find((info) => info.stepNumber === clickStepNumber)
+
+        if (!clickTargetStep?.position) {
+          return
+        }
+
+        if (Number(stepsElement.dataset.activeStep) !== clickStepNumber || Math.abs(window.scrollY - clickTargetStep?.position) > 100 ) {
+          window.scrollTo({
+            top: clickTargetStep?.position,
+            left: 0,
+            behavior: 'smooth',
+          })
+        }
+      }
+    })
 
     const scroller = scrollama();
     scroller
@@ -196,8 +227,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-page=index] [role="button"].primary {
-  background-color: hsla(var(--linc--purple--hs), 50%, 1);
-  border-color: hsla(var(--linc--purple--hs), 50%, 1);
+  background-color: var(--linc--purple);
+  border-color: var(--linc--purple);
   color: var(--white);
 }
 
@@ -207,12 +238,12 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-page=index] [role="button"].outline {
   background-color: rgba(var(--white--rgb, 0.5));
-  color: hsla(var(--linc--purple--hs), 50%, 1);
-  border-color: hsla(var(--linc--purple--hs), 50%, 1);
+  color: var(--linc--purple);
+  border-color: var(--linc--purple);
 }
 
 [data-page=index] [role="button"].outline:hover {
-  box-shadow: 4px 4px 0 hsla(var(--linc--purple--hs), 50%, 1);
+  box-shadow: 4px 4px 0 var(--linc--purple);
 }
 
 .headline em {
@@ -252,6 +283,7 @@ h1, h2, h3, h4, h5, h6 {
 .step--label {
   font-weight: 300;
   text-align: right;
+  cursor: pointer;
 }
 
 .step--listing {
@@ -283,6 +315,11 @@ h1, h2, h3, h4, h5, h6 {
 .steps[data-active-step=4] [data-step=4] {
   color: var(--linc--green);
   background-color: var(--white);
+  opacity: 1;
+}
+
+.steps[data-active-step] .step--label[data-step]:hover {
+  color: var(--linc--purple);
   opacity: 1;
 }
 

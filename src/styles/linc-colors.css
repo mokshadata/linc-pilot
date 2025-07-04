@@ -5,6 +5,7 @@
     --indigo-dye: #01497aff;
     --light-sky-blue: #85ceffff;
     --tekhelet: #3d348bff;
+    --iris: #5145BAFF;
     --periwinkle: #c9caf8ff;
     --naples-yellow: #ffde70ff;
     --peach: #ffc482ff;
@@ -17,6 +18,7 @@
     --indigo-dye--hsla: hsla(204, 98%, 24%, 1);
     --light-sky-blue--hsla: hsla(204, 100%, 76%, 1);
     --tekhelet--hsla: hsla(246, 46%, 37%, 1);
+    --iris--hsla: hsla(246, 46%, 50%, 1);
     --periwinkle--hsla: hsla(239, 77%, 88%, 1);
     --naples-yellow--hsla: hsla(46, 100%, 72%, 1);
     --peach--hsla: hsla(32, 100%, 75%, 1);
@@ -29,6 +31,7 @@
     --indigo-dye--hs: 204, 98%;
     --light-sky-blue--hs: 204, 100%;
     --tekhelet--hs: 246, 46%;
+    --iris--hs: var(--tekhelet--hs);
     --periwinkle--hs: 239, 77%;
     --naples-yellow--hs: 46, 100%;
     --peach--hs: 32, 100%;
@@ -41,6 +44,7 @@
     --indigo-dye--rgb: 1, 73, 122;
     --light-sky-blue--rgb: 133, 206, 255;
     --tekhelet--rgb: 61, 52, 139;
+    --iris--rgb: 81, 69, 186;
     --periwinkle--rgb: 201, 202, 248;
     --naples-yellow--rgb: 255, 222, 112;
     --peach--rgb: 255, 196, 130;
@@ -51,7 +55,7 @@
     --linc--green: var(--emerald);
     --linc--blue: var(--indigo-dye);
     --linc--blue--light: var(--light-sky-blue);
-    --linc--purple: var(--tekhelet);
+    --linc--purple: var(--iris);
     --linc--purple--light: var(--periwinkle);
     --linc--yellow: var(--naples-yellow);
     --linc--cream: var(--peach);
@@ -63,7 +67,7 @@
     --linc--green--rgb: var(--emerald--rgb);
     --linc--blue--rgb: var(--indigo-dye--rgb);
     --linc--blue--light--rgb: var(--light-sky-blue--rgb);
-    --linc--purple--rgb: var(--tekhelet--rgb);
+    --linc--purple--rgb: var(--iris--rgb);
     --linc--purple--light--rgb: var(--periwinkle--rgb);
     --linc--yellow--rgb: var(--naples-yellow--rgb);
     --linc--cream--rgb: var(--peach--rgb);
@@ -75,7 +79,7 @@
     --linc--green--hs: var(--emerald--hs);
     --linc--blue--hs: var(--indigo-dye--hs);
     --linc--blue--light--hs: var(--light-sky-blue--hs);
-    --linc--purple--hs: var(--tekhelet--hs);
+    --linc--purple--hs: var(--iris--hs);
     --linc--purple--light--hs: var(--periwinkle--hs);
     --linc--yellow--hs: var(--naples-yellow--hs);
     --linc--cream--hs: var(--peach--hs);
