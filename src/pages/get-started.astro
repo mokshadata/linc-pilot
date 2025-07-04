@@ -20,10 +20,17 @@ const stepsWithContent = await Promise.all(steps
 <script>
   import scrollama from "scrollama";
   document.addEventListener("astro:page-load", () => {
-
-    if (!document.querySelector('.step')) {
+    const stepElements = document.querySelectorAll('.step')
+    if (!stepElements.length) {
       return
     }
+    const stepNumbers = [...stepElements].map((el) => (Number(el.getAttribute('data-step'))))
+    const stepMin = Math.min(...stepNumbers)
+    const stepMax = Math.max(...stepNumbers)
+
+    const boundStepNumber = (stepNumberString: number) => (
+      Math.min(stepMax, Math.max(stepMin, stepNumberString))
+    )
 
     const scroller = scrollama();
     scroller
@@ -35,17 +42,17 @@ const stepsWithContent = await Promise.all(steps
         if (!stepNumber) {
           return
         }
-        if (stepNumber === 1) {
-          step.element.parentElement?.parentElement?.setAttribute('data-active-step', '0')
-          return
-        }
-        if (step.direction === 'up') {
-          step.element.parentElement?.parentElement?.setAttribute('data-active-step', `${stepNumber - 1}`)
+        if (step.direction === 'down') {
+          step.element.parentElement?.parentElement?.setAttribute('data-active-step', `${boundStepNumber(stepNumber)}`)
         }
       })
       .onStepExit((step) => {
-        if (step.direction === 'down') {
-          step.element.parentElement?.parentElement?.setAttribute('data-active-step', step.element.dataset.step || '')
+        const stepNumber = step.element.dataset.step && Number(step.element.dataset.step) || 0
+        if (!stepNumber) {
+          return
+        }
+        if (step.direction === 'up') {
+          step.element.parentElement?.parentElement?.setAttribute('data-active-step', `${boundStepNumber(stepNumber - 1)}`)
         }
       });
     })
@@ -76,7 +83,7 @@ const stepsWithContent = await Promise.all(steps
     </section>
     <section>
       <div>
-        <div class="steps">
+        <div class="steps" data-active-step="1">
           <div class="step--listing">
             {stepsWithContent
               .map((step) => 
@@ -126,7 +133,6 @@ const stepsWithContent = await Promise.all(steps
 
 <style>
 #how-it-works {
-  /* min-height: 700px; */
   display: flex;
   align-items: center;
   padding-top: 4rem;
@@ -179,9 +185,6 @@ img[src*=".svg"] {
 h1, h2, h3, h4, h5, h6 {
   color: hsla(var(--linc--green--dark--hs), 20%, 1);
 }
-/* .hero h1 {
-  color: var(--linc--green--dark);
-} */
 
 [data-page=index] [role="button"] {
   border-width: 4px;
@@ -223,6 +226,10 @@ h1, h2, h3, h4, h5, h6 {
   align-items: start;
   background-color: var(--seashell);
   padding-bottom: 2rem;
+}
+
+.step--info {
+  background-color: var(--seashell);
 }
 
 .step {
@@ -267,13 +274,12 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-step] {
   opacity: .5;
-  transition: 500ms linear opacity, 500ms linear color, 500ms linear background-color;
+  transition: 200ms ease-in-out opacity, 200ms ease-in-out color, 200ms ease-in-out background-color;
 }
 
-.steps[data-active-step=0] [data-step=1],
-.steps[data-active-step=1] [data-step=2],
-.steps[data-active-step=2] [data-step=3],
-.steps[data-active-step=3] [data-step=4],
+.steps[data-active-step=1] [data-step=1],
+.steps[data-active-step=2] [data-step=2],
+.steps[data-active-step=3] [data-step=3],
 .steps[data-active-step=4] [data-step=4] {
   color: var(--linc--green);
   background-color: var(--white);
@@ -281,18 +287,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .steps[data-active-step=1] .step--label[data-step=1],
-.steps[data-active-step=1] .step--label[data-step=2],
 
 .steps[data-active-step=2] .step--label[data-step=1],
 .steps[data-active-step=2] .step--label[data-step=2],
-.steps[data-active-step=2] .step--label[data-step=3],
 
 .steps[data-active-step=3] .step--label[data-step=1],
 .steps[data-active-step=3] .step--label[data-step=2],
 .steps[data-active-step=3] .step--label[data-step=3],
-.steps[data-active-step=3] .step--label[data-step=4],
-
-.steps[data-active-step=3],
 
 .steps[data-active-step=4] .step--label[data-step=1],
 .steps[data-active-step=4] .step--label[data-step=2],
