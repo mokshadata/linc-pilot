@@ -259,7 +259,7 @@ header[data-scroll-direction="down"] {
 }
 
 header #linc-logo {
-  transition: all 0.2s ease-out;
+  transition: transform 0.1s ease-out;
 }
 
 header #linc-logo path,
@@ -272,7 +272,7 @@ header[data-scroll-direction="down"] #linc-logo {
 }
 
 header nav > a > svg {
-  transition: all 0.2s ease-out;
+  transition: height 0.1s ease-out, width 0.1s ease-out;
 }
 
 header[data-scroll-direction="down"] nav > a > svg {
@@ -358,4 +358,10 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 1rem;
   margin-bottom: 0;
   background-color: var(--linc--green);
+}
+
+body > footer {
+  position: relative;
+  z-index: 10;
+  border-top: 0.25rem solid var(--linc--green);
 }

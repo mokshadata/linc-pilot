@@ -7,37 +7,41 @@ import { Image } from "astro:assets";
 import gridRenter1 from '@assets/images/grid/alvaro-reyes-3Cigxs7xEkM-unsplash.jpg'
 import gridRenter2 from '@assets/images/grid/assal-mshk-NP5Z_Mg8Q04-unsplash-cropped.jpg'
 import gridRenter3 from '@assets/images/grid/family-bike.jpg'
-import gridRenter4 from '@assets/images/grid/joao-reguengos-XPUFYcf284w-unsplash.jpg'
+import gridRenter4 from '@assets/images/grid/joao-reguengos-XPUFYcf284w-unsplash.jpg' 
 import gridRenter5 from '@assets/images/grid/pexels-august-de-richelieu-4260639.jpg'
 import gridRenter6 from '@assets/images/grid/pexels-elly-fairytale-3893723.jpg'
 import gridRenter7 from '@assets/images/grid/pexels-shvetsa-4586685-cropped.jpg'
+
+import gridRenter8 from '@assets/images/grid/pexels-pnw-prod-7677946.jpg'
 
 const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <main data-page="index">
-    <!-- <section>
+    <div class="grid hero-photo-grid">
+      <div>
+        <Image src={gridRenter3} alt="Family biking in neighborhood" class="hero-photo-grid--item"/>
+        <Image src={gridRenter2} alt="Family in park" class="hero-photo-grid--item"/>
+      </div>
+      <div>
+        <Image src={gridRenter1} alt="Grandpa with child in yard" class="hero-photo-grid--item"/>
+        <Image src={gridRenter4} alt="Woman smiling at camera in home" class="hero-photo-grid--item"/>
+        <Image src={gridRenter5} alt="Family hanging out on couch" class="hero-photo-grid--item"/>
+      </div>
+      <div>
+        <Image src={gridRenter6} alt="Mother with teen in home" class="hero-photo-grid--item"/>
+        <Image src={gridRenter7} alt="Father with toddler outside" class="hero-photo-grid--item"/>
+        <Image src={gridRenter8} alt="Mother with toddler in kitchen" class="hero-photo-grid--item"/>
+      </div>
+    </div>
 
-    </section> -->
+
     <!-- Hero -->
     <section class="hero">
       <!-- <div> -->
-        <div class="container-fluid grid">
-          <div class="grid hero-photo-grid">
-            <div>
-              <Image src={gridRenter3} alt="renter 3" class="hero-photo-grid--item"/>
-              <Image src={gridRenter2} alt="renter 2" class="hero-photo-grid--item"/>
-            </div>
-            <div>
-              <Image src={gridRenter4} alt="renter 4" class="hero-photo-grid--item"/>
-              <Image src={gridRenter1} alt="renter 1" class="hero-photo-grid--item"/>
-              <!-- <Image src={gridRenter5} alt="renter 5" class="hero-photo-grid--item"/> -->
-            </div>
-            <div>
-              <Image src={gridRenter6} alt="renter 6" class="hero-photo-grid--item"/>
-              <Image src={gridRenter7} alt="renter 7" class="hero-photo-grid--item"/>
-            </div>
+        <div class="container grid">
+          <div class="hero-photo-grid--spacer">
           </div>
 
           <div class="content hero-photo-grid--sibling">
@@ -61,6 +65,11 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
 .hero-photo-grid {
   grid-column-gap: 0.25rem;
   grid-row-gap: 0.25rem;
+  
+  position: fixed;
+  z-index: 2;
+  margin: 0.25rem;
+  width: 50%;
 }
 
 .hero-photo-grid--item {
@@ -72,15 +81,11 @@ main {
 }
 
 .hero {
-  /* background-image: var(--family); */
-  /* background-size: cover; */
-  /* background-attachment: fixed; */
   background-color: rgba(var(--linc--green--rgb), 1);
-  /* min-height: 100vh; */
   display: flex;
   align-items: center;
-  padding: 4em 0;
-  min-height: 100vh;
+  min-height: 90vh;
+  /* padding: 4rem 0; */
 }
 
 [data-page=index] [role="button"] {
@@ -115,8 +120,6 @@ main {
 @media (min-width:576px) {
   .hero-photo-grid--sibling {
     max-width:405px;
-    padding-right:0;
-    padding-left:0
   }
 }
 @media (min-width:768px) {
