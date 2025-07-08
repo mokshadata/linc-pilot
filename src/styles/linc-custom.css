@@ -285,9 +285,10 @@ footer svg {
 } */
 
 header[data-scroll-direction="down"] #linc-logo path,
-header[data-scroll-direction="down"] #linc-logo polygon,
-footer #linc-logo path,
-footer #linc-logo polygon
+header[data-scroll-direction="down"] #linc-logo polygon
+/* , */
+/* footer #linc-logo path, */
+/* footer #linc-logo polygon */
 {
   fill: var(--linc--green--dark);
 }
