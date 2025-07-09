@@ -16,7 +16,10 @@ The following monospaced font is available as needed:
 
 * DM Mono
 
-They are all Google Fonts and can be found and downloaded [here](https://fonts.google.com/selection?selection.family=Gabarito:wght@400..900|Figtree:ital,wght@0,300..900;1,300..900|DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500).
+They are all Google Fonts and can viewed [here](https://fonts.google.com/share?selection.family=Gabarito:wght@400..900|Figtree:ital,wght@0,300..900;1,300..900|DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500).
+
+You can download them <a href="./branding/Fort-Bend-LINC--font-stack.zip" download>here</a>.
 
 ## Sizing
 
+More details soon.
