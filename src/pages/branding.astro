@@ -1,0 +1,192 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
+
+import { getCollection } from "astro:content";
+
+const branding = await getCollection("branding")
+const brandingWithContent = await Promise.all(branding
+  .map(async (section) => ({
+    ...section,
+    ...await section.render(),
+  })));
+
+---
+
+<script>
+  import scrollama from "scrollama";
+
+  document.addEventListener("astro:page-load", () => {
+    const headerHeight = document.querySelector('header')?.clientHeight || 0
+    const getSectionInfo = (el: HTMLElement) => ({
+      sectionNumber: Number(el.getAttribute('data-section-order')),
+      position: el.offsetTop - headerHeight,
+    })
+
+    const sectionElements = document.querySelectorAll('section[data-section-order]') as NodeListOf<HTMLElement>;
+    if (!sectionElements.length) {
+      return
+    }
+
+    const sectionInfo = [...sectionElements].map(getSectionInfo)
+    const sectionNumbers = [...sectionInfo].map((item) => (item.sectionNumber))
+    const sectionMin = Math.min(...sectionNumbers)
+    const sectionMax = Math.max(...sectionNumbers)
+
+    const boundSectionNumber = (sectionNumber: number) => (
+      Math.min(sectionMax, Math.max(sectionMin, sectionNumber))
+    )
+
+    document.addEventListener('click', (clickEvent) => {
+      const clickTarget = clickEvent.target as HTMLElement
+      if( clickTarget.matches('a[data-section-order]') ) {
+        clickEvent.preventDefault();
+
+        const clickSectionNumber = Number(clickTarget.dataset.sectionOrder)
+        const contentNavigatorElement = document.querySelector('.nav-content') as HTMLElement
+        const clickTargetSection = sectionInfo.find((info) => info.sectionNumber === clickSectionNumber)
+
+        if (!clickTargetSection?.position) {
+          return
+        }
+
+        if (Number(contentNavigatorElement.dataset.activeSectionOrder) !== clickSectionNumber) {
+          window.scrollTo({
+            top: clickTargetSection?.position,
+            left: 0,
+            behavior: 'smooth',
+          })
+        }
+      }
+    })
+
+    const scroller = scrollama();
+    scroller
+      .setup({
+        step: "section[data-section-order]",
+      })
+      .onStepEnter((section) => {
+        const sectionNumber = section.element.dataset.sectionOrder && Number(section.element.dataset.sectionOrder) || 0
+        if (!sectionNumber) {
+          return
+        }
+        if (section.direction === 'down') {
+          section.element.parentElement?.parentElement?.setAttribute('data-active-section-order', `${boundSectionNumber(sectionNumber)}`)
+        }
+      })
+      .onStepExit((section) => {
+        const sectionNumber = section.element.dataset.sectionOrder && Number(section.element.dataset.sectionOrder) || 0
+        if (!sectionNumber) {
+          return
+        }
+        if (section.direction === 'up') {
+          section.element.parentElement?.parentElement?.setAttribute('data-active-section-order', `${boundSectionNumber(sectionNumber - 1)}`)
+        }
+      });
+    })
+</script>
+
+<BaseLayout pageTitle={pageTitle}>
+  <main data-page="branding">
+    <section class="title-section">
+      <div class="container">
+        <div class="grid">
+          <div class="content intro">
+            <h1>Fort Bend LINC Branding</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="nav-content" data-active-section-order="1">
+      <aside class="nav-content--toc">
+        <ul>
+          {brandingWithContent
+            .map((section) => 
+            (
+            <li>
+              <a
+                data-slug={section.slug}
+                data-section-order={section.data.order}
+              >{section.data.title}</a>
+            </li>
+            )
+          )}
+        </ul>
+      </aside>
+      <div class="nav-content--content">
+        {brandingWithContent
+          .map((section) => 
+          (
+          <section
+            data-slug={section.slug}
+            data-section-order={section.data.order}
+            id={section.slug}
+          >
+            <h1>{section.data.title}</h1>
+            <section.Content/>
+          </section>
+          )
+        )}
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+.nav-content {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: start;
+  background-color: var(--seashell);
+  padding-bottom: 2rem;
+}
+
+.nav-content--toc {
+  position: sticky;
+  top: 68px;
+  padding-top: 2rem;
+}
+
+.nav-content--toc ul {
+  padding: 0;
+}
+
+.nav-content--toc li {
+  padding: 0;
+  margin: 0;
+}
+
+.nav-content--toc a {
+  padding: 0.5rem 2rem;
+  text-align: right;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: var(--linc--button-font-family);
+}
+
+.nav-content section {
+  min-height: 50vh;
+  padding: 4rem 2rem;
+}
+
+[data-section-order] {
+  opacity: .5;
+  transition: 200ms ease-in-out opacity, 200ms ease-in-out color, 200ms ease-in-out background-color;
+}
+
+[data-active-section-order=1] [data-section-order=1],
+[data-active-section-order=2] [data-section-order=2],
+[data-active-section-order=3] [data-section-order=3],
+[data-active-section-order=4] [data-section-order=4],
+[data-active-section-order=5] [data-section-order=5],
+[data-active-section-order=6] [data-section-order=6],
+[data-active-section-order=7] [data-section-order=7],
+[data-active-section-order=8] [data-section-order=8],
+[data-active-section-order=9] [data-section-order=9],
+.nav-content--toc a:hover
+{
+  background-color: var(--white);
+  opacity: 1;
+}
+</style>

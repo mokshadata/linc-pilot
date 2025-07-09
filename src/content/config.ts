@@ -23,11 +23,18 @@ const stepsCollection = defineCollection({
     order: z.number(),
     cover: image(),
     coverAlt: z.string(),
-    isSummary: z.boolean(),
   }),
 });
 
 const faqsCollection = defineCollection({
+  type: "content",
+  schema: () => z.object({
+    title: z.string(),
+    order: z.number(),
+  }),
+})
+
+const brandingCollection = defineCollection({
   type: "content",
   schema: () => z.object({
     title: z.string(),
@@ -40,4 +47,5 @@ export const collections = {
   // posts: postsCollection,
   steps: stepsCollection,
   faqs: faqsCollection,
+  branding: brandingCollection,
 };
