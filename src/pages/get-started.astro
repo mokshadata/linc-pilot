@@ -116,7 +116,7 @@ const stepsWithContent = await Promise.all(steps
         <div class="step--listing">
           {stepsWithContent
             .map((step) => 
-            (<h4 class="step--label" data-step={step.data.order} data-slug={step.slug} data-summary={step.data.isSummary && "summary" || ""}>
+            (<h4 class="step--label" data-step={step.data.order} data-slug={step.slug}>
               {step.data.title}
             </h4>)
           )}
