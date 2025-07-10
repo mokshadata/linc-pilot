@@ -1,5 +1,4 @@
 ---
-import ThemeIcon from "./ThemeIcon.astro";
 import NavigationItem from "./NavigationItem.astro";
 
 const base_url = import.meta.env.BASE_URL;
@@ -9,38 +8,25 @@ const base_url = import.meta.env.BASE_URL;
   <NavigationItem href={`${base_url}/get-started/`}>How Does It Work</NavigationItem>
   <NavigationItem href={`${base_url}/about/`}>About Fort Bend LINC</NavigationItem>
   <NavigationItem href={`${base_url}/faqs/`}>FAQs</NavigationItem>
-  <!-- <NavigationItem href="/preview/">Style Guide</NavigationItem> -->
-  <!-- <li><a href="/projects/" class="contrast">Projects</a></li>
-  <li><a href="/about/" class="contrast">About</a></li> -->
 </ul>
 
 <style>
   .nav-links {
-    width: 100%;
-    top: 5rem;
-    left: 48px;
-    background-color: var(--pico-primary-background);
-    display: none;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
   }
 
-  .expanded {
-    display: grid;
-  }
-
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
     .nav-links {
-      margin-left: 5em;
       display: flex;
-      position: static;
-      width: auto;
-      background: none;
-      align-items: flex-end;
+      flex-direction: row;
     }
 
-    /* .nav-links a {
+    .nav-links a {
       display: inline-block;
       padding: 15px 20px;
-    } */
+    }
   }
 </style>

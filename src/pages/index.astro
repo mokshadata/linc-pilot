@@ -79,13 +79,14 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
 
 <style>
 .hero-photo-grid {
+  grid-template-columns: repeat(auto-fit,minmax(0%,1fr));
   grid-column-gap: 0.25rem;
   grid-row-gap: 0.25rem;
   
   position: fixed;
   z-index: 2;
-  margin: 0.25rem;
-  width: 50%;
+  padding: 0.25rem;
+  width: 100%;
 }
 
 .hero-photo-grid--item {
@@ -133,6 +134,12 @@ main {
   box-shadow: 4px 4px 0 var(--linc--purple);
 }
 
+.hero-photo-grid--sibling {
+  z-index: 10;
+  position: relative;
+  background-color: var(--linc--green);
+}
+
 @media (min-width:576px) {
   .hero-photo-grid--sibling {
     max-width:405px;
@@ -140,22 +147,29 @@ main {
 }
 @media (min-width:768px) {
   .hero-photo-grid--sibling {
-    max-width:350px
+    max-width:350px;
+    position: static;
+    z-index: inherit;
+    background-color: none;
+  }
+
+  .hero-photo-grid {
+    width: 50%;
   }
 }
 @media (min-width:1024px) {
   .hero-photo-grid--sibling {
-    max-width:475px
+    max-width:475px;
   }
 }
 @media (min-width:1280px) {
   .hero-photo-grid--sibling {
-    max-width:600px
+    max-width:600px;
   }
 }
 @media (min-width:1536px) {
   .hero-photo-grid--sibling {
-    max-width:725px
+    max-width:725px;
   }
 }
 </style>
