@@ -18,7 +18,15 @@ The following monospaced font is available as needed:
 
 They are all Google Fonts and can viewed [here](https://fonts.google.com/share?selection.family=Gabarito:wght@400..900|Figtree:ital,wght@0,300..900;1,300..900|DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500).
 
-You can download them <a href="./branding/Fort-Bend-LINC--font-stack.zip" download>here</a>.
+The Google fonts site has instructions for how to load these fonts.  The recommended way to load the fonts is:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Figtree:ital,wght@0,300..900;1,300..900&family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+```
+
+You do not need to download the fonts for most use cases.  If you need yo, you can download them <a href="./branding/Fort-Bend-LINC--font-stack.zip" download>here</a>.
 
 ## Sizing
 

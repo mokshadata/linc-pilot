@@ -366,3 +366,9 @@ body > footer {
   z-index: 10;
   border-top: 0.25rem solid var(--linc--green);
 }
+
+code {
+  text-wrap: wrap;
+  position: static;
+  max-width: 800px;
+}
