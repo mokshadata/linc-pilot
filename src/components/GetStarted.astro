@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import family1 from '@assets/images/pexels-olly-3820120.jpg';
+
+const base_url = `${import.meta.env.BASE_URL}`;
 ---
 
 <section id="get-started">
@@ -13,7 +15,7 @@ import family1 from '@assets/images/pexels-olly-3820120.jpg';
         <h2>Many Fort Bend neighbors need help for rent.</h2>
         <p>Fort Bend LINC connects Fort Bend renters to rental assistance.</p>
         <p>
-        <a href="/linc-demo/get-started" role="button" class="primary">See how it works!</a>
+        <a href={`${base_url}get-started`} role="button" class="primary">See how it works!</a>
         </p>
     </div>
   </div>

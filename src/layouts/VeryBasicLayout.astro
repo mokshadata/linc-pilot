@@ -2,12 +2,11 @@
 import "../styles/linc-colors.css";
 import "../styles/linc-custom.css";
 
-import Footer from "@components/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
 import LincLogo from "@components/LincLogo.astro";
 
 const { pathname } = Astro.url;
-const base_url = `${import.meta.env.BASE_URL}/`;
+const base_url = `${import.meta.env.BASE_URL}`;
 
 interface Props {
   pageTitle: string;

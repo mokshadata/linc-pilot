@@ -1,0 +1,30 @@
+# site_url: https://fortbendlinc.org
+local_backend: true
+backend:
+  name: git-gateway
+  # branch: main # Branch to update (optional; defaults to master)
+  # repo: mokshadata/linc-demo
+  # base_url: https://cms.fortbendlinc.org
+collections:
+  - name: "steps" # Used in routes, e.g., /admin/collections/blog
+    label: "Step" # Used in the UI
+    folder: "src/content/steps" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in frontmatter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Order", name: "order", widget: "number" }
+      - { label: "Featured Image", name: "cover", widget: "image" }
+      - { label: "Featured Image Description", name: "coverAlt", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "faqs"
+    label: "FAQs"
+    folder: "src/content/faqs"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Order", name: "order", widget: "number" }
+      - { label: "Body", name: "body", widget: "markdown" }
+media_folder: "src/assets/images" # Location where files will be stored in the repo
+public_folder: "src/assets/images" # The src attribute for uploaded media
