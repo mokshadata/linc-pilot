@@ -1,16 +1,14 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
+import VeryBasicLayout from "@layouts/VeryBasicLayout.astro";
 import Heading from "@components/Heading.astro";
-
 import PhotoGrid from "@components/PhotoGrid.astro";
 
 const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<VeryBasicLayout pageTitle={pageTitle}>
   <main data-page="index">
     <PhotoGrid/>
-
 
     <!-- Hero -->
     <section class="hero">
@@ -20,21 +18,17 @@ const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
           </div>
 
           <div class="content hero-photo-grid--sibling">
-            <Heading
-              title="Many Fort Bend neighbors need help for rent."
-              heading="1"
-              description="Fort Bend LINC connects Fort Bend renters to rental assistance."
-            />
-            <p>
-              <a href="/linc-demo/get-started" role="button" class="primary">See if you qualify</a>
+            <p>Fort Bend LINC is a group of Fort Bend nonprofit and public sector organizations working together to connect resources to 
+                <strong><i>anyone who calls Fort Bend home</i></strong>.
             </p>
+            <p>We are piloting a rental assistance program this fall.</p>
           </div>
         </div>
       <!-- </div> -->
     </section>
   <!-- ./ Hero -->
   </main>
-</BaseLayout>
+</VeryBasicLayout>
 
 <style>
 main {
