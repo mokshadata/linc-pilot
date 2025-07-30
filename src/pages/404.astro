@@ -1,25 +1,30 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
-import NavWrapper from "@components/NavigationWrapper.astro";
-
+import VeryBasicLayout from "@layouts/VeryBasicLayout.astro";
 const pageTitle: string = "404";
+
+const base_url = `${import.meta.env.BASE_URL}`;
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<VeryBasicLayout pageTitle={pageTitle}>
   <main>
     <section>
       <div class="container">
         <hgroup>
           <h1>{pageTitle}</h1>
-          <p>Page Not Found</p>
+          <p>Sorry, this page does not exist.</p>
         </hgroup>
-        <p>Oops, it is dead end.</p>
       </div>
     </section>
     <section>
       <div class="container">
-        <a href="/" role="button">Back to home</a>
+        <a href={base_url} role="button">Back to home</a>
       </div>
     </section>
   </main>
-</BaseLayout>
+</VeryBasicLayout>
+
+<style>
+  main {
+    padding: 4rem 0;
+  }
+</style>
