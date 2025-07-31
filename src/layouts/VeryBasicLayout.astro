@@ -19,7 +19,8 @@ const { pageTitle } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/linc-demo/favicon.svg" />
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/svg+xml" href={`${base_url}favicon.svg`} />
     <meta name="generator" content={Astro.generator} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +35,6 @@ const { pageTitle } = Astro.props;
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/classic.min.css"
     /> -->
-    <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{pageTitle}</title>
     <ViewTransitions />
   </head>
