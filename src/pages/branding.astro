@@ -10,7 +10,7 @@ const brandingWithContent = await Promise.all(branding
     ...section,
     ...await section.render(),
   })));
-
+brandingWithContent.sort((a, b) => (a.data.order < b.data.order && -1 || 1))
 ---
 
 <script>
