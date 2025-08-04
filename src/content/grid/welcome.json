@@ -14,23 +14,23 @@
     "order": 2
   },
   {
-    "slug": "photo-01-03",
-    "filename": "pexels-ketut-subiyanto-4473602.jpg",
-    "alt": "Woman and daughter smiling",
-    "column": 1,
-    "order": 3
-  },
-  {
     "slug": "photo-01-04",
     "filename": "pexels-rdne-7951664.jpg",
     "alt": "Grandmother, mother, sister and child at home",
     "column": 1,
+    "order": 3
+  },
+  {
+    "slug": "photo-03-04",
+    "filename": "pexels-marcus-aurelius-6787970.jpg",
+    "alt": "Elderly couple smiling on couch",
+    "column": 1,
     "order": 4
   },
   {
-    "slug": "photo-01-05",
-    "filename": "pexels-ivan-samkov-4784014.jpg",
-    "alt": "Mother and children on laptop",
+    "slug": "photo-01-03",
+    "filename": "pexels-ketut-subiyanto-4473602.jpg",
+    "alt": "Woman and daughter smiling",
     "column": 1,
     "order": 5
   },
@@ -56,16 +56,16 @@
     "order": 8
   },
   {
-    "slug": "photo-02-01",
-    "filename": "alvaro-reyes-3Cigxs7xEkM-unsplash.jpg",
-    "alt": "Grandpa with child in yard",
     "column": 2,
-    "order": 1
+    "order": 1,
+    "filename": "pexels-leish-6975176.jpg",
+    "slug": "photo-02-8",
+    "alt": "Woman reading in home"
   },
   {
-    "slug": "photo-02-02",
-    "filename": "joao-reguengos-XPUFYcf284w-unsplash.jpg",
-    "alt": "Woman smiling at camera in home",
+    "slug": "photo-02-04",
+    "filename": "pexels-william-fortunato-6393356.jpg",
+    "alt": "Mother with baby in arm, working on laptop",
     "column": 2,
     "order": 2
   },
@@ -77,9 +77,9 @@
     "order": 3
   },
   {
-    "slug": "photo-02-04",
-    "filename": "pexels-william-fortunato-6393356.jpg",
-    "alt": "Mother with baby in arm, working on laptop",
+    "slug": "photo-01-05",
+    "filename": "pexels-ivan-samkov-4784014.jpg",
+    "alt": "Mother and children on laptop",
     "column": 2,
     "order": 4
   },
@@ -131,27 +131,27 @@
     "alt": "Mother with teen in kitchen",
     "column": 3,
     "order": 1
+  }, 
+  {
+    "column": 3,
+    "order": 2,
+    "filename": "pexels-silverkblack-23495585.jpg",
+    "slug": "photo-02-14",
+    "alt": "Man in thought in foreground with family in home"
   },
   {
     "slug": "photo-03-02",
     "filename": "pexels-shvetsa-4586685-cropped.jpg",
     "alt": "Father with toddler outside",
     "column": 3,
-    "order": 2
-  },
-  {
-    "slug": "photo-03-03",
-    "filename": "pexels-mart-production-7415122.jpg",
-    "alt": "Mother and father with son on couch",
-    "column": 3,
     "order": 3
   },
   {
-    "slug": "photo-03-04",
-    "filename": "pexels-marcus-aurelius-6787970.jpg",
-    "alt": "Elderly couple smiling on couch",
     "column": 3,
-    "order": 4
+    "order": 4,
+    "filename": "pexels-mikhail-nilov-6963864.jpg",
+    "slug": "photo-00-12",
+    "alt": "Focused couple in home"
   },
   {
     "slug": "photo-03-05",
