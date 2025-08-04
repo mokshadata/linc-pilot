@@ -1,0 +1,114 @@
+[
+  {
+    "column": 0,
+    "order": 0,
+    "filename": "pexels-alex-green-5699685.jpg",
+    "slug": "photo-00-0",
+    "alt": "Couple in dining room, stressed"
+  },
+  {
+    "column": 1,
+    "order": 1,
+    "filename": "pexels-andrew-5255996.jpg",
+    "slug": "photo-01-1",
+    "alt": "Man at dining room table, worried"
+  },
+  {
+    "column": 1,
+    "order": 10,
+    "filename": "pexels-julia-m-cameron-4145348.jpg",
+    "slug": "photo-00-3",
+    "alt": "Mother and son on couch"
+  },
+  {
+    "column": 1,
+    "order": 4,
+    "filename": "pexels-kampus-8507633.jpg",
+    "slug": "photo-01-4",
+    "alt": "Multigenerational family in the kitchen"
+  },
+  {
+    "column": 2,
+    "order": 5,
+    "filename": "pexels-karolina-grabowska-6029189.jpg",
+    "slug": "photo-02-5",
+    "alt": "Stressed woman in home"
+  },
+  {
+    "column": 0,
+    "order": 6,
+    "filename": "pexels-keira-burton-6624305.jpg",
+    "slug": "photo-00-6",
+    "alt": "Stressed man in home"
+  },
+  {
+    "column": 2,
+    "order": 2,
+    "filename": "pexels-ketut-subiyanto-4474035.jpg",
+    "slug": "photo-01-7",
+    "alt": "Stressed mother in home with kids playing in background"
+  },
+  {
+    "column": 1,
+    "order": 0,
+    "filename": "pexels-leish-6975176.jpg",
+    "slug": "photo-02-8",
+    "alt": "Woman reading in home"
+  },
+  {
+    "column": 1,
+    "order": 4,
+    "filename": "pexels-liza-summer-6382660.jpg",
+    "slug": "photo-00-9",
+    "alt": "Stressed woman in home"
+  },
+  {
+    "column": 0,
+    "order": 2,
+    "filename": "pexels-liza-summer-6382672.jpg",
+    "slug": "photo-01-10",
+    "alt": "Stressed woman in home"
+  },
+  {
+    "column": 2,
+    "order": 11,
+    "filename": "pexels-mart-production-7491735.jpg",
+    "slug": "photo-02-11",
+    "alt": "Mother in kitchen"
+  },
+  {
+    "column": 2,
+    "order": 0,
+    "filename": "pexels-mikhail-nilov-6963864.jpg",
+    "slug": "photo-00-12",
+    "alt": "Focused couple in home"
+  },
+  {
+    "column": 0,
+    "order": 1,
+    "filename": "pexels-pavel-danilyuk-8057322.jpg",
+    "slug": "photo-01-13",
+    "alt": "Couple in home"
+  },
+  {
+    "column": 2,
+    "order": 1,
+    "filename": "pexels-silverkblack-23495585.jpg",
+    "slug": "photo-02-14",
+    "alt": "Man in thought in foreground with family in home"
+  },
+  {
+    "column": 0,
+    "order": 15,
+    "filename": "pexels-vanessa-loring-5082870.jpg",
+    "slug": "photo-00-15",
+    "alt": "Family in kitchen"
+  },
+  {
+    "column": 0,
+    "order": 4,
+    "filename": "pexels-yankrukov-4458320.jpg",
+    "slug": "photo-01-16",
+    "alt": "Stressed mother with son"
+  }
+]
