@@ -40,6 +40,7 @@ const brandingCollection = defineCollection({
   schema: () => z.object({
     title: z.string(),
     order: z.number(),
+    show: z.boolean(),
   }),
 })
 

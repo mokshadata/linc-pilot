@@ -6,6 +6,7 @@ import { getCollection } from "astro:content";
 
 const branding = await getCollection("branding")
 const brandingWithContent = await Promise.all(branding
+  .filter((section) => (section.data.show))
   .map(async (section) => ({
     ...section,
     ...await section.render(),

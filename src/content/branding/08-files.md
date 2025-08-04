@@ -1,5 +1,6 @@
 ---
 title: "Files for Download (work in progress)"
-slug: "07-files"
-order: 8
+slug: "08-files"
+order: 9
+show: true
 ---

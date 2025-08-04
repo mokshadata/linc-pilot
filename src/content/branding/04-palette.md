@@ -2,6 +2,7 @@
 title: "Palette: Extended"
 slug: "04-palette"
 order: 5
+show: true
 ---
 
 ## Extended Palette for Application Status and Interfaces

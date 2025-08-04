@@ -2,6 +2,7 @@
 title: "Typography"
 slug: "02-typography"
 order: 3
+show: true
 ---
 
 Fort Bend LINC branding uses 2 fonts:
