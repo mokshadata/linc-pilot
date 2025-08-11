@@ -4,11 +4,13 @@ import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import icon from "astro-icon";
 
+import partytown from "@astrojs/partytown";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://beta.fortbendlinc.org',
   // trailingSlash: 'always',
-  integrations: [react(), icon(), mdx(), sitemap()],
+  integrations: [react(), icon(), mdx(), sitemap(), partytown()],
   image: {
     domains: ["astro.build"],
     remotePatterns: [
