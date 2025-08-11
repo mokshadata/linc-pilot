@@ -13,6 +13,8 @@ interface Props {
 }
 
 const { pageTitle } = Astro.props;
+
+const GA_ID = 'G-Y61VN0N8VQ';
 ---
 
 <html lang="en" data-theme="light">
@@ -31,6 +33,27 @@ const { pageTitle } = Astro.props;
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
     />
+
+    <!-- Google tag (gtag.js) -->
+    <script is:inline type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+
+    <script is:inline type="text/partytown" define:vars={{ GA_ID }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+          dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("consent", "default", {
+          ad_storage: "denied",
+          ad_user_data: "denied",
+          ad_personalization: "denied",
+          analytics_storage: "denied",
+      });
+
+      gtag("config", GA_ID);
+    </script>
+
     <title>{pageTitle}</title>
     <ViewTransitions />
   </head>
