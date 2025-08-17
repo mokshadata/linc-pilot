@@ -1,10 +1,10 @@
-# site_url: https://fortbendlinc.org
-local_backend: true
+site_url: https://fortbendlinc.org
+local_backend: false
 backend:
   name: git-gateway
-  # branch: main # Branch to update (optional; defaults to master)
+  branch: main # Branch to update (optional; defaults to master)
   # repo: mokshadata/linc-demo
-  # base_url: https://cms.fortbendlinc.org
+  # base_url: https://api.netlify.com
 collections:
   - name: "steps" # Used in routes, e.g., /admin/collections/blog
     label: "Step" # Used in the UI
