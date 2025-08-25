@@ -1,4 +1,6 @@
-site_url: https://fortbendlinc.org
+site_url: https://staging--fortbendlinc.netlify.app
+display_url: https://rent.fortbendlinc.org
+logo_url: https://rent.fortbendlinc.org/favicon.svg
 local_backend: false
 publish_mode: editorial_workflow
 backend:
