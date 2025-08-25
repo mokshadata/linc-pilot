@@ -56,6 +56,17 @@ const photoGridCollection = defineCollection({
   })
 })
 
+const partsCollection = defineCollection({
+  type: "content",
+  schema: () => z.object({
+    headline: z.string(),
+    cover_image: z.string().optional(),
+    cover_alt: z.string().optional(),
+    call_to_action: z.string().optional(),
+    cover_first: z.boolean().optional(),
+  })
+})
+
 // Export a single `collections` object to register your collection(s)
 export const collections = {
   // posts: postsCollection,
@@ -63,5 +74,5 @@ export const collections = {
   faqs: faqsCollection,
   branding: brandingCollection,
   grid: photoGridCollection,
-  // gridAlt: photoGridAltCollection,
+  parts: partsCollection,
 };

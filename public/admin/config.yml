@@ -1,6 +1,6 @@
 site_url: https://staging--fortbendlinc.netlify.app
 display_url: https://rent.fortbendlinc.org
-logo_url: https://rent.fortbendlinc.org/favicon.svg
+logo_url: https://rent.fortbendlinc.org/branding/images/linc--fort-bend--colors.svg
 local_backend: false
 publish_mode: editorial_workflow
 backend:
@@ -10,9 +10,10 @@ backend:
   # base_url: https://api.netlify.com
 collections:
   - name: "steps" # Used in routes, e.g., /admin/collections/blog
-    label: "Step" # Used in the UI
+    label: "How it works - Steps" # Used in the UI
     folder: "src/content/steps" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    sortable_fields: ['order', 'title']
     fields: # The fields for each document, usually in frontmatter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
@@ -26,6 +27,7 @@ collections:
   - name: "faqs"
     label: "FAQs"
     folder: "src/content/faqs"
+    sortable_fields: ['order', 'title']
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
@@ -36,6 +38,7 @@ collections:
     label: "Photo Grid"
     folder: "src/content/grid"
     create: true
+    sortable_fields: ['order', 'alt']
     fields:
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Column", name: "column", widget: "number" }
@@ -50,5 +53,18 @@ collections:
           config:
             multiple: false
       - { label: "Alt", name: "alt", widget: "string" }
+  - name: "parts"
+    label: "Content Parts"
+    folder: "src/content/parts"
+    create: false
+    fields:
+      - { name: "headline", label: "Headline", widget: "string"}
+      - label: "Featured Image"
+        name: "cover_image"
+        widget: "image"
+      - { name: "cover_alt", label: "Alt", widget: "string"}
+      - { name: "call_to_action", label: "Call to Action", widget: "string"}
+      - { name: "cover_first", label: "Is Cover Image First?", widget: "boolean"}
+      - { label: "Body", name: "body", widget: "markdown" }
 media_folder: "src/assets/images" # Location where files will be stored in the repo
 public_folder: "src/assets/images" # The src attribute for uploaded media

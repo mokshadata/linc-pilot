@@ -1,11 +1,9 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Section from "@components/Section.astro";
 
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
-
-import onComputer from '@assets/images/on-computer.png'
-import family1 from '@assets/images/pexels-august-de-richelieu-4260639.jpg'
+import { getCollection, getEntry } from "astro:content";
 
 const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
 
@@ -15,6 +13,18 @@ const stepsWithContent = await Promise.all(steps
     ...step,
     ...await step.render(),
   })));
+
+const topSection = await getEntry('parts', 'how-it-works')
+const topSectionWithContent = {
+  ...topSection,
+  ...await topSection?.render(),
+}
+
+const bottomSection = await getEntry('parts', 'how-it-works-footer')
+const bottomSectionWithContent = {
+  ...bottomSection,
+  ...await bottomSection?.render(),
+}
 ---
 
 <script>
@@ -90,31 +100,9 @@ const stepsWithContent = await Promise.all(steps
 
 <BaseLayout pageTitle={pageTitle}>
   <main data-page="index">
-    <section id="how-it-works">
-      <div class="container-fluid">
-        <div class="grid">
-          <div class="content intro">
-            <h1>How Fort Bend LINC works</h1>
-
-            <p>
-              There are 4 steps to applying for and receiving rental assistance with Fort Bend LINC.
-              With each step, we ask for just the amount of information needed to process your application. 
-            </p>
-
-            <p>
-              <strong>
-                Assistance is not guaranteed until you receive communication from us that says we have pledged funds for your case.
-              </strong>
-            </p>
-            
-            <p>Learn more below and get started.</p>
-          </div>
-          <div>
-            <Image src={onComputer} alt="Woman submitting and application for rental assistance by laptop">
-          </div>
-        </div>
-      </div>
-    </section>
+    <Section {...topSectionWithContent?.data} title={topSectionWithContent?.slug}>
+      <topSectionWithContent?.Content/>
+    </Section>
     <section>
       <div class="steps" data-active-step="1">
         <div class="step--listing">
@@ -141,105 +129,17 @@ const stepsWithContent = await Promise.all(steps
         </div>
       </div>
     </section>
-    <section id="get-started">
-      <div class="container">
-        <div class="grid">
-          <div>
-            <Image src={family1} alt="Family of four smiling at home"/>
-          </div>
-          <div class="content">
-            <h1>Get started!</h1>
-            <p>You can complete the pre-screener on your phone or computer.</p>
-            <p>
-              <a href="https://harveyhomeconnect--linc.sandbox.my.site.com/MyLINC/s/apply-for-assistance" role="button" class="primary">See if you are eligible</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Section {...bottomSectionWithContent?.data} title={bottomSectionWithContent?.slug} call_to_location={'https://harveyhomeconnect--linc.sandbox.my.site.com/MyLINC/s/apply-for-assistance'}>
+      <bottomSectionWithContent?.Content/>
+    </Section>
   </main>
 </BaseLayout>
 
 <style>
-#how-it-works {
-  display: flex;
-  align-items: center;
-  padding-top: 4rem;
-  padding-bottom: 1rem;
-  margin-bottom: 0;
-  background-color: var(--linc--green);
-}
-
-#get-started {
-  background-color: var(--linc--green);
-  padding: 4rem 0;
-}
-
-section p {
-  font-size: 20px;
-}
-
-.grid {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.content {
-  padding: 1rem;
-}
-
-img[src*=".jpg"]:not(.hero-photo-grid--item),
-img[src*=".png"]:not(.hero-photo-grid--item),
-img[src*=".webp"]:not(.hero-photo-grid--item) {
-  border-radius: 2rem;
-
-  --s: 6rem; /* the size on the corner */
-  --t: 5px;  /* the thickness of the border */
-  --g: 1rem; /* the gap between the border and image */
-  
-  padding: calc(var(--g) + var(--t));
-  outline: var(--t) solid var(--linc--green--dark); /* the color here */
-  outline-offset: calc(-1*var(--t));
-  mask:
-    conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
-     0 0/calc(100% - var(--s)) calc(100% - var(--s)),
-    conic-gradient(#000 0 0) content-box;
-  transition: .4s;
-}
-
 img[src*=".svg"] {
   width: 100%;
   max-width: 240px;
   margin: auto;
-}
-
-[data-page=index] [role="button"] {
-  border-width: 4px;
-  transition: background-color var(--pico-transition),border-color var(--pico-transition),color var(--pico-transition),box-shadow var(--pico-transition), transform var(--pico-transition);
-}
-
-[data-page=index] [role="button"]:hover {
-  transform: translate(-4px, -4px);
-}
-
-[data-page=index] [role="button"].primary {
-  background-color: var(--linc--purple);
-  border-color: var(--linc--purple);
-  color: var(--white);
-}
-
-[data-page=index] [role="button"].primary:hover {
-  box-shadow: 4px 6px 0 hsla(var(--linc--purple--hs), 20%, 1);
-}
-
-[data-page=index] [role="button"].outline {
-  background-color: rgba(var(--white--rgb, 0.5));
-  color: var(--linc--purple);
-  border-color: var(--linc--purple);
-}
-
-[data-page=index] [role="button"].outline:hover {
-  box-shadow: 4px 4px 0 var(--linc--purple);
 }
 
 .headline em {
