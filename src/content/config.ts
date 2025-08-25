@@ -49,7 +49,7 @@ const photoGridCollection = defineCollection({
   // type: "content",
   // loader: glob({ pattern: "*.yml", base: "./src/content/grid"}),
   schema: () => z.object({
-    filename: z.string(),
+    image_filename: z.string(),
     alt: z.string(),
     column: z.number(),
     order: z.number(),

@@ -6,7 +6,7 @@ import type { ImageMetadata } from 'astro';
 const images = import.meta.glob<{ default: ImageMetadata }>('@assets/images/grid/compressed/*.{jpeg,jpg,png,gif}');
 const photos = await getCollection("grid");
 const photoGrid = Object.values(Object.groupBy(photos, (photo) => (photo.data.column)))
-console.log({ photos })
+
 ---
 <div class="grid hero-photo-grid">
   {photoGrid.filter((col) => (col && col.length))
