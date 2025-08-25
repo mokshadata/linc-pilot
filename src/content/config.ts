@@ -1,6 +1,6 @@
 // Import utilities from `astro:content`
 import { z, defineCollection } from "astro:content";
-import { file } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 // Define a `type` and `schema` for each collection
 // const postsCollection = defineCollection({
 //   type: "content",
@@ -45,18 +45,10 @@ const brandingCollection = defineCollection({
 })
 
 const photoGridCollection = defineCollection({
-  loader: file('src/content/grid/welcome.json'),
-  schema: z.object({
-    filename: z.string(),
-    alt: z.string(),
-    column: z.number(),
-    order: z.number(),
-  })
-})
-
-const photoGridAltCollection = defineCollection({
-  loader: file('src/content/grid/serious.json'),
-  schema: z.object({
+  // loader: file('src/content/grid/welcome.json'),
+  // type: "content",
+  // loader: glob({ pattern: "*.yml", base: "./src/content/grid"}),
+  schema: () => z.object({
     filename: z.string(),
     alt: z.string(),
     column: z.number(),
@@ -71,5 +63,5 @@ export const collections = {
   faqs: faqsCollection,
   branding: brandingCollection,
   grid: photoGridCollection,
-  gridAlt: photoGridAltCollection,
+  // gridAlt: photoGridAltCollection,
 };

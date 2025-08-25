@@ -2,7 +2,7 @@ site_url: https://fortbendlinc.org
 local_backend: false
 backend:
   name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  branch: cms # Branch to update (optional; defaults to master)
   # repo: mokshadata/linc-demo
   # base_url: https://api.netlify.com
 collections:
@@ -26,5 +26,15 @@ collections:
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Order", name: "order", widget: "number" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "photos"
+    label: "Photo Grid"
+    folder: "src/content/grid"
+    create: true
+    fields:
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Filename", name: "filename", widget: "string" }
+      - { label: "Alt", name: "alt", widget: "string" }
+      - { label: "Column", name: "column", widget: "number" }
+      - { label: "Order", name: "order", widget: "number" }
 media_folder: "src/assets/images" # Location where files will be stored in the repo
 public_folder: "src/assets/images" # The src attribute for uploaded media
