@@ -17,7 +17,7 @@ const photoGrid = Object.values(Object.groupBy(photos, (photo) => (photo.data.co
     .map((col) => (
       <div>
         {col && col.map((entry) => (
-          <Image src={images[`/src/assets/images/grid/compressed/${entry.data.filename}`]()} alt={entry.data.alt} class="hero-photo-grid--item"/>
+          <Image src={images[`/src/assets/images/grid/compressed/${entry.data.image_filename}`]()} alt={entry.data.alt} class="hero-photo-grid--item"/>
         ))}
       </div>
     ))}
