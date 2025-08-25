@@ -1,8 +1,9 @@
 site_url: https://fortbendlinc.org
 local_backend: false
+publish_mode: editorial_workflow
 backend:
   name: git-gateway
-  branch: cms # Branch to update (optional; defaults to master)
+  branch: staging # Branch to update (optional; defaults to master)
   # repo: mokshadata/linc-demo
   # base_url: https://api.netlify.com
 collections:
