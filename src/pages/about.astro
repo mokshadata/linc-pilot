@@ -5,7 +5,7 @@ import GetStarted from "@components/GetStarted.astro";
 const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
 import { getEntry } from "astro:content";
 
-const aboutSection = await getEntry('parts', 'about')
+const aboutSection = await getEntry('parts', '04-about')
 const aboutSectionWithContent = {
   ...aboutSection,
   ...await aboutSection?.render(),

@@ -14,13 +14,13 @@ const stepsWithContent = await Promise.all(steps
     ...await step.render(),
   })));
 
-const topSection = await getEntry('parts', 'how-it-works')
+const topSection = await getEntry('parts', '02-how-it-works')
 const topSectionWithContent = {
   ...topSection,
   ...await topSection?.render(),
 }
 
-const bottomSection = await getEntry('parts', 'how-it-works-footer')
+const bottomSection = await getEntry('parts', '03-how-it-works-footer')
 const bottomSectionWithContent = {
   ...bottomSection,
   ...await bottomSection?.render(),

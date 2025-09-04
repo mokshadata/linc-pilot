@@ -18,12 +18,12 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Order", name: "order", widget: "number" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Featured Image Description", name: "coverAlt", widget: "string" }
       - label: "Featured Image"
         name: "cover"
         widget: "image"
         media_folder: "/src/content/steps"
-      - { label: "Featured Image Description", name: "coverAlt", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
   - name: "faqs"
     label: "FAQs"
     folder: "src/content/faqs"
@@ -43,6 +43,7 @@ collections:
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Column", name: "column", widget: "number" }
       - { label: "Order", name: "order", widget: "number" }
+      - { label: "Image Description", name: "alt", widget: "string" }
       - label: "Image Filename"
         name: "image_filename"
         widget: "image"
@@ -52,19 +53,21 @@ collections:
         media_library:
           config:
             multiple: false
-      - { label: "Alt", name: "alt", widget: "string" }
   - name: "parts"
     label: "Content Parts"
-    folder: "src/content/parts"
+    folder: "src/content/parts"     
     create: false
+    sortable_fields: ['filename']
     fields:
-      - { name: "headline", label: "Headline", widget: "string"}
+      - { name: "headline", label: "Headline", widget: "string", required: true }
+      - { label: "Body", name: "body", widget: "markdown", required: true }
+      - { name: "call_to_action", label: "Call to Action", widget: "string", required: false }
+      - { name: "cover_first", label: "Is Cover Image First?", widget: "boolean", required: false }
+      - { name: "cover_alt", label: "Image Description", widget: "string", required: false }
       - label: "Featured Image"
         name: "cover_image"
+        media_folder: "/src/assets/images"
         widget: "image"
-      - { name: "cover_alt", label: "Alt", widget: "string"}
-      - { name: "call_to_action", label: "Call to Action", widget: "string"}
-      - { name: "cover_first", label: "Is Cover Image First?", widget: "boolean"}
-      - { label: "Body", name: "body", widget: "markdown" }
+        required: false
 media_folder: "src/assets/images" # Location where files will be stored in the repo
 public_folder: "src/assets/images" # The src attribute for uploaded media

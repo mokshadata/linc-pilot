@@ -6,7 +6,7 @@ import CallToAction from "@components/CallToAction.astro";
 
 import { getEntry } from "astro:content";
 
-const indexSection = await getEntry('parts', 'index')
+const indexSection = await getEntry('parts', '01-index')
 const indexSectionWithContent = {
   ...indexSection,
   ...await indexSection?.render(),
