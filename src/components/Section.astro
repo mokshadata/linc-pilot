@@ -1,0 +1,106 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from 'astro';
+
+import CallToAction from "./CallToAction.astro";
+
+const images = import.meta.glob<{ default: ImageMetadata }>('@assets/images/*.{jpeg,jpg,png,gif}');
+
+const { title, headline, cover_image, cover_alt, cover_first, call_to_action, call_to_location } = Astro.props
+---
+
+<section id={title}>
+  <div class="container">
+    <div class="grid">
+      {
+        cover_first && cover_image &&
+        <div>
+          <Image src={images[`/src/assets/images/${cover_image}`]()} alt={cover_alt}>
+        </div>
+      }
+      <div class="content intro">
+        <h1>{headline}</h1>
+        <slot/>
+        {call_to_action && call_to_location &&
+          <div>
+            <CallToAction
+              call_to_location={call_to_location}
+              call_to_action={call_to_action}
+            />
+          </div>
+        }
+      </div>
+      {
+        !cover_first && cover_image &&
+        <div>
+          <Image src={images[`/src/assets/images/${cover_image}`]()} alt={cover_alt}>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+
+section {
+  display: flex;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  margin-bottom: 0;
+  background-color: var(--linc--green);
+}
+
+
+.content {
+  padding: 1rem;
+}
+
+img[src*=".jpg"]:not(.hero-photo-grid--item),
+img[src*=".png"]:not(.hero-photo-grid--item),
+img[src*=".webp"]:not(.hero-photo-grid--item) {
+  border-radius: 2rem;
+
+  --s: 6rem; /* the size on the corner */
+  --t: 5px;  /* the thickness of the border */
+  --g: 1rem; /* the gap between the border and image */
+  
+  padding: calc(var(--g) + var(--t));
+  outline: var(--t) solid var(--linc--green--dark); /* the color here */
+  outline-offset: calc(-1*var(--t));
+  mask:
+    conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
+     0 0/calc(100% - var(--s)) calc(100% - var(--s)),
+    conic-gradient(#000 0 0) content-box;
+  transition: .4s;
+}
+
+[role="button"] {
+  border-width: 4px;
+  transition: background-color var(--pico-transition),border-color var(--pico-transition),color var(--pico-transition),box-shadow var(--pico-transition), transform var(--pico-transition);
+}
+
+[role="button"]:hover {
+  transform: translate(-4px, -4px);
+}
+
+[role="button"].primary {
+  background-color: var(--linc--purple);
+  border-color: var(--linc--purple);
+  color: var(--white);
+}
+
+[role="button"].primary:hover {
+  box-shadow: 4px 6px 0 hsla(var(--linc--purple--hs), 20%, 1);
+}
+
+[role="button"].outline {
+  background-color: rgba(var(--white--rgb, 0.5));
+  color: var(--linc--purple);
+  border-color: var(--linc--purple);
+}
+
+[role="button"].outline:hover {
+  box-shadow: 4px 4px 0 var(--linc--purple);
+}
+</style>

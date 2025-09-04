@@ -1,13 +1,16 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-
-import { Image } from "astro:assets";
-
 import GetStarted from "@components/GetStarted.astro";
 
 const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
+import { getEntry } from "astro:content";
 
-import tgfLogo from '@assets/images/tgf-logo.png'
+const aboutSection = await getEntry('parts', '04-about')
+const aboutSectionWithContent = {
+  ...aboutSection,
+  ...await aboutSection?.render(),
+}
+
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -16,28 +19,14 @@ import tgfLogo from '@assets/images/tgf-logo.png'
       <div class="container">
         <div class="grid">
           <div class="content intro">
-            <h1>About Fort Bend LINC</h1>
+            <h1>{aboutSectionWithContent.data?.headline}</h1>
           </div>
         </div>
       </div>
     </section>
     <section class="about">
       <div class="container">
-        <div class="tgf-logo">
-          <Image src={tgfLogo} alt="The George Foundation Logo"/>
-        </div>
-        <p>
-          The George Foundation is proud to serve as the founding catalyst of Fort Bend LINC—an innovative, community-driven initiative designed to streamline access to rental, mortgage, and utility assistance for residents across Fort Bend County. Recognizing housing stability as a cornerstone of economic resilience, the Foundation launched this effort in partnership with Connective and a coalition of nonprofit, faith-based, and public sector organizations.
-        </p>
-        <p>
-          Using a human-centered design process, The George Foundation led early efforts to identify gaps in the existing support system, elevate the voices of those most impacted, and co-create a coordinated, client-focused solution. These efforts have resulted in the development of a new housing stability blueprint and the creation of a centralized platform that simplifies applications, increases efficiency, and connects residents to essential resources with dignity and speed.
-        </p>
-        <p>
-          Through LINC, we envision a future where all Fort Bend residents—especially renters—can more easily access the help they need, avoid eviction, and remain stably housed.
-        </p>
-        <p class="emphasis">
-          Fort Bend LINC is currently composed of various Fort Bend nonprofit, faith-based, and public sector organizations that are working together to provide financial and other assistance to families in Fort Bend.
-        </p>
+        <aboutSectionWithContent.Content/>
       </div>
     </section>
     <GetStarted/>
@@ -45,9 +34,10 @@ import tgfLogo from '@assets/images/tgf-logo.png'
 </BaseLayout>
 
 <style>
-.tgf-logo {
-  text-align: center;
+.about :global(img) {
+  display: block;
   padding-bottom: 3rem;
+  margin: auto;
 }
 
 .emphasis {
