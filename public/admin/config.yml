@@ -9,6 +9,16 @@ backend:
   # repo: mokshadata/linc-demo
   # base_url: https://api.netlify.com
 collections:
+  - name: "faqs"
+    label: "FAQs"
+    folder: "src/content/faqs"
+    sortable_fields: ['order', 'title']
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Order", name: "order", widget: "number" }
+      - { label: "Body", name: "body", widget: "markdown" }
   - name: "steps" # Used in routes, e.g., /admin/collections/blog
     label: "How it works - Steps" # Used in the UI
     folder: "src/content/steps" # The path to the folder where the documents are stored
@@ -24,16 +34,6 @@ collections:
         name: "cover"
         widget: "image"
         media_folder: "/src/content/steps"
-  - name: "faqs"
-    label: "FAQs"
-    folder: "src/content/faqs"
-    sortable_fields: ['order', 'title']
-    create: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Order", name: "order", widget: "number" }
-      - { label: "Body", name: "body", widget: "markdown" }
   - name: "photos"
     label: "Photo Grid"
     folder: "src/content/grid"
