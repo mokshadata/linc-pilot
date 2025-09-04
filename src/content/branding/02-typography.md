@@ -27,8 +27,8 @@ The Google fonts site has instructions for how to load these fonts.  The recomme
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Figtree:ital,wght@0,300..900;1,300..900&family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
 ```
 
-You do not need to download the fonts for most use cases.  If you need yo, you can download them <a href="./branding/Fort-Bend-LINC--font-stack.zip" download>here</a>.
-
+You do not need to download the fonts for most use cases.  If you need to, you can download them <a href="./branding/Fort-Bend-LINC--font-stack.zip" download>here</a>.
+<!-- 
 ## Sizing
 
-More details soon.
+More details soon. -->
