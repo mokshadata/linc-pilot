@@ -22,4 +22,4 @@ Available for <a href="./branding/Fort-Bend-LINC--Google-Templates-v20250904.zip
 
 ### Fonts
 
-You do not need to download the fonts for most use cases.  If you need to, you can download them <a href="./branding/Fort-Bend-LINC--font-stack.zip" download>here</a>.
+You will not need to download the fonts for most use cases.  If you need to, you can download them <a href="./branding/Fort-Bend-LINC--font-stack.zip" download>here</a>.
