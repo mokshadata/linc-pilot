@@ -10,9 +10,10 @@ const base_url = `${import.meta.env.BASE_URL}`;
 
 interface Props {
   pageTitle: string;
+  currentLocale: string;
 }
 
-const { pageTitle } = Astro.props;
+const { pageTitle, currentLocale } = Astro.props;
 
 const GA_ID = 'G-Y61VN0N8VQ';
 ---
@@ -60,7 +61,7 @@ const GA_ID = 'G-Y61VN0N8VQ';
   <body>
     <header>
       <nav class="container-fluid nav-wrapper">
-        <a href={`${base_url}`} aria-current={pathname === base_url}><LincLogo/></a>
+        <a href={`${base_url}${currentLocale}/`} aria-current={pathname === `${base_url}${currentLocale}/`}><LincLogo/></a>
       </nav>
     </header>
     <slot />
@@ -68,7 +69,7 @@ const GA_ID = 'G-Y61VN0N8VQ';
       <div class="container-fluid">
         <div class="grid">
           <div>
-            <a href={`${base_url}`} aria-current={pathname === base_url}><LincLogo/></a>
+            <a href={`${base_url}${currentLocale}/`} aria-current={pathname === `${base_url}${currentLocale}/`}><LincLogo/></a>
           </div>
         </div>
       </div>

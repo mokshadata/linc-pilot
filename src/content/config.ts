@@ -67,6 +67,16 @@ const partsCollection = defineCollection({
   })
 })
 
+const menusCollection = defineCollection({
+  loader: glob({ pattern: "**/*.yml", base: "./src/content/menus"}),
+  schema: () => z.object({
+    items: z.array(z.object({
+      item_name: z.string(),
+      path: z.string(),
+    }))
+  })
+})
+
 // Export a single `collections` object to register your collection(s)
 export const collections = {
   // posts: postsCollection,
@@ -75,4 +85,5 @@ export const collections = {
   branding: brandingCollection,
   grid: photoGridCollection,
   parts: partsCollection,
+  menus: menusCollection,
 };

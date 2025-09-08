@@ -2,10 +2,11 @@
 import VeryBasicLayout from "@layouts/VeryBasicLayout.astro";
 const pageTitle: string = "404";
 
+const currentLocale = Astro.currentLocale || 'en';
 const base_url = `${import.meta.env.BASE_URL}`;
 ---
 
-<VeryBasicLayout pageTitle={pageTitle}>
+<VeryBasicLayout pageTitle={pageTitle} currentLocale={currentLocale}>
   <main>
     <section>
       <div class="container">

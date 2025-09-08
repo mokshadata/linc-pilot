@@ -8,7 +8,7 @@ const { currentLocale } = Astro.props;
 ---
 <header>
   <nav class="container-fluid nav-wrapper">
-    <a href={`${base_url}${currentLocale}`} aria-current={pathname === base_url}><LincLogo/></a>
+    <a href={`${base_url}${currentLocale}/`} aria-current={pathname === `${base_url}${currentLocale}/`}><LincLogo/></a>
     <Navigation currentLocale={currentLocale}/>
   </nav>
 </header>
