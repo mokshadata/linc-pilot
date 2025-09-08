@@ -7,7 +7,7 @@ show: true
 
 ### Logos
 
-Logos <a href="./branding/Fort-Bend-LINC--logos.zip" download>here</a>.
+Download logos <a href="./branding/Fort-Bend-LINC--logos.zip" download>here</a>.
 
 ### Document Templates
 
