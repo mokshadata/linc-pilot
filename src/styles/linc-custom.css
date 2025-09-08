@@ -275,6 +275,10 @@ header nav > a > svg {
   transition: height 0.1s ease-out, width 0.1s ease-out;
 }
 
+header[data-scroll-direction="down"] nav > a {
+  width: 32px;
+}
+
 header[data-scroll-direction="down"] nav > a > svg {
   height: 32px;
   width: 73px;
