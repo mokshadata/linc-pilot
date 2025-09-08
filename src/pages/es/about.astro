@@ -1,0 +1,6 @@
+---
+import AboutPage from "@components/pages/about.astro"
+
+const currentLocale = Astro.currentLocale || 'es';
+---
+<AboutPage currentLocale={currentLocale}/>

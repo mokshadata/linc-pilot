@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
+const currentLocale = Astro.currentLocale || 'en';
 
 import { getCollection } from "astro:content";
 
@@ -87,7 +88,7 @@ brandingWithContent.sort((a, b) => (a.data.order < b.data.order && -1 || 1))
     })
 </script>
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} currentLocale={currentLocale}>
   <main data-page="branding">
     <section class="title-section">
       <div class="container">

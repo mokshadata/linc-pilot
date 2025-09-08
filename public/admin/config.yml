@@ -8,9 +8,14 @@ backend:
   branch: staging # Branch to update (optional; defaults to master)
   # repo: mokshadata/linc-demo
   # base_url: https://api.netlify.com
+i18n:
+  structure: multiple_folders
+  locales: [en, es]
+  default_locale: en
 collections:
   - name: "faqs"
     label: "FAQs"
+    i18n: true
     folder: "src/content/faqs"
     sortable_fields: ['order', 'title']
     create: true
@@ -21,6 +26,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "steps" # Used in routes, e.g., /admin/collections/blog
     label: "How it works - Steps" # Used in the UI
+    i18n: true
     folder: "src/content/steps" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     sortable_fields: ['order', 'title']
@@ -55,6 +61,7 @@ collections:
             multiple: false
   - name: "parts"
     label: "Content Parts"
+    i18n: true
     folder: "src/content/parts"     
     create: false
     sortable_fields: ['filename']

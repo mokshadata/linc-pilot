@@ -1,0 +1,31 @@
+---
+import VeryBasicLayout from "@layouts/VeryBasicLayout.astro";
+const pageTitle: string = "404";
+const currentLocale = Astro.currentLocale || 'en';
+
+const base_url = `${import.meta.env.BASE_URL}`;
+---
+
+<VeryBasicLayout pageTitle={pageTitle} currentLocale={currentLocale}>
+  <main>
+    <section>
+      <div class="container">
+        <hgroup>
+          <h1>{pageTitle}</h1>
+          <p>Lo sentimos, esta página no existe.</p>
+        </hgroup>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <a href={`${base_url}${currentLocale}/`} role="button">De vuelta</a>
+      </div>
+    </section>
+  </main>
+</VeryBasicLayout>
+
+<style>
+  main {
+    padding: 4rem 0;
+  }
+</style>

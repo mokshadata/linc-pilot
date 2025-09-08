@@ -1,0 +1,7 @@
+items:
+  - item_name: Cómo funciona
+    path: es/get-started/
+  - item_name: Acerca de Fort Bend LINC
+    path: es/about/
+  - item_name: FAQs
+    path: es/faqs/

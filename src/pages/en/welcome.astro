@@ -1,0 +1,6 @@
+---
+import WelcomePage from "@components/pages/welcome.astro"
+
+const currentLocale = Astro.currentLocale || 'en';
+---
+<WelcomePage currentLocale={currentLocale}/>
