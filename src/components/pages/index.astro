@@ -7,6 +7,16 @@ import CallToAction from "@components/CallToAction.astro";
 import { getEntry } from "astro:content";
 
 const { currentLocale } = Astro.props;
+const localeToLang = {
+    en: {
+        label: 'English',
+        path: '',
+    },
+    es: {
+        label: 'Spanish',
+        path: 'es/',
+    },
+}
 const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
 
 const indexSection = await getEntry('parts', `${currentLocale}/01-index`)
@@ -37,7 +47,7 @@ const base_url = `${import.meta.env.BASE_URL}`;
             <indexSectionWithContent.Content/>
             <p>
               <CallToAction
-                call_to_location={`${base_url}get-started/`}
+                call_to_location={`${base_url}${localeToLang[currentLocale].path}get-started/`}
                 call_to_action={indexSectionWithContent.data?.call_to_action}
               />
             </p>

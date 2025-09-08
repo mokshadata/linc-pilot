@@ -1,14 +1,14 @@
 ---
-// Import Astro's i18n routing utility
-import { getRelativeLocaleUrlList } from 'astro:i18n';
-
-// Get the current locale and the list of all locale URLs
 const currentLocale = Astro.currentLocale;
-const localeUrls = getRelativeLocaleUrlList();
-
 const localeToLang = {
-    en: 'English',
-    es: 'Spanish',
+    en: {
+        label: 'English',
+        path: '',
+    },
+    es: {
+        label: 'Spanish',
+        path: '/es',
+    },
 }
 ---
 
@@ -16,12 +16,10 @@ const localeToLang = {
   id="language-picker"
   aria-label="Select language"
 >
-  {localeUrls.map((url) => {
-    const locale = url.split('/')[1] || 'en'; // Default locale if no prefix
-
+  {Object.entries(localeToLang).map(([locale, settings]) => {
     return (
       <option value={locale} selected={currentLocale === locale}>
-        {localeToLang[locale]}
+        {settings.label}
       </option>
     );
   })}
