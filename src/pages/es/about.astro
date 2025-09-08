@@ -2,10 +2,11 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import GetStarted from "@components/GetStarted.astro";
 
-const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
 import { getEntry } from "astro:content";
 
-const aboutSection = await getEntry('parts', '04-about')
+const currentLocale = Astro.currentLocale || 'es';
+const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
+const aboutSection = await getEntry('parts', 'es/04-about')
 const aboutSectionWithContent = {
   ...aboutSection,
   ...await aboutSection?.render(),
@@ -13,7 +14,7 @@ const aboutSectionWithContent = {
 
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} currentLocale={currentLocale}>
   <main data-page="index">
     <section class="title-section">
       <div class="container">

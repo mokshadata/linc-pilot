@@ -4,6 +4,7 @@ import Section from "@components/Section.astro";
 
 import { Image } from "astro:assets";
 import { getCollection, getEntry } from "astro:content";
+const currentLocale = Astro.currentLocale || 'en';
 
 const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
 
@@ -14,13 +15,13 @@ const stepsWithContent = await Promise.all(steps
     ...await step.render(),
   })));
 
-const topSection = await getEntry('parts', '02-how-it-works')
+const topSection = await getEntry('parts', 'en/02-how-it-works')
 const topSectionWithContent = {
   ...topSection,
   ...await topSection?.render(),
 }
 
-const bottomSection = await getEntry('parts', '03-how-it-works-footer')
+const bottomSection = await getEntry('parts', 'en/03-how-it-works-footer')
 const bottomSectionWithContent = {
   ...bottomSection,
   ...await bottomSection?.render(),
@@ -98,7 +99,7 @@ const bottomSectionWithContent = {
     })
 </script>
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} currentLocale={currentLocale}>
   <main data-page="index">
     <Section {...topSectionWithContent?.data} title={topSectionWithContent?.slug}>
       <topSectionWithContent?.Content/>

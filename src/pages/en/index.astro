@@ -6,13 +6,13 @@ import CallToAction from "@components/CallToAction.astro";
 
 import { getEntry } from "astro:content";
 
+const currentLocale = Astro.currentLocale || 'en';
 const indexSection = await getEntry('parts', 'en/01-index')
 const indexSectionWithContent = {
   ...indexSection,
   ...await indexSection?.render(),
 }
 
-const currentLocale = Astro.currentLocale || 'en';
 const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
 const base_url = `${import.meta.env.BASE_URL}`;
 ---
