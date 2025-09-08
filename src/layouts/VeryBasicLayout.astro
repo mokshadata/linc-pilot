@@ -14,6 +14,7 @@ interface Props {
 }
 
 const { pageTitle, currentLocale } = Astro.props;
+const localePath = currentLocale !== 'en' && `${currentLocale}/` || ''
 
 const GA_ID = 'G-Y61VN0N8VQ';
 ---
@@ -61,7 +62,7 @@ const GA_ID = 'G-Y61VN0N8VQ';
   <body>
     <header>
       <nav class="container-fluid nav-wrapper">
-        <a href={`${base_url}${currentLocale}/`} aria-current={pathname === `${base_url}${currentLocale}/`}><LincLogo/></a>
+        <a href={`${base_url}${localePath}`} aria-current={pathname === `${base_url}${localePath}`}><LincLogo/></a>
       </nav>
     </header>
     <slot />
@@ -69,7 +70,7 @@ const GA_ID = 'G-Y61VN0N8VQ';
       <div class="container-fluid">
         <div class="grid">
           <div>
-            <a href={`${base_url}${currentLocale}/`} aria-current={pathname === `${base_url}${currentLocale}/`}><LincLogo/></a>
+            <a href={`${base_url}${localePath}`} aria-current={pathname === `${base_url}${localePath}`}><LincLogo/></a>
           </div>
         </div>
       </div>

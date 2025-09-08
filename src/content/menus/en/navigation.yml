@@ -1,7 +1,7 @@
 items:
   - item_name: How Does It Work
-    path: en/get-started/
+    path: get-started/
   - item_name: About Fort Bend LINC
-    path: en/about/
+    path: about/
   - item_name: FAQs
-    path: en/faqs/
+    path: faqs/
