@@ -15,9 +15,9 @@ Document templates include:
 
 1. a themed Word Document where text formatting and colors are applied
 2. a simple letterhead with logo and theme
-3. a slides template (work in progress)
+3. a slides template
 
-Available for <a href="./branding/Fort-Bend-LINC--Google-Templates-v20250904.zip" download>here</a> or viewing [here](https://drive.google.com/drive/folders/1mY8VqopNWkMiuTzAREB5dHMJNmBTGdSm?usp=sharing).
+Available for download <a href="./branding/Fort-Bend-LINC--Google-Templates-v20250908.zip" download>here</a> or viewing [here](https://drive.google.com/drive/folders/1mY8VqopNWkMiuTzAREB5dHMJNmBTGdSm?usp=sharing).
 
 
 ### Fonts
