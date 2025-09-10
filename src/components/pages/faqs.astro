@@ -13,6 +13,7 @@ const faqsWithContent = await Promise.all(faqs
     ...faq,
     ...await faq.render(),
   })));
+faqsWithContent.sort((prev, current) => (prev.data.order - current.data.order))
 ---
 
 <BaseLayout pageTitle={pageTitle} currentLocale={currentLocale}>
