@@ -18,6 +18,8 @@ const stepsWithContent = await Promise.all(steps
     ...await step.render(),
   })));
 
+stepsWithContent.sort((prev, current) => (prev.data.order - current.data.order))
+  
 const topSection = await getEntry('parts', `${currentLocale}/02-how-it-works`)
 const topSectionWithContent = {
   ...topSection,
