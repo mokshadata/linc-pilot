@@ -10,7 +10,11 @@ import partytown from "@astrojs/partytown";
 export default defineConfig({
   site: 'https://rent.fortbendlinc.org',
   // trailingSlash: 'always',
-  integrations: [react(), icon(), mdx(), sitemap(), partytown()],
+  integrations: [react(), icon(), mdx(), sitemap(), partytown({
+    config: {
+      lib: '/_partytown/'
+    }
+  })],
   image: {
     domains: ["astro.build"],
     remotePatterns: [
