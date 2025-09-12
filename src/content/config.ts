@@ -64,6 +64,20 @@ const partsCollection = defineCollection({
     cover_alt: z.string().optional(),
     call_to_action: z.string().optional(),
     cover_first: z.boolean().optional(),
+
+    location: z.string().optional(),
+    url: z.string().optional(),
+    cms_order: z.number().optional(),
+  })
+})
+
+const menusCollection = defineCollection({
+  loader: glob({ pattern: "**/*.yml", base: "./src/content/menus"}),
+  schema: () => z.object({
+    items: z.array(z.object({
+      item_name: z.string(),
+      path: z.string(),
+    }))
   })
 })
 
@@ -75,4 +89,5 @@ export const collections = {
   branding: brandingCollection,
   grid: photoGridCollection,
   parts: partsCollection,
+  menus: menusCollection,
 };

@@ -11,7 +11,7 @@ const photoGrid = Object.values(Object.groupBy(photos, (photo) => (photo.data.co
 <div class="grid hero-photo-grid">
   {photoGrid.filter((col) => (col && col.length))
     .map((col) => {
-      col?.sort((prev, next) => (prev.data.order < next.data.order && -1 || 1))
+      col?.sort((prev, next) => (prev.data.order - next.data.order))
       return col
     })
     .map((col) => (

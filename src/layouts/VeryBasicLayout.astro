@@ -4,20 +4,23 @@ import "../styles/linc-custom.css";
 
 import { ViewTransitions } from "astro:transitions";
 import LincLogo from "@components/LincLogo.astro";
+import LanguagePicker from "@components/LanguagePicker.astro";
 
 const { pathname } = Astro.url;
 const base_url = `${import.meta.env.BASE_URL}`;
 
 interface Props {
   pageTitle: string;
+  currentLocale: string;
 }
 
-const { pageTitle } = Astro.props;
+const { pageTitle, currentLocale } = Astro.props;
+const localePath = currentLocale !== 'en' && `${currentLocale}/` || ''
 
 const GA_ID = 'G-Y61VN0N8VQ';
 ---
 
-<html lang="en" data-theme="light">
+<html lang={currentLocale} data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -60,7 +63,10 @@ const GA_ID = 'G-Y61VN0N8VQ';
   <body>
     <header>
       <nav class="container-fluid nav-wrapper">
-        <a href={`${base_url}`} aria-current={pathname === base_url}><LincLogo/></a>
+        <a href={`${base_url}${localePath}`} aria-current={pathname === `${base_url}${localePath}`}><LincLogo/></a>
+        <div class="language-picker-wrapper">
+          <LanguagePicker/>
+        </div>
       </nav>
     </header>
     <slot />
@@ -68,7 +74,7 @@ const GA_ID = 'G-Y61VN0N8VQ';
       <div class="container-fluid">
         <div class="grid">
           <div>
-            <a href={`${base_url}`} aria-current={pathname === base_url}><LincLogo/></a>
+            <a href={`${base_url}${localePath}`} aria-current={pathname === `${base_url}${localePath}`}><LincLogo/></a>
           </div>
         </div>
       </div>
@@ -85,7 +91,12 @@ const GA_ID = 'G-Y61VN0N8VQ';
     padding-bottom: 0.5rem;
     display: flex;
   }
-
+  .language-picker-wrapper {
+    display: flex;
+    flex: 1;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
   aside {
     text-align: right;
     font-size: 0.75em;

@@ -8,15 +8,16 @@ import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   pageTitle: string;
+  currentLocale: string;
 }
 
-const { pageTitle } = Astro.props;
+const { pageTitle, currentLocale } = Astro.props;
 const base_url = `${import.meta.env.BASE_URL}`;
 
 const GA_ID = 'G-JV9Z4WDCB7';
 ---
 
-<html lang="en" data-theme="light">
+<html lang={currentLocale} data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -57,9 +58,9 @@ const GA_ID = 'G-JV9Z4WDCB7';
     <ViewTransitions />
   </head>
   <body>
-    <NavigationWrapper />
+    <NavigationWrapper currentLocale={currentLocale}/>
     <slot />
-    <Footer />
+    <Footer currentLocale={currentLocale}/>
     <script>
       import "../scripts/menu.js";
     </script>

@@ -3,14 +3,25 @@ import Section from "@components/Section.astro";
 import { getEntry } from "astro:content";
 
 const base_url = `${import.meta.env.BASE_URL}`;
+const { currentLocale } = Astro.props;
+const localeToLang = {
+    en: {
+        label: 'English',
+        path: '',
+    },
+    es: {
+        label: 'Spanish',
+        path: 'es/',
+    },
+}
 
-const callToActionSection = await getEntry('parts', '05-pages-call-to-action')
+const callToActionSection = await getEntry('parts', `${currentLocale}/05-pages-call-to-action`)
 const callToActionSectionWithContent = {
   ...callToActionSection,
   ...await callToActionSection?.render(),
 }
 ---
 
-<Section {...callToActionSectionWithContent?.data} title={callToActionSectionWithContent?.slug} call_to_location={`${base_url}get-started`}>
+<Section {...callToActionSectionWithContent?.data} title={callToActionSectionWithContent?.slug} call_to_location={`${base_url}${localeToLang[currentLocale].path}get-started/`}>
   <callToActionSectionWithContent?.Content/>
 </Section>

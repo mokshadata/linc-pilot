@@ -1,13 +1,17 @@
 ---
 import NavigationItem from "./NavigationItem.astro";
+import { getEntry } from "astro:content";
 
 const base_url = import.meta.env.BASE_URL;
+const { currentLocale } = Astro.props;
+
+const navigationItems = await getEntry('menus', `${currentLocale}/navigation`)
 ---
 
 <ul class="nav-links">
-  <NavigationItem href={`${base_url}get-started/`}>How Does It Work</NavigationItem>
-  <NavigationItem href={`${base_url}about/`}>About Fort Bend LINC</NavigationItem>
-  <NavigationItem href={`${base_url}faqs/`}>FAQs</NavigationItem>
+  {navigationItems?.data.items.map((item) => (
+    <NavigationItem href={`${base_url}${item.path}`}>{item.item_name}</NavigationItem>
+  ))}
 </ul>
 
 <style>
