@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 import { getCollection, getEntry } from "astro:content";
 
 const { currentLocale } = Astro.props;
-const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
+const pageTitle: string = "Fort Bend LINC";
 
 const steps = await getCollection("steps", (item) => {
   return item.id.includes(`${currentLocale}/`)
