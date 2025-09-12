@@ -6,7 +6,7 @@ import { getEntry } from "astro:content";
 
 const { currentLocale } = Astro.props || 'en';
 
-const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
+const pageTitle: string = "Fort Bend LINC";
 const aboutSection = await getEntry('parts', `${currentLocale}/04-about`)
 const aboutSectionWithContent = {
   ...aboutSection,

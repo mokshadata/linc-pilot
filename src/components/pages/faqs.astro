@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 import GetStarted from "@components/GetStarted.astro";
 
 const { currentLocale } = Astro.props;
-const pageTitle: string = "LINC: Get help for rent in Fort Bend!";
+const pageTitle: string = "Fort Bend LINC";
 
 const faqs = await getCollection("faqs", (item) => (item.id.includes(`${currentLocale}/`)));
 const faqsWithContent = await Promise.all(faqs
