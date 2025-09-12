@@ -12,7 +12,8 @@ export default defineConfig({
   // trailingSlash: 'always',
   integrations: [react(), icon(), mdx(), sitemap(), partytown({
     config: {
-      lib: '/_partytown/'
+      lib: '/_partytown/',
+      forward: ['dataLayer.push'],
     }
   })],
   image: {

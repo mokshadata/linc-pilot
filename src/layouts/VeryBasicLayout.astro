@@ -42,7 +42,7 @@ const GA_ID = 'G-Y61VN0N8VQ';
 
     <script is:inline type="text/partytown" define:vars={{ GA_ID }}>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
+      window.gtag = function gtag() {
           dataLayer.push(arguments);
       }
       gtag("js", new Date());
