@@ -64,6 +64,10 @@ const partsCollection = defineCollection({
     cover_alt: z.string().optional(),
     call_to_action: z.string().optional(),
     cover_first: z.boolean().optional(),
+
+    location: z.string().optional(),
+    url: z.string().optional(),
+    cms_order: z.number().optional(),
   })
 })
 

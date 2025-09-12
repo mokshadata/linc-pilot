@@ -15,6 +15,7 @@ i18n:
 collections:
   - name: "faqs"
     label: "FAQs"
+    summary: "{{order}} - {{title}}"
     i18n: true
     folder: "src/content/faqs"
     sortable_fields: ['order', 'title']
@@ -26,6 +27,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown", i18n: true }
   - name: "steps" # Used in routes, e.g., /admin/collections/blog
     label: "How it works - Steps" # Used in the UI
+    summary: "{{order}} - {{title}}"
     i18n: true
     folder: "src/content/steps" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
@@ -43,9 +45,10 @@ collections:
         media_folder: "/src/content/steps"
   - name: "photos"
     label: "Photo Grid"
+    summary: "Column {{column}}, order {{order}} - {{alt}}"
     folder: "src/content/grid"
     create: true
-    sortable_fields: ['order', 'alt']
+    sortable_fields: ['column', 'order', 'alt']
     fields:
       # - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Column", name: "column", widget: "number" }
@@ -62,8 +65,9 @@ collections:
             multiple: false
   - name: "parts"
     label: "Content Parts"
+    summary: "{{cms_order}} - {{location}} - {{url}}"
     i18n: true
-    folder: "src/content/parts"     
+    folder: "src/content/parts"
     create: false
     sortable_fields: ['filename']
     fields:
