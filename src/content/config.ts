@@ -60,14 +60,14 @@ const partsCollection = defineCollection({
   type: "content",
   schema: () => z.object({
     headline: z.string(),
-    cover_image: z.string().optional(),
-    cover_alt: z.string().optional(),
-    call_to_action: z.string().optional(),
-    cover_first: z.boolean().optional(),
+    cover_image: z.string().nullable().optional(),
+    cover_alt: z.string().nullable().optional(),
+    call_to_action: z.string().nullable().optional(),
+    cover_first: z.boolean().nullable().optional(),
 
-    location: z.string().optional(),
-    url: z.string().optional(),
-    cms_order: z.number().optional(),
+    location: z.string().nullable().optional(),
+    url: z.string().nullable().optional(),
+    cms_order: z.number().nullable().optional(),
   })
 })
 
