@@ -1,11 +1,11 @@
 ---
-const { GA_ID } = Astro.props
+const { GA_ID, fixedURL } = Astro.props
 ---
 
 <!-- Google tag (gtag.js) -->
 <script is:inline async type="text/javascript" src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
 
-<script is:inline type="text/javascript" define:vars={{ GA_ID }}>
+<script is:inline type="text/javascript" define:vars={{ GA_ID, fixedURL }}>
     window.dataLayer = window.dataLayer || [];
     window.gtag = function gtag() {
         dataLayer.push(arguments);
@@ -23,8 +23,9 @@ const { GA_ID } = Astro.props
     });
 
     document.addEventListener("astro:page-load", (pageLoadEvent) => {
+        const page_location = fixedURL && `${pageLoadEvent.target.location.href}${fixedURL}/` || pageLoadEvent.target.URL
         gtag("event", "page_view", {
-            page_location: pageLoadEvent.target.URL,
+            page_location,
             page_title: pageLoadEvent.target.title,
         })
     })
