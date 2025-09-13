@@ -1,12 +1,12 @@
 ---
-import VeryBasicLayout from "@layouts/VeryBasicLayout.astro";
+import ErrorBasicLayout from "@layouts/ErrorBasicLayout.astro";
 const pageTitle: string = "404";
 const currentLocale = Astro.currentLocale || 'es';
 
 const base_url = `${import.meta.env.BASE_URL}`;
 ---
 
-<VeryBasicLayout pageTitle={pageTitle} currentLocale={currentLocale}>
+<ErrorBasicLayout pageTitle={pageTitle} currentLocale={currentLocale}>
   <main>
     <section>
       <div class="container">
@@ -22,7 +22,7 @@ const base_url = `${import.meta.env.BASE_URL}`;
       </div>
     </section>
   </main>
-</VeryBasicLayout>
+</ErrorBasicLayout>
 
 <style>
   main {

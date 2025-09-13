@@ -1,0 +1,33 @@
+---
+const { GA_ID } = Astro.props
+---
+
+<!-- Google tag (gtag.js) -->
+<script is:inline async type="text/javascript" src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+
+<script is:inline type="text/javascript" define:vars={{ GA_ID }}>
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+    });
+
+    gtag("config", GA_ID, {
+    send_page_view: false,
+    });
+
+    document.addEventListener("astro:page-load", (pageLoadEvent) => {
+    gtag({
+        event: 'page_view',
+        pagePath: pageLoadEvent.target.URL,
+        pageTitle: pageLoadEvent.target.title,
+    })
+    })
+    
+</script>

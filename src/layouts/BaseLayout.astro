@@ -4,7 +4,8 @@ import "../styles/linc-custom.css";
 
 import Footer from "@components/Footer.astro";
 import NavigationWrapper from "@components/NavigationWrapper.astro";
-import { ViewTransitions } from "astro:transitions";
+import GoogleAnalytics from "@components/GoogleAnalytics.astro";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   pageTitle: string;
@@ -34,28 +35,10 @@ const GA_ID = 'G-JV9Z4WDCB7';
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
     />
 
-    <!-- Google tag (gtag.js) -->
-    <script is:inline type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
-
-    <script is:inline type="text/partytown" define:vars={{ GA_ID }}>
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function gtag() {
-          dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("consent", "default", {
-          ad_storage: "denied",
-          ad_user_data: "denied",
-          ad_personalization: "denied",
-          // analytics_storage: "denied",
-      });
-
-      gtag("config", GA_ID);
-    </script>
+    <GoogleAnalytics GA_ID={GA_ID}/>
 
     <title>{pageTitle}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body>
     <NavigationWrapper currentLocale={currentLocale}/>
