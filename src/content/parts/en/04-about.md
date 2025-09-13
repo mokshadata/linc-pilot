@@ -3,6 +3,7 @@ headline: About Fort Bend LINC
 location: About page
 url: rent.fortbendlinc.org/about
 cms_order: 4
+preview_path_part: about
 ---
 
 ![The George Foundation Logo](../../../assets/images/tgf-logo.png)

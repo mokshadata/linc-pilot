@@ -5,6 +5,7 @@ cover_alt: Woman submitting an application for rental assistance by laptop
 cover_image: on-computer.png
 location: Top of How It Works page
 url: rent.fortbendlinc.org/get-started
+preview_path_part: 'get-started'
 cms_order: 2
 ---
 
