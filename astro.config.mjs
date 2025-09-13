@@ -4,18 +4,21 @@ import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import icon from "astro-icon";
 
-import partytown from "@astrojs/partytown";
+// import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://rent.fortbendlinc.org',
   // trailingSlash: 'always',
-  integrations: [react(), icon(), mdx(), sitemap(), partytown({
-    config: {
-      lib: '/_partytown/',
-      forward: ['dataLayer.push'],
-    }
-  })],
+  integrations: [react(), icon(), mdx(), sitemap()
+    ,
+    // partytown({
+    //   config: {
+    //     lib: '/_partytown/',
+    //     forward: ['dataLayer.push'],
+    //   }
+    // })
+  ],
   image: {
     domains: ["astro.build"],
     remotePatterns: [
