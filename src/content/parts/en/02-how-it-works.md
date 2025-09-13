@@ -1,8 +1,8 @@
 ---
 headline: How Fort Bend LINC works
-cover_image: on-computer.png
-cover_alt: Woman submitting and application for rental assistance by laptop
 cover_first: false
+cover_alt: Woman submitting an application for rental assistance by laptop
+cover_image: on-computer.png
 location: Top of How It Works page
 url: rent.fortbendlinc.org/get-started
 cms_order: 2
