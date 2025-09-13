@@ -43,26 +43,6 @@ collections:
         widget: "image"
         i18n: duplicate
         media_folder: "/src/content/steps"
-  - name: "photos"
-    label: "Photo Grid"
-    summary: "Column {{column}}, order {{order}} - {{alt}}"
-    folder: "src/content/grid"
-    create: true
-    sortable_fields: ['column', 'order', 'alt']
-    fields:
-      # - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Column", name: "column", widget: "number" }
-      - { label: "Order", name: "order", widget: "number" }
-      - { label: "Image Description", name: "alt", widget: "string" }
-      - label: "Image Filename"
-        name: "image_filename"
-        widget: "image"
-        choose_url: false
-        media_folder: "/src/assets/images/grid/compressed"
-        default: "/src/assets/images/grid/compressed/family-bike.jpg"
-        media_library:
-          config:
-            multiple: false
   - name: "parts"
     label: "Content Parts"
     summary: "{{cms_order}} - {{location}} - {{url}}"
@@ -82,5 +62,25 @@ collections:
         media_folder: "/src/assets/images"
         widget: "image"
         required: false
+  - name: "photos"
+    label: "Photo Grid"
+    summary: "Column {{column}}, Position {{order}} - {{alt}}"
+    folder: "src/content/grid"
+    create: true
+    sortable_fields: ['column', 'order', 'alt']
+    fields:
+      # - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Column", name: "column", widget: "number" }
+      - { label: "Order", name: "order", widget: "number" }
+      - { label: "Image Description", name: "alt", widget: "string" }
+      - label: "Image Filename"
+        name: "image_filename"
+        widget: "image"
+        choose_url: false
+        media_folder: "/src/assets/images/grid/compressed"
+        default: "/src/assets/images/grid/compressed/family-bike.jpg"
+        media_library:
+          config:
+            multiple: false
 media_folder: "src/assets/images" # Location where files will be stored in the repo
 public_folder: "src/assets/images" # The src attribute for uploaded media
