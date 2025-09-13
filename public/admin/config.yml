@@ -20,6 +20,7 @@ collections:
     folder: "src/content/faqs"
     sortable_fields: ['order', 'title']
     create: true
+    delete: false
     preview_path: 'faqs'
     fields:
       - { label: "Title", name: "title", widget: "string", i18n: true }
@@ -32,6 +33,7 @@ collections:
     i18n: true
     folder: "src/content/steps" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    delete: false
     preview_path: 'get-started'
     sortable_fields: ['order', 'title']
     fields: # The fields for each document, usually in frontmatter
@@ -52,6 +54,7 @@ collections:
     i18n: true
     folder: "src/content/parts"
     create: false
+    delete: false
     sortable_fields: ['cms_order', 'location', 'url', 'filename']
     fields:
       - { name: "headline", label: "Headline", widget: "string", required: true, i18n: true }
@@ -70,6 +73,7 @@ collections:
     summary: "Column {{column}}, Position {{order}} - {{alt}}"
     folder: "src/content/grid"
     create: true
+    delete: false
     sortable_fields: ['column', 'order', 'alt']
     fields:
       # - { label: "Slug", name: "slug", widget: "string" }
