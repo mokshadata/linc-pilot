@@ -19,15 +19,14 @@ const { GA_ID } = Astro.props
     });
 
     gtag("config", GA_ID, {
-    send_page_view: false,
+        send_page_view: false,
     });
 
     document.addEventListener("astro:page-load", (pageLoadEvent) => {
-    gtag({
-        event: 'page_view',
-        pagePath: pageLoadEvent.target.URL,
-        pageTitle: pageLoadEvent.target.title,
-    })
+        gtag("event", "page_view", {
+            page_location: pageLoadEvent.target.URL,
+            page_title: pageLoadEvent.target.title,
+        })
     })
     
 </script>
