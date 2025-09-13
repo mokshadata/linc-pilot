@@ -1,0 +1,86 @@
+site_url: https://staging--fortbendlinc.netlify.app
+display_url: https://rent.fortbendlinc.org
+logo_url: https://rent.fortbendlinc.org/branding/images/linc--fort-bend--colors.svg
+local_backend: false
+publish_mode: editorial_workflow
+backend:
+  name: git-gateway
+  branch: staging # Branch to update (optional; defaults to master)
+  # repo: mokshadata/linc-demo
+  # base_url: https://api.netlify.com
+i18n:
+  structure: multiple_folders
+  locales: [en, es]
+  default_locale: en
+collections:
+  - name: "faqs"
+    label: "FAQs"
+    summary: "{{order}} - {{title}}"
+    i18n: true
+    folder: "src/content/faqs"
+    sortable_fields: ['order', 'title']
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string", i18n: true }
+      # - { label: "Slug", name: "slug", widget: "string", i18n: true }
+      - { label: "Order", name: "order", widget: "number", i18n: duplicate }
+      - { label: "Body", name: "body", widget: "markdown", i18n: true }
+  - name: "steps" # Used in routes, e.g., /admin/collections/blog
+    label: "How it works - Steps" # Used in the UI
+    summary: "{{order}} - {{title}}"
+    i18n: true
+    folder: "src/content/steps" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    sortable_fields: ['order', 'title']
+    fields: # The fields for each document, usually in frontmatter
+      - { label: "Title", name: "title", widget: "string", i18n: true }
+      # - { label: "Slug", name: "slug", widget: "string", i18n: true }
+      - { label: "Order", name: "order", widget: "number", i18n: duplicate }
+      - { label: "Body", name: "body", widget: "markdown", i18n: true }
+      - { label: "Featured Image Description", name: "coverAlt", widget: "string", i18n: true }
+      - label: "Featured Image"
+        name: "cover"
+        widget: "image"
+        i18n: duplicate
+        media_folder: "/src/content/steps"
+  - name: "parts"
+    label: "Content Parts"
+    summary: "{{cms_order}} - {{location}} - {{url}}"
+    i18n: true
+    folder: "src/content/parts"
+    create: false
+    sortable_fields: ['filename']
+    fields:
+      - { name: "headline", label: "Headline", widget: "string", required: true, i18n: true }
+      - { label: "Body", name: "body", widget: "markdown", required: true, i18n: true }
+      - { name: "call_to_action", label: "Call to Action", widget: "string", required: false, i18n: true }
+      - { name: "cover_first", label: "Is Cover Image First?", widget: "boolean", required: false, i18n: true }
+      - { name: "cover_alt", label: "Image Description", widget: "string", required: false, i18n: true }
+      - label: "Featured Image"
+        name: "cover_image"
+        i18n: duplicate
+        media_folder: "/src/assets/images"
+        widget: "image"
+        required: false
+  - name: "photos"
+    label: "Photo Grid"
+    summary: "Column {{column}}, Position {{order}} - {{alt}}"
+    folder: "src/content/grid"
+    create: true
+    sortable_fields: ['column', 'order', 'alt']
+    fields:
+      # - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Column", name: "column", widget: "number" }
+      - { label: "Order", name: "order", widget: "number" }
+      - { label: "Image Description", name: "alt", widget: "string" }
+      - label: "Image Filename"
+        name: "image_filename"
+        widget: "image"
+        choose_url: false
+        media_folder: "/src/assets/images/grid/compressed"
+        default: "/src/assets/images/grid/compressed/family-bike.jpg"
+        media_library:
+          config:
+            multiple: false
+media_folder: "src/assets/images" # Location where files will be stored in the repo
+public_folder: "src/assets/images" # The src attribute for uploaded media
