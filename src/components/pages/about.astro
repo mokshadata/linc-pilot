@@ -6,16 +6,14 @@ import { getEntry } from "astro:content";
 
 const { currentLocale } = Astro.props || 'en';
 
-const pageTitle: string = "Fort Bend LINC";
 const aboutSection = await getEntry('parts', `${currentLocale}/04-about`)
 const aboutSectionWithContent = {
   ...aboutSection,
   ...await aboutSection?.render(),
 }
-
 ---
 
-<BaseLayout pageTitle={pageTitle} currentLocale={currentLocale}>
+<BaseLayout pageTitle={aboutSectionWithContent.data?.page_title || 'Fort Bend LINC'} currentLocale={currentLocale}>
   <main data-page="index">
     <section class="title-section">
       <div class="container">

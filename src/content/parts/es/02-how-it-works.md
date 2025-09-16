@@ -1,9 +1,9 @@
 ---
 headline: Cómo funciona Fort Bend LINC
 cover_first: false
-cover_alt: Mujer presentando una solicitud de ayuda para el alquiler mediante
-  una computadora portátil
+cover_alt: Mujer presentando una solicitud de ayuda para el alquiler mediante una computadora portátil
 cover_image: on-computer.png
+page_title: Hay 4 pasos para solicitar y recibir asistencia para el alquiler con Fort Bend LINC.
 ---
 
 Hay 4 pasos para solicitar y recibir asistencia para el alquiler con Fort Bend LINC. En cada paso, solicitamos solo la información necesaria para procesar su solicitud.
