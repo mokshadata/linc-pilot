@@ -7,6 +7,7 @@ location: Top of How It Works page
 url: rent.fortbendlinc.org/get-started
 preview_path_part: get-started
 cms_order: 2
+page_title: There are 4 steps to applying for and receiving rental assistance with Fort Bend LINC.
 ---
 
 There are 4 steps to applying for and receiving rental assistance with Fort Bend LINC. With each step, we ask for just the amount of information needed to process your application.
