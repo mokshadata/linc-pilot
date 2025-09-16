@@ -1,13 +1,25 @@
 /* eslint-disable */
 var CustomPreview = createClass({
+	getInitialState: function() {
+		return {
+			steps: [],
+		}
+	},
+	componentWillMount: async function() {
+		const collection = await this.props.getCollection('steps')
+		const steps = collection.map((post) => (post.get('data')))
+		steps.sort((a, b) => (a.order - b.order));
+		this.setState({
+			steps,
+		})
+	},
 	render: function () {
-		var entry = this.props.entry;
-		// Add 'prose' class to the div for the tailwind typography styles
-		// return h("div", { className: "prose" }, this.props.widgetFor("body"));
-		return <div className="preview-wrapper">
-			<h1>{this.props.widgetFor('order')} {this.props.widgetFor('title')}</h1>
-			{this.props.widgetFor('body')}
-		</div>
+		return <div className="preview-wrapper">{
+			this.state.steps.map((step) => (<div>
+				<h3>{step.order}. {step.title}</h3>
+				<div dangerouslySetInnerHTML={{__html: marked.parse(step.body)}}/>
+			</div>))
+		}</div>
 	},
 });
 
