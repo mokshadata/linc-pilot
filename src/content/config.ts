@@ -65,6 +65,8 @@ const partsCollection = defineCollection({
     call_to_action: z.string().nullable().optional(),
     cover_first: z.boolean().nullable().optional(),
 
+    page_title: z.string().nullable().optional(),
+
     location: z.string().nullable().optional(),
     url: z.string().nullable().optional(),
     cms_order: z.number().nullable().optional(),

@@ -6,7 +6,6 @@ import { Image } from "astro:assets";
 import { getCollection, getEntry } from "astro:content";
 
 const { currentLocale } = Astro.props;
-const pageTitle: string = "Fort Bend LINC";
 
 const steps = await getCollection("steps", (item) => {
   return item.id.includes(`${currentLocale}/`)
@@ -104,7 +103,7 @@ const bottomSectionWithContent = {
     })
 </script>
 
-<BaseLayout pageTitle={pageTitle} currentLocale={currentLocale}>
+<BaseLayout pageTitle={topSectionWithContent?.data?.page_title || 'Fort Bend LINC'} currentLocale={currentLocale}>
   <main data-page="index">
     <Section {...topSectionWithContent?.data} title={topSectionWithContent?.slug}>
       <topSectionWithContent?.Content/>
