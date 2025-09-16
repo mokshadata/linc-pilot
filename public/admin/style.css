@@ -870,3 +870,7 @@ body {
 img {
   width: 50%;
 }
+
+.preview-wrapper section {
+  margin-bottom: 2rem;
+}
