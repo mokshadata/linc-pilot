@@ -17,7 +17,6 @@ const localeToLang = {
         path: 'es/',
     },
 }
-const pageTitle: string = "Fort Bend LINC";
 
 const indexSection = await getEntry('parts', `${currentLocale}/01-index`)
 const indexSectionWithContent = {
@@ -28,7 +27,7 @@ const indexSectionWithContent = {
 const base_url = `${import.meta.env.BASE_URL}`;
 ---
 
-<BaseLayout pageTitle={pageTitle} currentLocale={currentLocale}>
+<BaseLayout pageTitle={indexSectionWithContent.data?.page_title || 'Fort Bend LINC'} currentLocale={currentLocale}>
   <main data-page="index">
     <PhotoGrid/>
 

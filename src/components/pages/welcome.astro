@@ -4,7 +4,6 @@ import PhotoGrid from "@components/PhotoGrid.astro";
 import { getEntry } from "astro:content";
 
 const { currentLocale } = Astro.props;
-const pageTitle: string = "Fort Bend LINC";
 
 const welcomeSection = await getEntry('parts', `${currentLocale}/06-welcome`)
 const welcomeSectionWithContent = {
@@ -13,7 +12,7 @@ const welcomeSectionWithContent = {
 }
 ---
 
-<VeryBasicLayout pageTitle={pageTitle} currentLocale={currentLocale}>
+<VeryBasicLayout pageTitle={welcomeSectionWithContent.data?.page_title || 'Fort Bend LINC'} currentLocale={currentLocale}>
   <main data-page="index">
     <PhotoGrid/>
 
