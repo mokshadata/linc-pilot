@@ -23,10 +23,10 @@ collections:
     delete: false
     preview_path: 'faqs'
     fields:
-      - { label: "Title", name: "title", widget: "string", i18n: true }
-      # - { label: "Slug", name: "slug", widget: "string", i18n: true }
       - { label: "Order", name: "order", widget: "number", i18n: duplicate }
-      - { label: "Body", name: "body", widget: "markdown", i18n: true }
+      - { label: "Question", name: "title", widget: "string", i18n: true }
+      # - { label: "Slug", name: "slug", widget: "string", i18n: true }
+      - { label: "Answer", name: "body", widget: "markdown", i18n: true }
   - name: "steps" # Used in routes, e.g., /admin/collections/blog
     label: "How it works - Steps" # Used in the UI
     summary: "{{order}} - {{title}}"
@@ -37,12 +37,12 @@ collections:
     preview_path: 'get-started'
     sortable_fields: ['order', 'title']
     fields: # The fields for each document, usually in frontmatter
-      - { label: "Title", name: "title", widget: "string", i18n: true }
+      - { label: "Step Number", name: "order", widget: "number", i18n: duplicate }
+      - { label: "Step", name: "title", widget: "string", i18n: true }
       # - { label: "Slug", name: "slug", widget: "string", i18n: true }
-      - { label: "Order", name: "order", widget: "number", i18n: duplicate }
-      - { label: "Body", name: "body", widget: "markdown", i18n: true }
-      - { label: "Featured Image Description", name: "coverAlt", widget: "string", i18n: true }
-      - label: "Featured Image"
+      - { label: "Step Detail", name: "body", widget: "markdown", i18n: true }
+      - { label: "Step Image Description", name: "coverAlt", widget: "string", i18n: true }
+      - label: "Step Image"
         name: "cover"
         widget: "image"
         i18n: duplicate
@@ -79,7 +79,7 @@ collections:
     fields:
       # - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Column", name: "column", widget: "number" }
-      - { label: "Order", name: "order", widget: "number" }
+      - { label: "Position", name: "order", widget: "number" }
       - { label: "Image Description", name: "alt", widget: "string" }
       - label: "Image Filename"
         name: "image_filename"

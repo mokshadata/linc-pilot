@@ -868,9 +868,38 @@ body {
 }
 
 img {
-  width: 50%;
+  width: 35%;
 }
 
 .preview-wrapper section {
   margin-bottom: 2rem;
+}
+
+[role="button"] {
+  border-width: 4px;
+  transition: background-color var(--pico-transition),border-color var(--pico-transition),color var(--pico-transition),box-shadow var(--pico-transition), transform var(--pico-transition);
+}
+
+[role="button"]:hover {
+  transform: translate(-4px, -4px);
+}
+
+[role="button"].primary {
+  background-color: var(--linc--purple);
+  border-color: var(--linc--purple);
+  color: var(--white);
+}
+
+[role="button"].primary:hover {
+  box-shadow: 4px 6px 0 hsla(var(--linc--purple--hs), 20%, 1);
+}
+
+[role="button"].outline {
+  background-color: rgba(var(--white--rgb, 0.5));
+  color: var(--linc--purple);
+  border-color: var(--linc--purple);
+}
+
+[role="button"].outline:hover {
+  box-shadow: 4px 4px 0 var(--linc--purple);
 }
