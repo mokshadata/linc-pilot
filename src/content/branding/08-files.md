@@ -7,7 +7,7 @@ show: true
 
 ### Logos
 
-Download logos <a href="./branding/Fort-Bend-LINC--logos.zip" download>here</a>.
+Download logos <a href="/branding/Fort-Bend-LINC--logos.zip" download>here</a>.
 
 ### Document Templates
 
@@ -17,9 +17,9 @@ Document templates include:
 2. a simple letterhead with logo and theme
 3. a slides template
 
-Available for download <a href="./branding/Fort-Bend-LINC--Google-Templates-v20250908.zip" download>here</a> or viewing [here](https://drive.google.com/drive/folders/1mY8VqopNWkMiuTzAREB5dHMJNmBTGdSm?usp=sharing).
+Available for download <a href="/branding/Fort-Bend-LINC--Google-Templates-v20250908.zip" download>here</a> or viewing [here](https://drive.google.com/drive/folders/1mY8VqopNWkMiuTzAREB5dHMJNmBTGdSm?usp=sharing).
 
 
 ### Fonts
 
-You will not need to download the fonts for most use cases.  If you need to, you can download them <a href="./branding/Fort-Bend-LINC--font-stack.zip" download>here</a>.
+You will not need to download the fonts for most use cases.  If you need to, you can download them <a href="/branding/Fort-Bend-LINC--font-stack.zip" download>here</a>.
