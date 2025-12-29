@@ -5,7 +5,6 @@ page_title: "Fort Bend LINC es un grupo de organizaciones sin ánimo de lucro qu
   condado de Fort Bend su hogar. "
 cover_image: null
 ---
-
 ![El logotipo de The George Foundation](../../../assets/images/tgf-logo.png)
 
 The George Foundation se enorgullece de ser el catalizador fundador de Fort Bend LINC, una iniciativa innovadora impulsada por la comunidad, diseñada para facilitar el acceso a la asistencia con el alquiler, la hipoteca y los servicios públicos para los residentes del condado de Fort Bend. Reconociendo que la estabilidad de la vivienda es fundamental para la resiliencia económica, la Fundación lanzó esta iniciativa en colaboración con Connective y una coalición de organizaciones sin fines de lucro, religiosas y del sector público.
@@ -15,3 +14,5 @@ Mediante un proceso de diseño centrado en el ser humano, The George Foundation 
 A través de LINC, imaginamos un futuro donde todos los residentes de Fort Bend, especialmente los inquilinos, puedan acceder más fácilmente a la ayuda que necesitan, evitar el desalojo y permanecer en una vivienda estable.
 
 ***Fort Bend LINC actualmente está compuesto por varias organizaciones sin fines de lucro, religiosas y del sector público de Fort Bend que trabajan juntos para brindar asistencia financiera y de otro tipo a las familias de Fort Bend.***
+
+![](src/assets/images/white_second-mile-logo.png)
