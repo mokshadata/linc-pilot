@@ -1,6 +1,9 @@
 ---
 headline: Acerca de Fort Bend LINC
-page_title: Fort Bend LINC es un grupo de organizaciones sin fines de lucro, religiosas y del sector público de Fort Bend que trabajan juntos para conectar recursos con cualquier persona que considere al condado de Fort Bend como su hogar.
+page_title: "Fort Bend LINC es un grupo de organizaciones sin ánimo de lucro que
+  trabajan juntas para conectar recursos con cualquier persona que considere el
+  condado de Fort Bend su hogar. "
+cover_image: null
 ---
 
 ![El logotipo de The George Foundation](../../../assets/images/tgf-logo.png)
