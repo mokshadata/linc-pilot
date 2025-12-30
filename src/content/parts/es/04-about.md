@@ -13,7 +13,7 @@ Mediante un proceso de diseño centrado en el ser humano, The George Foundation 
 
 A través de LINC, imaginamos un futuro donde todos los residentes de Fort Bend, especialmente los inquilinos, puedan acceder más fácilmente a la ayuda que necesitan, evitar el desalojo y permanecer en una vivienda estable.
 
-***Fort Bend LINC actualmente está compuesto por varias organizaciones sin fines de lucro, religiosas y del sector público de Fort Bend que trabajan juntos para brindar asistencia financiera y de otro tipo a las familias de Fort Bend.***
+***Fort Bend LINC actualmente está compuesto por varias organizaciones sin fines de lucro de Fort Bend que trabajan juntos para brindar asistencia financiera y de otro tipo a las familias de Fort Bend.***
 
 ![](src/assets/images/white_second-mile-logo.png)
 

@@ -15,7 +15,7 @@ Using a human-centered design process, The George Foundation led early efforts t
 
 Through LINC, we envision a future where all Fort Bend residents—especially renters—can more easily access the help they need, avoid eviction, and remain stably housed.
 
-***Fort Bend LINC is currently composed of various Fort Bend nonprofit, faith-based, and public sector organizations that are working together to provide financial and other assistance to families in Fort Bend.***
+***Fort Bend LINC is currently composed of various Fort Bend nonprofit organizations that are working together to provide financial and other assistance to families in Fort Bend.***
 
 ![](src/assets/images/white_second-mile-logo.png)
 
