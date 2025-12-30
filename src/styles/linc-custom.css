@@ -380,3 +380,12 @@ code {
 ul {
   padding-left: 1.5rem;
 }
+
+.partner {
+  display: flex;
+  align-items: center;
+}
+
+.partner a img {
+  padding-bottom: 0 !important;
+}
