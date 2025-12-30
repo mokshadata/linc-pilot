@@ -18,3 +18,9 @@ Through LINC, we envision a future where all Fort Bend residents—especially re
 ***Fort Bend LINC is currently composed of various Fort Bend nonprofit, faith-based, and public sector organizations that are working together to provide financial and other assistance to families in Fort Bend.***
 
 ![](src/assets/images/white_second-mile-logo.png)
+
+![East Fort Bend Human Needs Ministry](src/assets/images/efbhnm-logo.png)
+
+![Fort Bend County Social Services](src/assets/images/hhs-logo-png-002-.png)
+
+![Fort Bend Family Promise](src/assets/images/fbfp-logo.png)
