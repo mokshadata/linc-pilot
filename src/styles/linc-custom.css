@@ -386,6 +386,11 @@ ul {
   align-items: center;
 }
 
+.partner a {
+  width: 100%;
+}
+
 .partner a img {
-  padding-bottom: 0 !important;
+  padding: 2em 0 !important;
+  width: 100%;
 }
