@@ -24,3 +24,7 @@ Through LINC, we envision a future where all Fort Bend residents—especially re
 ![Fort Bend County Social Services](src/assets/images/hhs-logo-png-002-.png)
 
 ![Fort Bend Family Promise](src/assets/images/fbfp-logo.png)
+
+![]()
+
+![Rupani Foundation](src/assets/images/rupani-logo.png)

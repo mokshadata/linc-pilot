@@ -24,3 +24,5 @@ A través de LINC, imaginamos un futuro donde todos los residentes de Fort Bend,
 
 
 ![Fort Bend Family Promise](src/assets/images/fbfp-logo.png)
+
+![Rupani Foundation](src/assets/images/rupani-logo.png)
