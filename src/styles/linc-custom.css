@@ -394,3 +394,8 @@ ul {
   padding: 2em 0 !important;
   width: 100%;
 }
+
+img[alt$="Access Health"] {
+  max-width: 400px;
+  padding-top: 2rem;
+}

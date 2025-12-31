@@ -44,6 +44,19 @@ const brandingCollection = defineCollection({
   }),
 })
 
+const organizationsCollection = defineCollection({
+  // loader: file('src/content/grid/welcome.json'),
+  // type: "content",
+  // loader: glob({ pattern: "*.yml", base: "./src/content/grid"}),
+  schema: () => z.object({
+    title: z.string().optional(),
+    website: z.string().optional(),
+    logo: z.string().optional(),
+    alt: z.string().optional(),
+    order: z.number().optional(),
+  })
+})
+
 const photoGridCollection = defineCollection({
   // loader: file('src/content/grid/welcome.json'),
   // type: "content",
@@ -91,5 +104,6 @@ export const collections = {
   branding: brandingCollection,
   grid: photoGridCollection,
   parts: partsCollection,
+  orgs: organizationsCollection,
   menus: menusCollection,
 };
