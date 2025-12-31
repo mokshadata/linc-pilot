@@ -68,6 +68,26 @@ collections:
         media_folder: "/src/assets/images"
         widget: "image"
         required: false
+  - name: "orgs" # Used in routes, e.g., /admin/collections/blog
+    label: "About - Organizations" # Used in the UI
+    summary: "{{order}} - {{title}}"
+    i18n: true
+    folder: "src/content/orgs" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    delete: false
+    preview_path: 'about'
+    sortable_fields: ['order', 'title']
+    fields: # The fields for each document, usually in frontmatter
+      - { label: "Organization Order", name: "order", widget: "number", i18n: duplicate }
+      - { label: "Organization Name", name: "title", widget: "string", i18n: duplicate }
+      # - { label: "Slug", name: "slug", widget: "string", i18n: true }
+      - { label: "Organization Website", name: "website", widget: "string", i18n: duplicate }
+      - { label: "Organization Description", name: "alt", widget: "string", i18n: true }
+      - label: "Organization Logo"
+        name: "logo"
+        widget: "image"
+        i18n: duplicate
+        media_folder: "/src/assets/images"
   - name: "photos"
     label: "Photo Grid"
     summary: "Column {{column}}, Position {{order}} - {{alt}}"
