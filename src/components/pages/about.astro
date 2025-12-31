@@ -2,9 +2,16 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import GetStarted from "@components/GetStarted.astro";
 
-import { getEntry } from "astro:content";
+import { Image } from "astro:assets";
+import { getEntry, getCollection } from "astro:content";
+import type { ImageMetadata } from 'astro';
 
 const { currentLocale } = Astro.props || 'en';
+
+const organizationsLogos = import.meta.glob<{ default: ImageMetadata }>('@assets/images/orgs/*.{jpeg,jpg,png,gif}');
+const organizations = (await getCollection("orgs", (item) => {
+  return item.id.includes(`${currentLocale}/`)
+})).toSorted((a, b) => (a.data.order || 0) - (b.data.order || 0));
 
 const aboutSection = await getEntry('parts', `${currentLocale}/04-about`)
 const aboutSectionWithContent = {
@@ -27,6 +34,16 @@ const aboutSectionWithContent = {
     <section class="about">
       <div class="container">
         <aboutSectionWithContent.Content/>
+        <div class="grid">
+          {organizations
+            .map((org) => (
+              <div class="partner">
+                <a href={org.data.website || '#'} target="_blank">
+                  <Image src={organizationsLogos[`/src/assets/images/orgs/${org.data.logo}`]()} alt={org.data.alt || ''} title={org.data.title || ''}/>
+                </a>
+              </div>
+            ))}
+        </div>
       </div>
     </section>
     <GetStarted currentLocale={currentLocale}/>

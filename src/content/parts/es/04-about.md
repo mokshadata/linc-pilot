@@ -13,22 +13,6 @@ Mediante un proceso de diseño centrado en el ser humano, The George Foundation 
 
 A través de LINC, imaginamos un futuro donde todos los residentes de Fort Bend, especialmente los inquilinos, puedan acceder más fácilmente a la ayuda que necesitan, evitar el desalojo y permanecer en una vivienda estable.
 
-***Fort Bend LINC actualmente está compuesto por varias organizaciones sin fines de lucro de Fort Bend que trabajan juntos para brindar asistencia financiera y de otro tipo a las familias de Fort Bend.***
+***Fort Bend LINC actualmente está compuesto por varias organizaciones sin fines de lucro de Fort Bend que trabajan juntos para brindar asistencia financiera y de otro tipo a las familias de Fort Bend. AccessHealth facilita todas las iniciativas de Fort Bend LINC.***
 
-<div class="grid">
-  <div class="partner">
-    <a href="https://secondmile.org/" target="_blank">![Second Mile](src/assets/images/Second-Mile-Logo.png)</a>
-  </div>
-  <div class="partner">
-    <a href="https://www.humanneeds.org/" target="_blank">![East Fort Bend Human Needs Ministry](src/assets/images/East-Fort-Bend-Ministry-logo.png)</a>
-  </div>
-  <div class="partner">
-    <a href="https://www.fortbendcountytx.gov/government/departments/health-and-human-services" target="_blank">![Fort Bend County Social Services](src/assets/images/FBHHS-Logo-horizontal.png)</a>
-  </div>
-  <div class="partner">
-    <a href="https://fortbendfamilypromise.org/" target="_blank">![Fort Bend Family Promise](src/assets/images/fort-bend-family-promise.png)</a>
-  </div>
-  <div class="partner">
-    <a href="https://rupanifoundationusa.org/" target="_blank">![Rupani Foundation](src/assets/images/rupani-logo.png)</a>
-  </div>
-</div>
+[![Access Health](../../../assets/images/access-health.png)](https://www.myaccesshealth.org/)

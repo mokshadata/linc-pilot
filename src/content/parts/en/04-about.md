@@ -14,22 +14,6 @@ Using a human-centered design process, The George Foundation led early efforts t
 
 Through LINC, we envision a future where all Fort Bend residents—especially renters—can more easily access the help they need, avoid eviction, and remain stably housed.
 
-***Fort Bend LINC is currently composed of various Fort Bend nonprofit organizations that are working together to provide financial and other assistance to families in Fort Bend.***
+***Fort Bend LINC is currently composed of various Fort Bend nonprofit organizations that are working together to provide financial and other assistance to families in Fort Bend. AccessHealth facilitates all Fort Bend LINC initiatives.***
 
-<div class="grid">
-  <div class="partner">
-    <a href="https://secondmile.org/" target="_blank">![Second Mile](src/assets/images/Second-Mile-Logo.png)</a>
-  </div>
-  <div class="partner">
-    <a href="https://www.humanneeds.org/" target="_blank">![East Fort Bend Human Needs Ministry](src/assets/images/East-Fort-Bend-Ministry-logo.png)</a>
-  </div>
-  <div class="partner">
-    <a href="https://www.fortbendcountytx.gov/government/departments/health-and-human-services" target="_blank">![Fort Bend County Social Services](src/assets/images/FBHHS-Logo-horizontal.png)</a>
-  </div>
-  <div class="partner">
-    <a href="https://fortbendfamilypromise.org/" target="_blank">![Fort Bend Family Promise](src/assets/images/fort-bend-family-promise.png)</a>
-  </div>
-  <div class="partner">
-    <a href="https://rupanifoundationusa.org/" target="_blank">![Rupani Foundation](src/assets/images/rupani-logo.png)</a>
-  </div>
-</div>
+[![Access Health](../../../assets/images/access-health.png)](https://www.myaccesshealth.org/)
