@@ -87,7 +87,7 @@ collections:
         name: "logo"
         widget: "image"
         i18n: duplicate
-        media_folder: "/src/assets/images"
+        media_folder: "/src/assets/images/orgs"
   - name: "photos"
     label: "Photo Grid"
     summary: "Column {{column}}, Position {{order}} - {{alt}}"
