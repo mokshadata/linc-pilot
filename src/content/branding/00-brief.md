@@ -5,7 +5,7 @@ order: 1
 show: true
 ---
 
-Fort Bend LINC aims to serve all who call Fort Bend home by connecting our neighbors to resources like rental assistance. In the initial launch of the program, partner agencies will be introducing clients to the platform so that they can apply for rental assistance in a streamlined process.
+Fort Bend LINC aims to serve all who call Fort Bend home by connecting our neighbors to resources like rental assistance. In the initial launch of the program, partner organizations will be introducing clients to the platform so that they can apply for rental assistance in a streamlined process.
 
 Fort Bend LINC as a brand should be
 

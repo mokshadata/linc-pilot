@@ -6,8 +6,8 @@ cover_image: on-computer.png
 page_title: Hay 4 pasos para solicitar y recibir asistencia financiera con Fort Bend LINC.
 ---
 
-Hay 4 pasos para solicitar y recibir asistencia financiera con Fort Bend LINC. Presentar una solicitud no garantiza que recibirá asistencia. La asistencia es limitada y depende de los fondos disponibles y de la capacidad de las agencias participantes.
+Hay 4 pasos para solicitar y recibir asistencia financiera con Fort Bend LINC. Presentar una solicitud no garantiza que recibirá asistencia. La asistencia es limitada y depende de los fondos disponibles y de la capacidad de las organizaciones participantes.
 
-**La mayoría de las agencias solo pueden proporcionar fondos para un mes a la vez.**
+**La mayoría de las organizaciones asociadas solo pueden proporcionar fondos para un mes a la vez.**
 
 Obtenga más información a continuación y comience.

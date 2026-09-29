@@ -70,7 +70,7 @@ Para convertirse en paciente nuevo, llame al: [281-342-4530](tel:2813424530)
 
 ## Apoyo a familias y a la comunidad
 
-Varias de nuestras organizaciones asociadas brindan apoyo a familias y personas a través de diversos programas y servicios. Estas agencias pueden ofrecer ayuda en áreas como:
+Varias de nuestras organizaciones asociadas brindan apoyo a familias y personas a través de diversos programas y servicios. Estas organizaciones asociadas pueden ofrecer ayuda en áreas como:
 
 * Programas para jóvenes y familias
 * Consejería de salud mental

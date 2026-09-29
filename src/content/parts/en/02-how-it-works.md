@@ -10,8 +10,8 @@ cms_order: 2
 page_title: There are 4 steps to applying for and receiving assistance with Fort Bend LINC.
 ---
 
-There are 4 steps to applying for and receiving assistance with Fort Bend LINC. Applying does not guarantee you will receive assistance. Assistance is limited based on available funding and capacity at our involved agencies.
+There are 4 steps to applying for and receiving assistance with Fort Bend LINC. Applying does not guarantee you will receive assistance. Assistance is limited based on available funding and capacity at our involved community partner organizations.
 
-**Most agencies can only provide funds toward one month at a time.**
+**Most partners can only provide funds toward one month at a time.**
 
 Learn more below and get started.

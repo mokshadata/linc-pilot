@@ -68,7 +68,7 @@ To become a new patient call: [281-342-4530](tel:2813424530)
 
 ## Family & Community Support
 
-Several of our partners support families and individuals through various programs and services. Partner agencies may assist with:
+Several of our partners support families and individuals through various programs and services. Community partner organizations may assist with:
 
 * Youth and family programs
 * Mental Health Counseling

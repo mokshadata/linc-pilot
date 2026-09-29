@@ -7,4 +7,4 @@ preview_path_part: null
 cms_order: 1
 page_title: Fort Bend LINC is piloting a financial assistance program.
 ---
-Fort Bend LINC connects Fort Bend residents to partners agencies that provide emergency financial assistance.
+Fort Bend LINC connects Fort Bend residents to partner organizations that provide emergency financial assistance.
