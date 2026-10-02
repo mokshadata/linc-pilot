@@ -41,7 +41,7 @@ Bienvenido a **fortbendlinc.org** (“nosotros”, “nos”, “nuestro” o el
 
     * Proporcionar, operar, mantener y mejorar el Sitio web y sus servicios
     * Responder a sus consultas o solicitudes
-    * Administrar y procesar solicitudes de asistencia para el alquiler
+    * Administrar y procesar solicitudes de asistencia
     * Comunicarnos con usted sobre elegibilidad de programas, actualizaciones y avisos importantes
     * Monitorear y analizar el uso, las tendencias y el rendimiento del Sitio web
     * Cumplir con requisitos legales y reglamentarios

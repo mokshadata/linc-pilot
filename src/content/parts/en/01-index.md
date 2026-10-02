@@ -1,10 +1,10 @@
 ---
-headline: Many Fort Bend neighbors need help with rent.
+headline: Many Fort Bend neighbors need help with bills.
 call_to_action: See if you qualify
 location: Front page
-url: rent.fortbendlinc.org
+url: fortbendlinc.org
 preview_path_part: null
 cms_order: 1
-page_title: Fort Bend LINC is piloting a rental assistance program.
+page_title: Fort Bend LINC is piloting a financial assistance program.
 ---
-Fort Bend LINC connects Fort Bend renters to rental assistance.
+Fort Bend LINC connects Fort Bend residents to partner organizations that provide emergency financial assistance.

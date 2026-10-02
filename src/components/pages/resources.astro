@@ -8,7 +8,7 @@ import type { ImageMetadata } from 'astro';
 
 const { currentLocale } = Astro.props || 'en';
 
-const organizationsLogos = import.meta.glob<{ default: ImageMetadata }>('@assets/images/orgs/*.{jpeg,jpg,png,gif}');
+const organizationsLogos = import.meta.glob<{ default: ImageMetadata }>('@assets/images/orgs/*.{jpeg,jpg,png,gif,svg,avif}');
 const organizations = (await getCollection("orgs", (item) => {
   return item.id.includes(`${currentLocale}/`)
 })).toSorted((a, b) => (a.data.order || 0) - (b.data.order || 0));
@@ -68,5 +68,32 @@ const aboutSectionWithContent = {
 
 .about {
   padding: 4rem 0;
+}
+.about .partners img {
+  max-height: 12rem;
+  max-width: 90%;
+  width: auto;
+}
+
+.emphasis {
+  font-weight: 800;
+  font-style: italic;
+}
+
+.about {
+  padding: 4rem 0;
+}
+.technology-partner {
+  padding-top: 2rem;
+}
+.technology-partner p {
+  text-align: center;
+}
+img[alt~="Connective"] {
+  width: 100%;
+  max-width: 400px;
+}
+.about a[href~="attackpoverty"] img {
+  max-height: 20px;
 }
 </style>

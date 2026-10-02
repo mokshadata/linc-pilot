@@ -1,7 +1,7 @@
 ---
 headline: Recursos Comunitarios de Fort Bend
 location: Resources page
-url: rent.fortbendlinc.org/resources
+url: fortbendlinc.org/resources
 cms_order: 8
 preview_path_part: resources
 page_title: "Fort Bend LINC es un grupo de organizaciones sin ánimo de lucro que
@@ -28,24 +28,14 @@ Varios de nuestros socios comunitarios operan bancos de alimentos o programas de
 <div class="resource-contact-list">
 
 * **East Fort Bend Human Needs Ministry**
-  * **Horario**
-    * Martes, jueves y viernes de 10:00 a. m. a 12:30 p. m.
-    * Algunos miércoles por la tarde/noche, de 6:00 p. m. a 8:00 p. m.
-    * Se le atenderá por orden de llegada. No se requiere cita previa. 
   * **Dirección**
     * [435 Stafford Run Rd., Stafford, TX 77477](https://maps.app.goo.gl/ydGK2q64JZnq7KYw7)
   * Obtenga más información sobre la [despensa de alimentos Interfaith aquí](https://www.humanneeds.org/services-offered).
 * **Second Mile Mission Center**
   * Puede inscribirse para recibir ayuda con alimentos una vez cada dos semanas. 
   * Debe programar una cita. [Inscríbase aquí](https://www.signupgenius.com/tabs/13576df0ea7c8e9cf9-foodfor#/) o llame al [281-410-1859](tel:2814101859). 
-  * **Horario**
-    * De lunes a jueves: Despensa de libre elección (donde usted puede seleccionar los productos).
-    * Viernes y sábados: Sistema de estacionar y recoger (*Park & ​​Pick up*). 
   * Obtenga más información sobre el [programa de alimentos de Second Mile aquí](https://www.signupgenius.com/tabs/13576df0ea7c8e9cf9-foodfor#/).
 * **Rosenberg-Richmond Helping Hands**
-  * **Horario**
-    * De lunes a jueves: 9:30 a. m. - 1:30 p. m.
-    * No se necesita cita previa. 
   * **Dirección**
     * [902 Collins Rd, Richmond, TX 77469](https://maps.app.goo.gl/rf8RdgExr5qtWe4E6)
   * Puede llamar al [281-232-4904](tel:2812324904) para obtener más información.
@@ -80,7 +70,7 @@ Para convertirse en paciente nuevo, llame al: [281-342-4530](tel:2813424530)
 
 ## Apoyo a familias y a la comunidad
 
-Varias de nuestras organizaciones asociadas brindan apoyo a familias y personas a través de diversos programas y servicios. Estas agencias pueden ofrecer ayuda en áreas como:
+Varias de nuestras organizaciones asociadas brindan apoyo a familias y personas a través de diversos programas y servicios. Estas organizaciones asociadas pueden ofrecer ayuda en áreas como:
 
 * Programas para jóvenes y familias
 * Consejería de salud mental
@@ -98,24 +88,21 @@ Varias de nuestras organizaciones asociadas brindan apoyo a familias y personas 
 * **Family Houston**
   * Ofrece [consejería de salud mental](https://www.familyhouston.org/mentalhealth), [asesoramiento para la estabilidad financiera](https://www.familyhouston.org/financial-stability-coaching) y [servicios para veteranos](https://www.familyhouston.org/veteransupport). 
   * Obtenga más información llamando al [713-861-4849](tel:7138614849) o visitando [familyhouston.org](https://www.familyhouston.org). 
-  * **Oficina de Fort Bend**: [12300 Parc Crest Dr. Stafford, TX 77477](https://maps.app.goo.gl/smXGERsHUh156pAc8)
 * **Rupani Foundation**
-  * Apoya a las familias con [programas de desarrollo de la primera infancia](https://rupanifoundationusa.org/early-childhood-development/) y [apoyo de salud mental](https://rupanifoundationusa.org/mental-health-support/). 
+  * Apoya a las familias con [empoderamiento económico](https://rupanifoundationusa.org/economic-empowerment/), [programas de desarrollo de la primera infancia](https://rupanifoundationusa.org/early-childhood-development/) y [apoyo de salud mental](https://rupanifoundationusa.org/mental-health-support/). 
   * Obtenga más información llamando al [713-777-5059](tel:7137775059) o visitando [rupanifoundationusa.org](https://rupanifoundationusa.org). 
-  * **Dirección**: [8303 Southwest Fwy Ste 495, Houston, TX 77074](https://maps.app.goo.gl/cVfiAofUVArMgYDo9)
 * **Fort Bend Family Promise**
   * Apoya a las familias con servicios integrales tanto para padres como para hijos. Es necesario aceptar apoyo continuo de gestión de casos. 
   * Obtenga más información llamando al [281-403-3923](tel:2814033923).
   * **Campus Este (East Campus)**: [4645 Cartwright Rd, Missouri City, TX 77459](https://maps.app.goo.gl/qsykcFxRjijf2Tzd9)
   * **Campus Oeste (West Campus)**: [1002 Wilson Dr, Rosenberg, TX 77471](https://maps.app.goo.gl/tuKdYdnoAGSwD6U69)
 * **East Fort Bend Human Needs Ministry**
-  * Ofrece bolsas de cumpleaños para niños y hay con una tienda de reventa donde puede encontrar una gran variedad de artículos asequibles.
+  * Hay con una tienda de reventa donde puede encontrar una gran variedad de artículos asequibles.
   * Obtenga más información llamando al [281-499-8833](tel:2814998833). 
   * **Tienda de reventa**: [425 Stafford Run Rd, Stafford, TX 77477](https://maps.app.goo.gl/FFMU5c1U6pcHwxJ49)
 * **AccessHealth**
-  * El Departamento de Coordinación de Atención ayuda a los pacientes a acceder a recursos comunitarios locales en su área. 
-  * Obtenga más información sobre la Coordinación de Atención llamando al [832-957-6187](tel:8329576187).
-  * El programa Medical-Legal Partnership ayuda a los pacientes de AccessHealth con sus necesidades legales en materia civil. Para registrarse como paciente, llame al [281-342-4530](tel:2813424530).
+  * El Departamento de Coordinación de Atención de AccessHealth ofrece programas y servicios que apoyan a los pacientes más allá de la atención médica. Brindamos asistencia en el manejo de enfermedades crónicas, orientación personal (*life coaching*), asuntos legales civiles a través de nuestra alianza médico-legal y conexión con recursos comunitarios.
+  * Estos servicios están disponibles para los pacientes de AccessHealth. Para convertirse en paciente, por favor llame al [281-342-4530](tel:2813424530).
 * **Servicios Sociales del Condado de Fort Bend (Fort Bend County Social Services)**
   * Ofrece apoyo a veteranos, gestión de casos y asistencia financiera temporal.
   * **Oficina de Missouri City**:

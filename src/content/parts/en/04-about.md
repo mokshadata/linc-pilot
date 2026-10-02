@@ -1,7 +1,7 @@
 ---
 headline: About Fort Bend LINC
 location: About page
-url: rent.fortbendlinc.org/about
+url: fortbendlinc.org/about
 cms_order: 4
 preview_path_part: about
 page_title: "Fort Bend LINC is a group of nonprofit organizations working together to connect resources to anyone who calls Fort Bend County home."

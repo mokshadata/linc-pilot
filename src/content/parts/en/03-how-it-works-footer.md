@@ -5,7 +5,7 @@ cover_alt: Family of four smiling at home
 call_to_action: See if you are eligible
 cover_first: true
 location: How It Works footer
-url: rent.fortbendlinc.org/get-started
+url: fortbendlinc.org/get-started
 preview_path_part: get-started
 cms_order: 3
 ---

@@ -1,7 +1,7 @@
 ---
 headline: Privacy Policy
 location: Privacy Policy page
-url: rent.fortbendlinc.org/privacy-policy
+url: fortbendlinc.org/privacy-policy
 cms_order: 7
 preview_path_part: privacy-policy
 page_title: "Fort Bend LINC is a group of nonprofit organizations working together to connect resources to anyone who calls Fort Bend County home."
@@ -42,7 +42,7 @@ Welcome to **fortbendlinc.org** (“we,” “us,” “our,” or “Website”
 
     * To provide, operate, maintain, and improve the Website and its services
     * To respond to your inquiries or requests
-    * To administer and process rental assistance applications
+    * To administer and process applications for assistance
     * To communicate with you about program eligibility, updates, and important notices
     * To monitor and analyze usage, trends, and performance of the Website
     * To comply with legal and regulatory requirements
