@@ -5,3 +5,5 @@ page_title: Fort Bend LINC está probando un programa de asistencia financiera.
 cover_image: null
 ---
 Fort Bend LINC conecta a los residentes de Fort Bend con organizaciones asociadas que brindan asistencia financiera de emergencia.
+
+Actualmente estamos conectando a los residentes con asistencia para el alquiler y los servicios públicos.

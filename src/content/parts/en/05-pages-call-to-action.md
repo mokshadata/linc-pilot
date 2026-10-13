@@ -9,4 +9,6 @@ location: Footer on About and FAQs page
 preview_path_part: about
 cms_order: 5
 ---
-Fort Bend LINC connects Fort Bend residents to emergency financial assistance.
+Fort Bend LINC connects Fort Bend residents to partner organizations that provide emergency financial assistance.
+
+We are currently connecting residents to rental and utility assistance.
